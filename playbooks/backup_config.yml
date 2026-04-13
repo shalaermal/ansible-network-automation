@@ -9,8 +9,15 @@
           - show running-config
       register: running_config
 
+    - name: Ensure backup directory exists
+      ansible.builtin.file:
+        path: "{{ playbook_dir }}/../backups"
+        state: directory
+        mode: "0755"
+      delegate_to: localhost
+
     - name: Save config to file
-      copy:
+      ansible.builtin.copy:
         content: "{{ running_config.stdout[0] }}"
-        dest: "backups/{{ inventory_hostname }}.cfg"
+        dest: "{{ playbook_dir }}/../backups/{{ inventory_hostname }}.cfg"
       delegate_to: localhost
