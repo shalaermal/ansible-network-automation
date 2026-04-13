@@ -1,0 +1,10 @@
+ansible_network_os: cisco.ios.ios
+
+ansible_become: yes
+ansible_become_method: enable
+ansible_become_password: admin123
+
+ansible_ssh_common_args: >-
+  -o KexAlgorithms=+diffie-hellman-group1-sha1
+  -o HostKeyAlgorithms=+ssh-rsa
+  -o MACs=+hmac-sha1
