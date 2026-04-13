@@ -1,0 +1,16 @@
+- name: Backup Cisco switch configs
+  hosts: access_switches
+  gather_facts: no
+
+  tasks:
+    - name: Get running config
+      cisco.ios.ios_command:
+        commands:
+          - show running-config
+      register: running_config
+
+    - name: Save config to file
+      copy:
+        content: "{{ running_config.stdout[0] }}"
+        dest: "backups/{{ inventory_hostname }}.cfg"
+      delegate_to: localhost
