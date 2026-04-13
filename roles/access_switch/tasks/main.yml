@@ -1,0 +1,16 @@
+- name: Set hostname
+  cisco.ios.ios_config:
+    lines:
+      - "hostname {{ hostname }}"
+
+- name: Configure default gateway
+  cisco.ios.ios_config:
+    lines:
+      - "ip default-gateway {{ default_gateway }}"
+
+- name: Create base VLANs
+  cisco.ios.ios_config:
+    lines:
+      - "name {{ item.name }}"
+    parents: "vlan {{ item.id }}"
+  loop: "{{ base_vlans }}"
