@@ -11,3 +11,10 @@ ansible_ssh_common_args: >-
   -o KexAlgorithms=+diffie-hellman-group1-sha1
   -o HostKeyAlgorithms=+ssh-rsa
   -o MACs=+hmac-sha1
+
+cisco_base_config:
+  - no ip domain-lookup
+  - service password-encryption
+  - ip ssh version 2
+  - logging buffered 10000
+  - spanning-tree mode rapid-pvst

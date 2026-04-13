@@ -8,9 +8,16 @@
     lines:
       - "ip default-gateway {{ default_gateway }}"
 
-- name: Create base VLANs
-  cisco.ios.ios_config:
-    lines:
-      - "name {{ item.name }}"
-    parents: "vlan {{ item.id }}"
-  loop: "{{ base_vlans }}"
+- name: Configure base VLANs
+  cisco.ios.ios_vlans:
+    config:
+      - vlan_id: 10
+        name: MGMT
+        state: active
+      - vlan_id: 20
+        name: USERS
+        state: active
+      - vlan_id: 30
+        name: VOICE
+        state: active
+    state: merged
