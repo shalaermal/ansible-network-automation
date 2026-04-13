@@ -1,0 +1,6 @@
+- name: Apply base config to access switches
+  hosts: access_switches
+  gather_facts: no
+
+  roles:
+    - access_switch

@@ -1,0 +1,14 @@
+- name: Run ping test on Cisco switches
+  hosts: access_switches
+  gather_facts: no
+
+  tasks:
+    - name: Ping default gateway from switch
+      cisco.ios.ios_command:
+        commands:
+          - ping 192.168.0.1
+      register: ping_output
+
+    - name: Print ping output
+      ansible.builtin.debug:
+        var: ping_output.stdout_lines
