@@ -1,0 +1,6 @@
+- name: Apply Cisco base config
+  hosts: cisco_ios
+  gather_facts: no
+
+  roles:
+    - cisco_base

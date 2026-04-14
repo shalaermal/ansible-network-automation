@@ -1,0 +1,10 @@
+- name: Build access switches
+  hosts: access_switches
+  gather_facts: no
+
+  roles:
+    - role: cisco_base
+      tags: [base]
+
+    - role: access_switch
+      tags: [access]
