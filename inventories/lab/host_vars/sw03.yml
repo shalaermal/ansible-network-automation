@@ -6,3 +6,7 @@ unused_interfaces:
   - GigabitEthernet0/3
   - GigabitEthernet1/2
   - GigabitEthernet1/3
+
+change_interface: GigabitEthernet0/2
+target_vlan_id: 40
+target_vlan_name: SERVERS

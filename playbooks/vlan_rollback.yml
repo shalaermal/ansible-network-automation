@@ -1,0 +1,13 @@
+- name: Rollback VLAN change on access port
+  hosts: sw03
+  gather_facts: no
+
+  tasks:
+    - name: Restore interface to VLAN 20
+      cisco.ios.ios_config:
+        parents: "interface {{ change_interface }}"
+        lines:
+          - switchport mode access
+          - switchport access vlan 20
+          - description ROLLBACK_TO_USERS
+          - no shutdown
