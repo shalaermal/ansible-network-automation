@@ -28,3 +28,11 @@
     lines:
       - "ip address {{ mgmt_ip }} {{ mgmt_mask }}"
       - no shutdown
+
+- name: Disable unused interfaces
+  cisco.ios.ios_config:
+    parents: "interface {{ item }}"
+    lines:
+      - description UNUSED
+      - shutdown
+  loop: "{{ unused_interfaces }}"
