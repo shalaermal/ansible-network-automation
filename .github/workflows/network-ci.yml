@@ -20,18 +20,18 @@ jobs:
           tags: tag:ci
           ping: ${{ secrets.VM_HOST }}
 
-      - name: Run Precheck + Deploy + Postcheck
-        uses: appleboy/ssh-action@v1.0.0
-        with:
-          host: ${{ secrets.VM_HOST }}
-          username: ${{ secrets.VM_USER }}
-          password: ${{ secrets.VM_PASS }}
-          script: |
-            cd ~/networking-ansible-lab
-            git pull
-            echo "=== PRECHECK ==="
-            ansible-playbook playbooks/vlan_precheck.yml
-            echo "=== DEPLOY ==="
-            ansible-playbook playbooks/vlan_deploy.yml
-            echo "=== POSTCHECK ==="
+      - name: Install sshpass
+        run: sudo apt-get update && sudo apt-get install -y sshpass
+
+      - name: Run Precheck + Deploy + Postcheck on VM
+        run: |
+          sshpass -p "${{ secrets.VM_PASS }}" ssh -o StrictHostKeyChecking=no ${{ secrets.VM_USER }}@${{ secrets.VM_HOST }} '
+            cd ~/networking-ansible-lab &&
+            git pull &&
+            echo "=== PRECHECK ===" &&
+            ansible-playbook playbooks/vlan_precheck.yml &&
+            echo "=== DEPLOY ===" &&
+            ansible-playbook playbooks/vlan_deploy.yml &&
+            echo "=== POSTCHECK ===" &&
             ansible-playbook playbooks/vlan_postcheck.yml
+          '
