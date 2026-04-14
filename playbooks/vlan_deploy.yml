@@ -11,6 +11,7 @@
             state: active
         state: merged
 
+
     - name: Configure target interface as access port in target VLAN
       cisco.ios.ios_config:
         parents: "interface {{ change_interface }}"
