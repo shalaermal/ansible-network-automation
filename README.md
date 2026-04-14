@@ -6,6 +6,8 @@
 - GitHub Actions for CI/CD
 - Tailscale for secure private connectivity
 
+---
+
 ## Project Structure
 network-ansible/
 ├── inventories/
@@ -29,27 +31,28 @@ network-ansible/
 └── README.md
 
 
-## Features Implemented
+---
 
-### Day-0 Configuration
-- Hostname
-- Management IP (SVI)
-- Default gateway
-- DNS, NTP, syslog
-- SSH configuration
-- Local user
+## Capabilities
 
-### Access Switch Configuration
-- VLAN creation (MGMT, USERS, VOICE)
-- SVI configuration
-- Interface setup
+### Base Device Provisioning
+- Hostname and system identity
+- Management interface (SVI)
+- Default gateway configuration
+- DNS, NTP, and syslog integration
+- SSH enablement and secure access
+- Local user provisioning
 
-### Security Automation
-- Disable unused interfaces
-- Interface descriptions
-- Shutdown unused ports
+### Access Layer Configuration
+- VLAN provisioning (MGMT, USERS, VOICE)
+- Interface configuration
+- Management SVI setup
+
+### Security Hardening
+- Identification and shutdown of unused interfaces
+- Standardized interface descriptions
 
 ### Operational Workflow
-- Pre-check
-- Deploy
-- Post-check
+- Pre-deployment validation
+- Configuration deployment
+- Post-deployment verification
