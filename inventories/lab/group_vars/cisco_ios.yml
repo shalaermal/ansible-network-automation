@@ -15,6 +15,10 @@ ansible_ssh_common_args: >-
 cisco_base_config:
   - no ip domain-lookup
   - service password-encryption
+  - ip domain-name lab.local
   - ip ssh version 2
   - logging buffered 10000
   - spanning-tree mode rapid-pvst
+
+local_admin_user: admin
+local_admin_password: admin123
