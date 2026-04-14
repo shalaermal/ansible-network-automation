@@ -27,3 +27,26 @@
     lines:
       - crypto key generate rsa modulus 2048
   when: rsa_keys.stdout is defined and ('% Key pair was generated' not in (rsa_keys.stdout[0] | default(''))) and ('Key name' not in (rsa_keys.stdout[0] | default('')))
+
+- name: Configure DNS servers
+  cisco.ios.ios_config:
+    lines:
+      - "ip name-server {{ item }}"
+  loop: "{{ dns_servers }}"
+
+- name: Configure NTP servers
+  cisco.ios.ios_config:
+    lines:
+      - "ntp server {{ item }}"
+  loop: "{{ ntp_servers }}"
+
+- name: Configure syslog servers
+  cisco.ios.ios_config:
+    lines:
+      - "logging host {{ item }}"
+  loop: "{{ syslog_servers }}"
+
+- name: Configure logging level
+  cisco.ios.ios_config:
+    lines:
+      - "logging trap {{ logging_level }}"
