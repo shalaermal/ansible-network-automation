@@ -13,6 +13,13 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v3
 
+      - name: Connect runner to Tailscale
+        uses: tailscale/github-action@v3
+        with:
+          authkey: ${{ secrets.TAILSCALE_AUTHKEY }}
+          tags: tag:ci
+          ping: ${{ secrets.VM_HOST }}
+
       - name: Run Precheck + Deploy + Postcheck
         uses: appleboy/ssh-action@v1.0.0
         with:
@@ -22,12 +29,9 @@ jobs:
           script: |
             cd ~/networking-ansible-lab
             git pull
-
             echo "=== PRECHECK ==="
             ansible-playbook playbooks/vlan_precheck.yml
-
             echo "=== DEPLOY ==="
             ansible-playbook playbooks/vlan_deploy.yml
-
             echo "=== POSTCHECK ==="
             ansible-playbook playbooks/vlan_postcheck.yml
