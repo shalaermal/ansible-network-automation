@@ -21,3 +21,10 @@
         name: VOICE
         state: active
     state: merged
+
+- name: Configure management SVI
+  cisco.ios.ios_config:
+    parents: "interface vlan {{ mgmt_vlan }}"
+    lines:
+      - "ip address {{ mgmt_ip }} {{ mgmt_mask }}"
+      - no shutdown

@@ -1,5 +1,6 @@
 device_role: access_switch
 default_gateway: 192.168.0.1
+mgmt_vlan: 10
 
 base_vlans:
   - { id: 10, name: MGMT }

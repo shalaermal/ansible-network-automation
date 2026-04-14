@@ -22,3 +22,14 @@ cisco_base_config:
 
 local_admin_user: admin
 local_admin_password: admin123
+
+dns_servers:
+  - 8.8.8.8
+
+ntp_servers:
+  - 192.168.0.1
+
+syslog_servers:
+  - 192.168.0.1
+
+logging_level: informational
