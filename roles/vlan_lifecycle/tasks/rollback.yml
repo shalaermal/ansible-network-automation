@@ -1,0 +1,12 @@
+- name: Remove VLAN from interfaces
+  ios_config:
+    parents: "interface {{ item.1 }}"
+    lines:
+      - no switchport access vlan
+  loop: "{{ vlans | subelements('ports') }}"
+
+- name: Delete VLANs
+  ios_config:
+    lines:
+      - "no vlan {{ item.id }}"
+  loop: "{{ vlans }}"

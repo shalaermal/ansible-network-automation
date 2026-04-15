@@ -1,0 +1,13 @@
+- name: Get VLAN info
+  ios_command:
+    commands: "show vlan brief"
+  register: vlan_output
+
+- name: Check VLAN existence
+  set_fact:
+    vlan_exists: "{{ vlan_output.stdout[0] }}"
+    
+- name: Show VLAN check
+  debug:
+    msg: "{{ item.id }} present: {{ item.id|string in vlan_exists }}"
+  loop: "{{ vlans }}"

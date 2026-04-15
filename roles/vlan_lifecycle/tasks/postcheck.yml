@@ -1,0 +1,21 @@
+- name: Check VLAN exists
+  ios_command:
+    commands: "show vlan brief"
+  register: vlan_brief
+
+- name: Set VLAN check result
+  set_fact:
+    vlan_ok: "{{ '40' in vlan_brief.stdout[0] }}"
+
+- name: Check port VLAN
+  ios_command:
+    commands: "show interfaces GigabitEthernet0/1 switchport"
+  register: port_check
+
+- name: Set port check result
+  set_fact:
+    port_ok: "{{ 'Access Mode VLAN: 40' in port_check.stdout[0] }}"
+
+- name: FINAL RESULT
+  debug:
+    msg: "{{ inventory_hostname }}: {{ 'PASS' if vlan_ok and port_ok else 'FAIL' }}"

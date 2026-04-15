@@ -1,0 +1,16 @@
+- name: Create VLANs
+  ios_config:
+    parents: "vlan {{ item.id }}"
+    lines:
+      - "name {{ item.name }}"
+    match: line
+  loop: "{{ vlans }}"
+
+- name: Assign VLANs to interfaces
+  ios_config:
+    parents: "interface {{ item.1 }}"
+    lines:
+      - "switchport access vlan {{ item.0.id }}"
+      - switchport mode access
+    match: line
+  loop: "{{ vlans | subelements('ports') }}"
