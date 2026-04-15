@@ -6,12 +6,12 @@ on:
       - main
 
 jobs:
-  deploy:
+
+  precheck:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repo
-        uses: actions/checkout@v3
+      - uses: actions/checkout@v3
 
       - name: Connect runner to Tailscale
         uses: tailscale/github-action@v3
@@ -23,15 +23,62 @@ jobs:
       - name: Install sshpass
         run: sudo apt-get update && sudo apt-get install -y sshpass
 
-      - name: Run Precheck + Deploy + Postcheck on VM
+      - name: Run precheck
         run: |
           sshpass -p "${{ secrets.VM_PASS }}" ssh -o StrictHostKeyChecking=no ${{ secrets.VM_USER }}@${{ secrets.VM_HOST }} '
             cd ~/networking-ansible-lab &&
             git pull &&
-            echo "=== PRECHECK ===" &&
-            ansible-playbook playbooks/mop/precheck.yml &&
-            echo "=== DEPLOY ===" &&
-            ansible-playbook playbooks/mop/deploy.yml &&
-            echo "=== POSTCHECK ===" &&
+            ansible-playbook playbooks/mop/precheck.yml
+          '
+
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: precheck
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Connect runner to Tailscale
+        uses: tailscale/github-action@v3
+        with:
+          authkey: ${{ secrets.TAILSCALE_AUTHKEY }}
+          tags: tag:ci
+          ping: ${{ secrets.VM_HOST }}
+
+      - name: Install sshpass
+        run: sudo apt-get update && sudo apt-get install -y sshpass
+
+      - name: Deploy config
+        run: |
+          sshpass -p "${{ secrets.VM_PASS }}" ssh -o StrictHostKeyChecking=no ${{ secrets.VM_USER }}@${{ secrets.VM_HOST }} '
+            cd ~/networking-ansible-lab &&
+            git pull &&
+            ansible-playbook playbooks/mop/deploy.yml
+          '
+
+
+  postcheck:
+    runs-on: ubuntu-latest
+    needs: deploy
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Connect runner to Tailscale
+        uses: tailscale/github-action@v3
+        with:
+          authkey: ${{ secrets.TAILSCALE_AUTHKEY }}
+          tags: tag:ci
+          ping: ${{ secrets.VM_HOST }}
+
+      - name: Install sshpass
+        run: sudo apt-get update && sudo apt-get install -y sshpass
+
+      - name: Run postcheck
+        run: |
+          sshpass -p "${{ secrets.VM_PASS }}" ssh -o StrictHostKeyChecking=no ${{ secrets.VM_USER }}@${{ secrets.VM_HOST }} '
+            cd ~/networking-ansible-lab &&
+            git pull &&
             ansible-playbook playbooks/mop/postcheck.yml
           '
