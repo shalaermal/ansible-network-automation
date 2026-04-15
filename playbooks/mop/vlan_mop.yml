@@ -1,0 +1,12 @@
+- hosts: access_switches
+  gather_facts: no
+
+  tasks:
+    - name: Precheck
+      import_tasks: ../../roles/vlan_lifecycle/tasks/precheck.yml
+
+    - name: Deploy
+      import_tasks: ../../roles/vlan_lifecycle/tasks/deploy.yml
+
+    - name: Postcheck
+      import_tasks: ../../roles/vlan_lifecycle/tasks/postcheck.yml

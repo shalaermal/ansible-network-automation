@@ -14,3 +14,9 @@ unused_interfaces:
   - GigabitEthernet1/1
   - GigabitEthernet1/2
   - GigabitEthernet1/3
+
+vlans:
+  - id: 40
+    name: COSTUMER
+    ports:
+      - GigabitEthernet0/1
