@@ -1166,3 +1166,699 @@ See the timeout setting options in the Network Debug and Troubleshooting Guide.
 2026-04-15 18:37:40,585 p=202941 u=root n=ansible | persistent connection idle timeout triggered, timeout value is 30 secs.
 See the timeout setting options in the Network Debug and Troubleshooting Guide.
 2026-04-15 18:37:40,687 p=202941 u=root n=ansible | shutdown complete
+2026-04-15 19:04:49,632 p=212786 u=root n=ansible | PLAY [access_switches] *********************************************************
+2026-04-15 19:04:49,640 p=212786 u=root n=ansible | TASK [Get VLAN info] ***********************************************************
+2026-04-15 19:04:50,536 p=212786 u=root n=ansible | network_os is set to cisco.ios.ios
+2026-04-15 19:04:50,596 p=212786 u=root n=ansible | network_os is set to cisco.ios.ios
+2026-04-15 19:04:50,623 p=212822 u=root n=p=212822 u=root | paramiko [192.168.0.204] | Connected (version 2.0, client Cisco-1.25)
+2026-04-15 19:04:50,655 p=212825 u=root n=p=212825 u=root | paramiko [192.168.0.203] | Connected (version 2.0, client Cisco-1.25)
+2026-04-15 19:04:51,014 p=212822 u=root n=p=212822 u=root | paramiko [192.168.0.204] | Auth banner: b'\r\nIOSv - Cisco Systems Confidential -\r\n\r\nSupplemental End User License Restrictions\r\n\r\nThis IOSv software is provided AS-IS without warranty of any kind. Under no circumstances may this software be used separate from the Cisco Modeling Labs Software that this software was provided with, or deployed or used as part of a production environment.\r\n\r\nBy using the software, you agree to abide by the terms and conditions of the Cisco End User License Agreement at http://www.cisco.com/go/eula. Unauthorized use or distribution of this software is expressly prohibited.\r\n'
+2026-04-15 19:04:51,027 p=212822 u=root n=p=212822 u=root | paramiko [192.168.0.204] | Authentication (password) successful!
+2026-04-15 19:04:51,089 p=212825 u=root n=p=212825 u=root | paramiko [192.168.0.203] | Auth banner: b'\r\nIOSv - Cisco Systems Confidential -\r\n\r\nSupplemental End User License Restrictions\r\n\r\nThis IOSv software is provided AS-IS without warranty of any kind. Under no circumstances may this software be used separate from the Cisco Modeling Labs Software that this software was provided with, or deployed or used as part of a production environment.\r\n\r\nBy using the software, you agree to abide by the terms and conditions of the Cisco End User License Agreement at http://www.cisco.com/go/eula. Unauthorized use or distribution of this software is expressly prohibited.\r\n'
+2026-04-15 19:04:51,106 p=212825 u=root n=p=212825 u=root | paramiko [192.168.0.203] | Authentication (password) successful!
+2026-04-15 19:04:52,711 p=212786 u=root n=ansible | ok: [sw01]
+2026-04-15 19:04:52,815 p=212786 u=root n=ansible | ok: [sw02]
+2026-04-15 19:04:52,821 p=212786 u=root n=ansible | TASK [Check VLAN existence] ****************************************************
+2026-04-15 19:04:52,916 p=212786 u=root n=ansible | ok: [sw01]
+2026-04-15 19:04:52,923 p=212786 u=root n=ansible | ok: [sw02]
+2026-04-15 19:04:52,925 p=212786 u=root n=ansible | TASK [Show VLAN check] *********************************************************
+2026-04-15 19:04:53,029 p=212786 u=root n=ansible | ok: [sw01] => (item={'id': 40, 'name': 'COSTUMER', 'ports': ['GigabitEthernet0/1']}) => {
+    "msg": "40 present: True"
+}
+2026-04-15 19:04:53,036 p=212786 u=root n=ansible | ok: [sw02] => (item={'id': 40, 'name': 'COSTUMER', 'ports': ['GigabitEthernet0/1']}) => {
+    "msg": "40 present: True"
+}
+2026-04-15 19:04:53,048 p=212786 u=root n=ansible | PLAY [routers] *****************************************************************
+2026-04-15 19:04:53,064 p=212786 u=root n=ansible | TASK [Check interface status] **************************************************
+2026-04-15 19:04:53,145 p=212825 u=root n=ansible | shutdown complete
+2026-04-15 19:04:53,153 p=212822 u=root n=ansible | shutdown complete
+2026-04-15 19:04:55,042 p=212786 u=root n=ansible | network_os is set to cisco.ios.ios
+2026-04-15 19:04:55,099 p=212849 u=root n=p=212849 u=root | paramiko [192.168.0.12] | Connected (version 2.0, client Cisco-1.25)
+2026-04-15 19:04:55,109 p=212786 u=root n=ansible | network_os is set to cisco.ios.ios
+2026-04-15 19:04:55,160 p=212786 u=root n=ansible | network_os is set to cisco.ios.ios
+2026-04-15 19:04:55,196 p=212868 u=root n=p=212868 u=root | paramiko [192.168.0.14] | Connected (version 2.0, client Cisco-1.25)
+2026-04-15 19:04:55,272 p=212858 u=root n=p=212858 u=root | paramiko [192.168.0.11] | Connected (version 2.0, client Cisco-1.25)
+2026-04-15 19:04:55,276 p=212786 u=root n=ansible | network_os is set to cisco.ios.ios
+2026-04-15 19:04:55,393 p=212879 u=root n=p=212879 u=root | paramiko [192.168.0.13] | Connected (version 2.0, client Cisco-1.25)
+2026-04-15 19:04:55,692 p=212868 u=root n=p=212868 u=root | paramiko [192.168.0.14] | Auth banner: b"\r\n**************************************************************************\r\n* IOSv is strictly limited to use for evaluation, demonstration and IOS  *\r\n* education. IOSv is provided as-is and is not supported by Cisco's      *\r\n* Technical Advisory Center. Any use or disclosure, in whole or in part, *\r\n* of the IOSv Software or Documentation to any third party for any       *\r\n* purposes is expressly prohibited except as otherwise authorized by     *\r\n* Cisco in writing.                                                      *\r\n**************************************************************************"
+2026-04-15 19:04:55,713 p=212868 u=root n=p=212868 u=root | paramiko [192.168.0.14] | Authentication (password) successful!
+2026-04-15 19:04:55,717 p=212849 u=root n=p=212849 u=root | paramiko [192.168.0.12] | Auth banner: b"\r\n**************************************************************************\r\n* IOSv is strictly limited to use for evaluation, demonstration and IOS  *\r\n* education. IOSv is provided as-is and is not supported by Cisco's      *\r\n* Technical Advisory Center. Any use or disclosure, in whole or in part, *\r\n* of the IOSv Software or Documentation to any third party for any       *\r\n* purposes is expressly prohibited except as otherwise authorized by     *\r\n* Cisco in writing.                                                      *\r\n**************************************************************************"
+2026-04-15 19:04:55,734 p=212849 u=root n=p=212849 u=root | paramiko [192.168.0.12] | Authentication (password) successful!
+2026-04-15 19:04:55,829 p=212858 u=root n=p=212858 u=root | paramiko [192.168.0.11] | Auth banner: b"\r\n**************************************************************************\r\n* IOSv is strictly limited to use for evaluation, demonstration and IOS  *\r\n* education. IOSv is provided as-is and is not supported by Cisco's      *\r\n* Technical Advisory Center. Any use or disclosure, in whole or in part, *\r\n* of the IOSv Software or Documentation to any third party for any       *\r\n* purposes is expressly prohibited except as otherwise authorized by     *\r\n* Cisco in writing.                                                      *\r\n**************************************************************************"
+2026-04-15 19:04:55,849 p=212879 u=root n=p=212879 u=root | paramiko [192.168.0.13] | Auth banner: b"\r\n**************************************************************************\r\n* IOSv is strictly limited to use for evaluation, demonstration and IOS  *\r\n* education. IOSv is provided as-is and is not supported by Cisco's      *\r\n* Technical Advisory Center. Any use or disclosure, in whole or in part, *\r\n* of the IOSv Software or Documentation to any third party for any       *\r\n* purposes is expressly prohibited except as otherwise authorized by     *\r\n* Cisco in writing.                                                      *\r\n**************************************************************************"
+2026-04-15 19:04:55,859 p=212858 u=root n=p=212858 u=root | paramiko [192.168.0.11] | Authentication (password) successful!
+2026-04-15 19:04:55,879 p=212879 u=root n=p=212879 u=root | paramiko [192.168.0.13] | Authentication (password) successful!
+2026-04-15 19:04:57,298 p=212786 u=root n=ansible | ok: [router_P2]
+2026-04-15 19:04:57,437 p=212786 u=root n=ansible | ok: [router_P1]
+2026-04-15 19:04:57,533 p=212786 u=root n=ansible | ok: [router_PE2]
+2026-04-15 19:04:57,718 p=212786 u=root n=ansible | ok: [router_PE1]
+2026-04-15 19:04:57,727 p=212786 u=root n=ansible | PLAY RECAP *********************************************************************
+2026-04-15 19:04:57,728 p=212786 u=root n=ansible | router_P1                  : ok=1    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2026-04-15 19:04:57,729 p=212786 u=root n=ansible | router_P2                  : ok=1    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2026-04-15 19:04:57,729 p=212786 u=root n=ansible | router_PE1                 : ok=1    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2026-04-15 19:04:57,729 p=212786 u=root n=ansible | router_PE2                 : ok=1    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2026-04-15 19:04:57,729 p=212786 u=root n=ansible | sw01                       : ok=3    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2026-04-15 19:04:57,729 p=212786 u=root n=ansible | sw02                       : ok=3    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2026-04-15 19:04:57,828 p=212849 u=root n=ansible | shutdown complete
+2026-04-15 19:04:57,829 p=212879 u=root n=ansible | shutdown complete
+2026-04-15 19:04:57,829 p=212868 u=root n=ansible | shutdown complete
+2026-04-15 19:04:57,832 p=212858 u=root n=ansible | shutdown complete
+2026-04-15 19:04:58,648 p=212892 u=root n=ansible | PLAY [Deploy VLANs on switches] ************************************************
+2026-04-15 19:04:58,656 p=212892 u=root n=ansible | TASK [Create VLANs] ************************************************************
+2026-04-15 19:04:59,543 p=212892 u=root n=ansible | network_os is set to cisco.ios.ios
+2026-04-15 19:04:59,597 p=212903 u=root n=p=212903 u=root | paramiko [192.168.0.203] | Connected (version 2.0, client Cisco-1.25)
+2026-04-15 19:04:59,691 p=212892 u=root n=ansible | network_os is set to cisco.ios.ios
+2026-04-15 19:04:59,731 p=212906 u=root n=p=212906 u=root | paramiko [192.168.0.204] | Connected (version 2.0, client Cisco-1.25)
+2026-04-15 19:04:59,987 p=212903 u=root n=p=212903 u=root | paramiko [192.168.0.203] | Auth banner: b'\r\nIOSv - Cisco Systems Confidential -\r\n\r\nSupplemental End User License Restrictions\r\n\r\nThis IOSv software is provided AS-IS without warranty of any kind. Under no circumstances may this software be used separate from the Cisco Modeling Labs Software that this software was provided with, or deployed or used as part of a production environment.\r\n\r\nBy using the software, you agree to abide by the terms and conditions of the Cisco End User License Agreement at http://www.cisco.com/go/eula. Unauthorized use or distribution of this software is expressly prohibited.\r\n'
+2026-04-15 19:05:00,001 p=212903 u=root n=p=212903 u=root | paramiko [192.168.0.203] | Authentication (password) successful!
+2026-04-15 19:05:00,094 p=212906 u=root n=p=212906 u=root | paramiko [192.168.0.204] | Auth banner: b'\r\nIOSv - Cisco Systems Confidential -\r\n\r\nSupplemental End User License Restrictions\r\n\r\nThis IOSv software is provided AS-IS without warranty of any kind. Under no circumstances may this software be used separate from the Cisco Modeling Labs Software that this software was provided with, or deployed or used as part of a production environment.\r\n\r\nBy using the software, you agree to abide by the terms and conditions of the Cisco End User License Agreement at http://www.cisco.com/go/eula. Unauthorized use or distribution of this software is expressly prohibited.\r\n'
+2026-04-15 19:05:00,106 p=212906 u=root n=p=212906 u=root | paramiko [192.168.0.204] | Authentication (password) successful!
+2026-04-15 19:05:04,713 p=212892 u=root n=ansible | changed: [sw02] => (item={'id': 40, 'name': 'COSTUMER', 'ports': ['GigabitEthernet0/1']})
+2026-04-15 19:05:04,716 p=212892 u=root n=ansible | [WARNING]: To ensure idempotency and correct diff the input configuration lines
+should be similar to how they appear if present in the running configuration on
+device
+
+2026-04-15 19:05:04,741 p=212892 u=root n=ansible | changed: [sw01] => (item={'id': 40, 'name': 'COSTUMER', 'ports': ['GigabitEthernet0/1']})
+2026-04-15 19:05:04,746 p=212892 u=root n=ansible | TASK [Assign VLANs to interfaces] **********************************************
+2026-04-15 19:05:07,798 p=212892 u=root n=ansible | ok: [sw02] => (item=[{'id': 40, 'name': 'COSTUMER', 'ports': ['GigabitEthernet0/1']}, 'GigabitEthernet0/1'])
+2026-04-15 19:05:07,899 p=212892 u=root n=ansible | ok: [sw01] => (item=[{'id': 40, 'name': 'COSTUMER', 'ports': ['GigabitEthernet0/1']}, 'GigabitEthernet0/1'])
+2026-04-15 19:05:07,907 p=212892 u=root n=ansible | PLAY [Configure router interfaces] *********************************************
+2026-04-15 19:05:07,921 p=212892 u=root n=ansible | TASK [router_interfaces : Configure router interfaces] *************************
+2026-04-15 19:05:09,366 p=212892 u=root n=ansible | network_os is set to cisco.ios.ios
+2026-04-15 19:05:09,460 p=212982 u=root n=p=212982 u=root | paramiko [192.168.0.14] | Connected (version 2.0, client Cisco-1.25)
+2026-04-15 19:05:09,756 p=212892 u=root n=ansible | network_os is set to cisco.ios.ios
+2026-04-15 19:05:09,756 p=212892 u=root n=ansible | network_os is set to cisco.ios.ios
+2026-04-15 19:05:09,857 p=212988 u=root n=p=212988 u=root | paramiko [192.168.0.12] | Connected (version 2.0, client Cisco-1.25)
+2026-04-15 19:05:09,863 p=212985 u=root n=p=212985 u=root | paramiko [192.168.0.13] | Connected (version 2.0, client Cisco-1.25)
+2026-04-15 19:05:09,948 p=212892 u=root n=ansible | network_os is set to cisco.ios.ios
+2026-04-15 19:05:10,042 p=212993 u=root n=p=212993 u=root | paramiko [192.168.0.11] | Connected (version 2.0, client Cisco-1.25)
+2026-04-15 19:05:10,289 p=212982 u=root n=p=212982 u=root | paramiko [192.168.0.14] | Auth banner: b"\r\n**************************************************************************\r\n* IOSv is strictly limited to use for evaluation, demonstration and IOS  *\r\n* education. IOSv is provided as-is and is not supported by Cisco's      *\r\n* Technical Advisory Center. Any use or disclosure, in whole or in part, *\r\n* of the IOSv Software or Documentation to any third party for any       *\r\n* purposes is expressly prohibited except as otherwise authorized by     *\r\n* Cisco in writing.                                                      *\r\n**************************************************************************"
+2026-04-15 19:05:10,319 p=212982 u=root n=p=212982 u=root | paramiko [192.168.0.14] | Authentication (password) successful!
+2026-04-15 19:05:10,432 p=212985 u=root n=p=212985 u=root | paramiko [192.168.0.13] | Auth banner: b"\r\n**************************************************************************\r\n* IOSv is strictly limited to use for evaluation, demonstration and IOS  *\r\n* education. IOSv is provided as-is and is not supported by Cisco's      *\r\n* Technical Advisory Center. Any use or disclosure, in whole or in part, *\r\n* of the IOSv Software or Documentation to any third party for any       *\r\n* purposes is expressly prohibited except as otherwise authorized by     *\r\n* Cisco in writing.                                                      *\r\n**************************************************************************"
+2026-04-15 19:05:10,449 p=212988 u=root n=p=212988 u=root | paramiko [192.168.0.12] | Auth banner: b"\r\n**************************************************************************\r\n* IOSv is strictly limited to use for evaluation, demonstration and IOS  *\r\n* education. IOSv is provided as-is and is not supported by Cisco's      *\r\n* Technical Advisory Center. Any use or disclosure, in whole or in part, *\r\n* of the IOSv Software or Documentation to any third party for any       *\r\n* purposes is expressly prohibited except as otherwise authorized by     *\r\n* Cisco in writing.                                                      *\r\n**************************************************************************"
+2026-04-15 19:05:10,457 p=212985 u=root n=p=212985 u=root | paramiko [192.168.0.13] | Authentication (password) successful!
+2026-04-15 19:05:10,512 p=212988 u=root n=p=212988 u=root | paramiko [192.168.0.12] | Authentication (password) successful!
+2026-04-15 19:05:10,527 p=212993 u=root n=p=212993 u=root | paramiko [192.168.0.11] | Auth banner: b"\r\n**************************************************************************\r\n* IOSv is strictly limited to use for evaluation, demonstration and IOS  *\r\n* education. IOSv is provided as-is and is not supported by Cisco's      *\r\n* Technical Advisory Center. Any use or disclosure, in whole or in part, *\r\n* of the IOSv Software or Documentation to any third party for any       *\r\n* purposes is expressly prohibited except as otherwise authorized by     *\r\n* Cisco in writing.                                                      *\r\n**************************************************************************"
+2026-04-15 19:05:10,566 p=212993 u=root n=p=212993 u=root | paramiko [192.168.0.11] | Authentication (password) successful!
+2026-04-15 19:05:17,484 p=212892 u=root n=ansible | changed: [router_P1] => (item={'name': 'GigabitEthernet0/1', 'ip': '10.0.12.1', 'mask': '255.255.255.252'})
+2026-04-15 19:05:17,543 p=212892 u=root n=ansible | changed: [router_P2] => (item={'name': 'GigabitEthernet0/1', 'ip': '10.0.12.2', 'mask': '255.255.255.252'})
+2026-04-15 19:05:19,173 p=212892 u=root n=ansible | changed: [router_PE1] => (item={'name': 'GigabitEthernet0/1', 'ip': '10.0.13.2', 'mask': '255.255.255.252'})
+2026-04-15 19:05:20,122 p=212892 u=root n=ansible | changed: [router_PE2] => (item={'name': 'GigabitEthernet0/1', 'ip': '10.0.14.2', 'mask': '255.255.255.252'})
+2026-04-15 19:05:20,534 p=212892 u=root n=ansible | changed: [router_P1] => (item={'name': 'GigabitEthernet0/2', 'ip': '10.0.13.1', 'mask': '255.255.255.252'})
+2026-04-15 19:05:20,778 p=212892 u=root n=ansible | changed: [router_P2] => (item={'name': 'GigabitEthernet0/2', 'ip': '10.0.24.1', 'mask': '255.255.255.252'})
+2026-04-15 19:05:21,930 p=212892 u=root n=ansible | changed: [router_PE1] => (item={'name': 'GigabitEthernet0/2', 'ip': '172.16.10.1', 'mask': '255.255.255.0'})
+2026-04-15 19:05:22,431 p=212892 u=root n=ansible | changed: [router_PE2] => (item={'name': 'GigabitEthernet0/2', 'ip': '172.16.20.1', 'mask': '255.255.255.0'})
+2026-04-15 19:05:22,626 p=212892 u=root n=ansible | changed: [router_P1] => (item={'name': 'GigabitEthernet0/3', 'ip': '10.0.14.1', 'mask': '255.255.255.252'})
+2026-04-15 19:05:24,309 p=212892 u=root n=ansible | changed: [router_PE2] => (item={'name': 'GigabitEthernet0/3', 'ip': '10.0.24.2', 'mask': '255.255.255.252'})
+2026-04-15 19:05:24,320 p=212892 u=root n=ansible | PLAY RECAP *********************************************************************
+2026-04-15 19:05:24,320 p=212892 u=root n=ansible | router_P1                  : ok=1    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2026-04-15 19:05:24,320 p=212892 u=root n=ansible | router_P2                  : ok=1    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2026-04-15 19:05:24,320 p=212892 u=root n=ansible | router_PE1                 : ok=1    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2026-04-15 19:05:24,320 p=212892 u=root n=ansible | router_PE2                 : ok=1    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2026-04-15 19:05:24,320 p=212892 u=root n=ansible | sw01                       : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2026-04-15 19:05:24,320 p=212892 u=root n=ansible | sw02                       : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2026-04-15 19:05:25,049 p=212779 u=root n=ansible | PLAY [access_switches] *********************************************************
+2026-04-15 19:05:25,058 p=212779 u=root n=ansible | TASK [Check VLAN exists] *******************************************************
+2026-04-15 19:05:26,057 p=212779 u=root n=ansible | network_os is set to cisco.ios.ios
+2026-04-15 19:05:26,097 p=212779 u=root n=ansible | network_os is set to cisco.ios.ios
+2026-04-15 19:05:26,105 p=213103 u=root n=p=213103 u=root | paramiko [192.168.0.203] | Connected (version 2.0, client Cisco-1.25)
+2026-04-15 19:05:26,171 p=213106 u=root n=p=213106 u=root | paramiko [192.168.0.204] | Connected (version 2.0, client Cisco-1.25)
+2026-04-15 19:05:26,508 p=213103 u=root n=p=213103 u=root | paramiko [192.168.0.203] | Auth banner: b'\r\nIOSv - Cisco Systems Confidential -\r\n\r\nSupplemental End User License Restrictions\r\n\r\nThis IOSv software is provided AS-IS without warranty of any kind. Under no circumstances may this software be used separate from the Cisco Modeling Labs Software that this software was provided with, or deployed or used as part of a production environment.\r\n\r\nBy using the software, you agree to abide by the terms and conditions of the Cisco End User License Agreement at http://www.cisco.com/go/eula. Unauthorized use or distribution of this software is expressly prohibited.\r\n'
+2026-04-15 19:05:26,525 p=213103 u=root n=p=213103 u=root | paramiko [192.168.0.203] | Authentication (password) successful!
+2026-04-15 19:05:26,562 p=213106 u=root n=p=213106 u=root | paramiko [192.168.0.204] | Auth banner: b'\r\nIOSv - Cisco Systems Confidential -\r\n\r\nSupplemental End User License Restrictions\r\n\r\nThis IOSv software is provided AS-IS without warranty of any kind. Under no circumstances may this software be used separate from the Cisco Modeling Labs Software that this software was provided with, or deployed or used as part of a production environment.\r\n\r\nBy using the software, you agree to abide by the terms and conditions of the Cisco End User License Agreement at http://www.cisco.com/go/eula. Unauthorized use or distribution of this software is expressly prohibited.\r\n'
+2026-04-15 19:05:26,581 p=213106 u=root n=p=213106 u=root | paramiko [192.168.0.204] | Authentication (password) successful!
+2026-04-15 19:05:28,268 p=212779 u=root n=ansible | ok: [sw01]
+2026-04-15 19:05:28,300 p=212779 u=root n=ansible | ok: [sw02]
+2026-04-15 19:05:28,303 p=212779 u=root n=ansible | TASK [Set VLAN check result] ***************************************************
+2026-04-15 19:05:28,373 p=212779 u=root n=ansible | ok: [sw01]
+2026-04-15 19:05:28,390 p=212779 u=root n=ansible | ok: [sw02]
+2026-04-15 19:05:28,392 p=212779 u=root n=ansible | TASK [Check port VLAN] *********************************************************
+2026-04-15 19:05:29,600 p=212779 u=root n=ansible | ok: [sw02]
+2026-04-15 19:05:29,671 p=212779 u=root n=ansible | ok: [sw01]
+2026-04-15 19:05:29,678 p=212779 u=root n=ansible | TASK [Set port check result] ***************************************************
+2026-04-15 19:05:29,778 p=212779 u=root n=ansible | ok: [sw02]
+2026-04-15 19:05:29,798 p=212779 u=root n=ansible | ok: [sw01]
+2026-04-15 19:05:29,800 p=212779 u=root n=ansible | TASK [FINAL RESULT] ************************************************************
+2026-04-15 19:05:29,894 p=212779 u=root n=ansible | ok: [sw02] => {
+    "msg": "sw02: PASS"
+}
+2026-04-15 19:05:29,929 p=212779 u=root n=ansible | ok: [sw01] => {
+    "msg": "sw01: PASS"
+}
+2026-04-15 19:05:29,945 p=212779 u=root n=ansible | PLAY [routers] *****************************************************************
+2026-04-15 19:05:29,965 p=212779 u=root n=ansible | TASK [Verify interface IPs] ****************************************************
+2026-04-15 19:05:30,041 p=213103 u=root n=ansible | shutdown complete
+2026-04-15 19:05:30,045 p=213106 u=root n=ansible | shutdown complete
+2026-04-15 19:05:32,156 p=212779 u=root n=ansible | network_os is set to cisco.ios.ios
+2026-04-15 19:05:32,180 p=212779 u=root n=ansible | network_os is set to cisco.ios.ios
+2026-04-15 19:05:32,180 p=212779 u=root n=ansible | network_os is set to cisco.ios.ios
+2026-04-15 19:05:32,215 p=213225 u=root n=p=213225 u=root | paramiko [192.168.0.11] | Connected (version 2.0, client Cisco-1.25)
+2026-04-15 19:05:32,292 p=212779 u=root n=ansible | network_os is set to cisco.ios.ios
+2026-04-15 19:05:32,323 p=213204 u=root n=p=213204 u=root | paramiko [192.168.0.12] | Connected (version 2.0, client Cisco-1.25)
+2026-04-15 19:05:32,324 p=213207 u=root n=p=213207 u=root | paramiko [192.168.0.13] | Connected (version 2.0, client Cisco-1.25)
+2026-04-15 19:05:32,403 p=213222 u=root n=p=213222 u=root | paramiko [192.168.0.14] | Connected (version 2.0, client Cisco-1.25)
+2026-04-15 19:05:32,847 p=213204 u=root n=p=213204 u=root | paramiko [192.168.0.12] | Auth banner: b"\r\n**************************************************************************\r\n* IOSv is strictly limited to use for evaluation, demonstration and IOS  *\r\n* education. IOSv is provided as-is and is not supported by Cisco's      *\r\n* Technical Advisory Center. Any use or disclosure, in whole or in part, *\r\n* of the IOSv Software or Documentation to any third party for any       *\r\n* purposes is expressly prohibited except as otherwise authorized by     *\r\n* Cisco in writing.                                                      *\r\n**************************************************************************"
+2026-04-15 19:05:32,865 p=213204 u=root n=p=213204 u=root | paramiko [192.168.0.12] | Authentication (password) successful!
+2026-04-15 19:05:32,939 p=213207 u=root n=p=213207 u=root | paramiko [192.168.0.13] | Auth banner: b"\r\n**************************************************************************\r\n* IOSv is strictly limited to use for evaluation, demonstration and IOS  *\r\n* education. IOSv is provided as-is and is not supported by Cisco's      *\r\n* Technical Advisory Center. Any use or disclosure, in whole or in part, *\r\n* of the IOSv Software or Documentation to any third party for any       *\r\n* purposes is expressly prohibited except as otherwise authorized by     *\r\n* Cisco in writing.                                                      *\r\n**************************************************************************"
+2026-04-15 19:05:32,945 p=213225 u=root n=p=213225 u=root | paramiko [192.168.0.11] | Auth banner: b"\r\n**************************************************************************\r\n* IOSv is strictly limited to use for evaluation, demonstration and IOS  *\r\n* education. IOSv is provided as-is and is not supported by Cisco's      *\r\n* Technical Advisory Center. Any use or disclosure, in whole or in part, *\r\n* of the IOSv Software or Documentation to any third party for any       *\r\n* purposes is expressly prohibited except as otherwise authorized by     *\r\n* Cisco in writing.                                                      *\r\n**************************************************************************"
+2026-04-15 19:05:32,966 p=213225 u=root n=p=213225 u=root | paramiko [192.168.0.11] | Authentication (password) successful!
+2026-04-15 19:05:32,978 p=213222 u=root n=p=213222 u=root | paramiko [192.168.0.14] | Auth banner: b"\r\n**************************************************************************\r\n* IOSv is strictly limited to use for evaluation, demonstration and IOS  *\r\n* education. IOSv is provided as-is and is not supported by Cisco's      *\r\n* Technical Advisory Center. Any use or disclosure, in whole or in part, *\r\n* of the IOSv Software or Documentation to any third party for any       *\r\n* purposes is expressly prohibited except as otherwise authorized by     *\r\n* Cisco in writing.                                                      *\r\n**************************************************************************"
+2026-04-15 19:05:33,018 p=213207 u=root n=p=213207 u=root | paramiko [192.168.0.13] | Authentication (password) successful!
+2026-04-15 19:05:33,048 p=213222 u=root n=p=213222 u=root | paramiko [192.168.0.14] | Authentication (password) successful!
+2026-04-15 19:05:34,774 p=212779 u=root n=ansible | ok: [router_P2]
+2026-04-15 19:05:34,811 p=212779 u=root n=ansible | ok: [router_P1]
+2026-04-15 19:05:34,829 p=212779 u=root n=ansible | ok: [router_PE1]
+2026-04-15 19:05:35,083 p=212779 u=root n=ansible | ok: [router_PE2]
+2026-04-15 19:05:35,100 p=212779 u=root n=ansible | PLAY RECAP *********************************************************************
+2026-04-15 19:05:35,100 p=212779 u=root n=ansible | router_P1                  : ok=1    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2026-04-15 19:05:35,100 p=212779 u=root n=ansible | router_P2                  : ok=1    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2026-04-15 19:05:35,100 p=212779 u=root n=ansible | router_PE1                 : ok=1    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2026-04-15 19:05:35,100 p=212779 u=root n=ansible | router_PE2                 : ok=1    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2026-04-15 19:05:35,100 p=212779 u=root n=ansible | sw01                       : ok=5    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2026-04-15 19:05:35,100 p=212779 u=root n=ansible | sw02                       : ok=5    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2026-04-15 19:05:35,192 p=213204 u=root n=ansible | shutdown complete
+2026-04-15 19:05:35,196 p=213225 u=root n=ansible | shutdown complete
+2026-04-15 19:05:35,199 p=213207 u=root n=ansible | shutdown complete
+2026-04-15 19:05:35,203 p=213222 u=root n=ansible | shutdown complete
+2026-04-15 19:05:37,805 p=212906 u=root n=ansible | persistent connection idle timeout triggered, timeout value is 30 secs.
+See the timeout setting options in the Network Debug and Troubleshooting Guide.
+2026-04-15 19:05:37,889 p=212903 u=root n=ansible | persistent connection idle timeout triggered, timeout value is 30 secs.
+See the timeout setting options in the Network Debug and Troubleshooting Guide.
+2026-04-15 19:05:37,914 p=212906 u=root n=ansible | shutdown complete
+2026-04-15 19:05:37,995 p=212903 u=root n=ansible | shutdown complete
+2026-04-15 19:05:50,771 p=212988 u=root n=ansible | persistent connection idle timeout triggered, timeout value is 30 secs.
+See the timeout setting options in the Network Debug and Troubleshooting Guide.
+2026-04-15 19:05:50,879 p=212988 u=root n=ansible | shutdown complete
+2026-04-15 19:05:51,930 p=212985 u=root n=ansible | persistent connection idle timeout triggered, timeout value is 30 secs.
+See the timeout setting options in the Network Debug and Troubleshooting Guide.
+2026-04-15 19:05:52,042 p=212985 u=root n=ansible | shutdown complete
+2026-04-15 19:05:52,625 p=212993 u=root n=ansible | persistent connection idle timeout triggered, timeout value is 30 secs.
+See the timeout setting options in the Network Debug and Troubleshooting Guide.
+2026-04-15 19:05:52,734 p=212993 u=root n=ansible | shutdown complete
+2026-04-15 19:05:54,315 p=212982 u=root n=ansible | persistent connection idle timeout triggered, timeout value is 30 secs.
+See the timeout setting options in the Network Debug and Troubleshooting Guide.
+2026-04-15 19:05:54,417 p=212982 u=root n=ansible | shutdown complete
+2026-04-15 19:27:15,140 p=219133 u=root n=ansible | PLAY [access_switches] *********************************************************
+2026-04-15 19:27:15,147 p=219133 u=root n=ansible | TASK [Get VLAN info] ***********************************************************
+2026-04-15 19:27:16,056 p=219133 u=root n=ansible | network_os is set to cisco.ios.ios
+2026-04-15 19:27:16,125 p=219150 u=root n=p=219150 u=root | paramiko [192.168.0.204] | Connected (version 2.0, client Cisco-1.25)
+2026-04-15 19:27:16,150 p=219133 u=root n=ansible | network_os is set to cisco.ios.ios
+2026-04-15 19:27:16,281 p=219153 u=root n=p=219153 u=root | paramiko [192.168.0.203] | Connected (version 2.0, client Cisco-1.25)
+2026-04-15 19:27:16,632 p=219150 u=root n=p=219150 u=root | paramiko [192.168.0.204] | Auth banner: b'\r\nIOSv - Cisco Systems Confidential -\r\n\r\nSupplemental End User License Restrictions\r\n\r\nThis IOSv software is provided AS-IS without warranty of any kind. Under no circumstances may this software be used separate from the Cisco Modeling Labs Software that this software was provided with, or deployed or used as part of a production environment.\r\n\r\nBy using the software, you agree to abide by the terms and conditions of the Cisco End User License Agreement at http://www.cisco.com/go/eula. Unauthorized use or distribution of this software is expressly prohibited.\r\n'
+2026-04-15 19:27:16,649 p=219150 u=root n=p=219150 u=root | paramiko [192.168.0.204] | Authentication (password) successful!
+2026-04-15 19:27:16,720 p=219153 u=root n=p=219153 u=root | paramiko [192.168.0.203] | Auth banner: b'\r\nIOSv - Cisco Systems Confidential -\r\n\r\nSupplemental End User License Restrictions\r\n\r\nThis IOSv software is provided AS-IS without warranty of any kind. Under no circumstances may this software be used separate from the Cisco Modeling Labs Software that this software was provided with, or deployed or used as part of a production environment.\r\n\r\nBy using the software, you agree to abide by the terms and conditions of the Cisco End User License Agreement at http://www.cisco.com/go/eula. Unauthorized use or distribution of this software is expressly prohibited.\r\n'
+2026-04-15 19:27:16,731 p=219153 u=root n=p=219153 u=root | paramiko [192.168.0.203] | Authentication (password) successful!
+2026-04-15 19:27:18,210 p=219133 u=root n=ansible | ok: [sw02]
+2026-04-15 19:27:18,289 p=219133 u=root n=ansible | ok: [sw01]
+2026-04-15 19:27:18,291 p=219133 u=root n=ansible | TASK [Check VLAN existence] ****************************************************
+2026-04-15 19:27:18,376 p=219133 u=root n=ansible | ok: [sw01]
+2026-04-15 19:27:18,382 p=219133 u=root n=ansible | ok: [sw02]
+2026-04-15 19:27:18,385 p=219133 u=root n=ansible | TASK [Show VLAN check] *********************************************************
+2026-04-15 19:27:18,520 p=219133 u=root n=ansible | ok: [sw02] => (item={'id': 40, 'name': 'COSTUMER', 'ports': ['GigabitEthernet0/1']}) => {
+    "msg": "40 present: True"
+}
+2026-04-15 19:27:18,539 p=219133 u=root n=ansible | ok: [sw01] => (item={'id': 40, 'name': 'COSTUMER', 'ports': ['GigabitEthernet0/1']}) => {
+    "msg": "40 present: True"
+}
+2026-04-15 19:27:18,546 p=219133 u=root n=ansible | PLAY [routers] *****************************************************************
+2026-04-15 19:27:18,558 p=219133 u=root n=ansible | TASK [Check interface status] **************************************************
+2026-04-15 19:27:18,653 p=219150 u=root n=ansible | shutdown complete
+2026-04-15 19:27:18,657 p=219153 u=root n=ansible | shutdown complete
+2026-04-15 19:27:20,039 p=219133 u=root n=ansible | network_os is set to cisco.ios.ios
+2026-04-15 19:27:20,147 p=219208 u=root n=p=219208 u=root | paramiko [192.168.0.14] | Connected (version 2.0, client Cisco-1.25)
+2026-04-15 19:27:20,676 p=219208 u=root n=p=219208 u=root | paramiko [192.168.0.14] | Auth banner: b"\r\n**************************************************************************\r\n* IOSv is strictly limited to use for evaluation, demonstration and IOS  *\r\n* education. IOSv is provided as-is and is not supported by Cisco's      *\r\n* Technical Advisory Center. Any use or disclosure, in whole or in part, *\r\n* of the IOSv Software or Documentation to any third party for any       *\r\n* purposes is expressly prohibited except as otherwise authorized by     *\r\n* Cisco in writing.                                                      *\r\n**************************************************************************"
+2026-04-15 19:27:20,701 p=219208 u=root n=p=219208 u=root | paramiko [192.168.0.14] | Authentication (password) successful!
+2026-04-15 19:27:20,740 p=219133 u=root n=ansible | network_os is set to cisco.ios.ios
+2026-04-15 19:27:20,794 p=219133 u=root n=ansible | network_os is set to cisco.ios.ios
+2026-04-15 19:27:20,861 p=219213 u=root n=p=219213 u=root | paramiko [192.168.0.11] | Connected (version 2.0, client Cisco-1.25)
+2026-04-15 19:27:20,873 p=219216 u=root n=p=219216 u=root | paramiko [192.168.0.12] | Connected (version 2.0, client Cisco-1.25)
+2026-04-15 19:27:20,879 p=219133 u=root n=ansible | network_os is set to cisco.ios.ios
+2026-04-15 19:27:20,975 p=219219 u=root n=p=219219 u=root | paramiko [192.168.0.13] | Connected (version 2.0, client Cisco-1.25)
+2026-04-15 19:27:21,386 p=219216 u=root n=p=219216 u=root | paramiko [192.168.0.12] | Auth banner: b"\r\n**************************************************************************\r\n* IOSv is strictly limited to use for evaluation, demonstration and IOS  *\r\n* education. IOSv is provided as-is and is not supported by Cisco's      *\r\n* Technical Advisory Center. Any use or disclosure, in whole or in part, *\r\n* of the IOSv Software or Documentation to any third party for any       *\r\n* purposes is expressly prohibited except as otherwise authorized by     *\r\n* Cisco in writing.                                                      *\r\n**************************************************************************"
+2026-04-15 19:27:21,387 p=219213 u=root n=p=219213 u=root | paramiko [192.168.0.11] | Auth banner: b"\r\n**************************************************************************\r\n* IOSv is strictly limited to use for evaluation, demonstration and IOS  *\r\n* education. IOSv is provided as-is and is not supported by Cisco's      *\r\n* Technical Advisory Center. Any use or disclosure, in whole or in part, *\r\n* of the IOSv Software or Documentation to any third party for any       *\r\n* purposes is expressly prohibited except as otherwise authorized by     *\r\n* Cisco in writing.                                                      *\r\n**************************************************************************"
+2026-04-15 19:27:21,403 p=219216 u=root n=p=219216 u=root | paramiko [192.168.0.12] | Authentication (password) successful!
+2026-04-15 19:27:21,412 p=219213 u=root n=p=219213 u=root | paramiko [192.168.0.11] | Authentication (password) successful!
+2026-04-15 19:27:21,469 p=219219 u=root n=p=219219 u=root | paramiko [192.168.0.13] | Auth banner: b"\r\n**************************************************************************\r\n* IOSv is strictly limited to use for evaluation, demonstration and IOS  *\r\n* education. IOSv is provided as-is and is not supported by Cisco's      *\r\n* Technical Advisory Center. Any use or disclosure, in whole or in part, *\r\n* of the IOSv Software or Documentation to any third party for any       *\r\n* purposes is expressly prohibited except as otherwise authorized by     *\r\n* Cisco in writing.                                                      *\r\n**************************************************************************"
+2026-04-15 19:27:21,530 p=219219 u=root n=p=219219 u=root | paramiko [192.168.0.13] | Authentication (password) successful!
+2026-04-15 19:27:22,562 p=219133 u=root n=ansible | ok: [router_PE2]
+2026-04-15 19:27:23,226 p=219133 u=root n=ansible | ok: [router_PE1]
+2026-04-15 19:27:23,244 p=219133 u=root n=ansible | ok: [router_P2]
+2026-04-15 19:27:23,301 p=219133 u=root n=ansible | ok: [router_P1]
+2026-04-15 19:27:23,314 p=219133 u=root n=ansible | PLAY RECAP *********************************************************************
+2026-04-15 19:27:23,314 p=219133 u=root n=ansible | router_P1                  : ok=1    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2026-04-15 19:27:23,314 p=219133 u=root n=ansible | router_P2                  : ok=1    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2026-04-15 19:27:23,314 p=219133 u=root n=ansible | router_PE1                 : ok=1    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2026-04-15 19:27:23,314 p=219133 u=root n=ansible | router_PE2                 : ok=1    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2026-04-15 19:27:23,314 p=219133 u=root n=ansible | sw01                       : ok=3    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2026-04-15 19:27:23,314 p=219133 u=root n=ansible | sw02                       : ok=3    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2026-04-15 19:27:23,408 p=219208 u=root n=ansible | shutdown complete
+2026-04-15 19:27:23,412 p=219219 u=root n=ansible | shutdown complete
+2026-04-15 19:27:23,413 p=219216 u=root n=ansible | shutdown complete
+2026-04-15 19:27:23,414 p=219213 u=root n=ansible | shutdown complete
+2026-04-15 19:27:52,608 p=219458 u=root n=ansible | PLAY [Deploy VLANs on switches] ************************************************
+2026-04-15 19:27:52,615 p=219458 u=root n=ansible | TASK [Create VLANs] ************************************************************
+2026-04-15 19:27:53,651 p=219458 u=root n=ansible | network_os is set to cisco.ios.ios
+2026-04-15 19:27:53,706 p=219500 u=root n=p=219500 u=root | paramiko [192.168.0.204] | Connected (version 2.0, client Cisco-1.25)
+2026-04-15 19:27:53,728 p=219458 u=root n=ansible | network_os is set to cisco.ios.ios
+2026-04-15 19:27:53,774 p=219503 u=root n=p=219503 u=root | paramiko [192.168.0.203] | Connected (version 2.0, client Cisco-1.25)
+2026-04-15 19:27:54,094 p=219500 u=root n=p=219500 u=root | paramiko [192.168.0.204] | Auth banner: b'\r\nIOSv - Cisco Systems Confidential -\r\n\r\nSupplemental End User License Restrictions\r\n\r\nThis IOSv software is provided AS-IS without warranty of any kind. Under no circumstances may this software be used separate from the Cisco Modeling Labs Software that this software was provided with, or deployed or used as part of a production environment.\r\n\r\nBy using the software, you agree to abide by the terms and conditions of the Cisco End User License Agreement at http://www.cisco.com/go/eula. Unauthorized use or distribution of this software is expressly prohibited.\r\n'
+2026-04-15 19:27:54,115 p=219500 u=root n=p=219500 u=root | paramiko [192.168.0.204] | Authentication (password) successful!
+2026-04-15 19:27:54,159 p=219503 u=root n=p=219503 u=root | paramiko [192.168.0.203] | Auth banner: b'\r\nIOSv - Cisco Systems Confidential -\r\n\r\nSupplemental End User License Restrictions\r\n\r\nThis IOSv software is provided AS-IS without warranty of any kind. Under no circumstances may this software be used separate from the Cisco Modeling Labs Software that this software was provided with, or deployed or used as part of a production environment.\r\n\r\nBy using the software, you agree to abide by the terms and conditions of the Cisco End User License Agreement at http://www.cisco.com/go/eula. Unauthorized use or distribution of this software is expressly prohibited.\r\n'
+2026-04-15 19:27:54,184 p=219503 u=root n=p=219503 u=root | paramiko [192.168.0.203] | Authentication (password) successful!
+2026-04-15 19:27:58,831 p=219458 u=root n=ansible | changed: [sw01] => (item={'id': 40, 'name': 'COSTUMER', 'ports': ['GigabitEthernet0/1']})
+2026-04-15 19:27:58,834 p=219458 u=root n=ansible | [WARNING]: To ensure idempotency and correct diff the input configuration lines
+should be similar to how they appear if present in the running configuration on
+device
+
+2026-04-15 19:27:58,925 p=219458 u=root n=ansible | changed: [sw02] => (item={'id': 40, 'name': 'COSTUMER', 'ports': ['GigabitEthernet0/1']})
+2026-04-15 19:27:58,929 p=219458 u=root n=ansible | TASK [Assign VLANs to interfaces] **********************************************
+2026-04-15 19:28:02,070 p=219458 u=root n=ansible | ok: [sw01] => (item=[{'id': 40, 'name': 'COSTUMER', 'ports': ['GigabitEthernet0/1']}, 'GigabitEthernet0/1'])
+2026-04-15 19:28:02,480 p=219458 u=root n=ansible | ok: [sw02] => (item=[{'id': 40, 'name': 'COSTUMER', 'ports': ['GigabitEthernet0/1']}, 'GigabitEthernet0/1'])
+2026-04-15 19:28:02,485 p=219458 u=root n=ansible | PLAY [Configure router interfaces] *********************************************
+2026-04-15 19:28:02,498 p=219458 u=root n=ansible | TASK [router_interfaces : Configure router interfaces] *************************
+2026-04-15 19:28:04,189 p=219458 u=root n=ansible | network_os is set to cisco.ios.ios
+2026-04-15 19:28:04,195 p=219458 u=root n=ansible | network_os is set to cisco.ios.ios
+2026-04-15 19:28:04,282 p=219579 u=root n=p=219579 u=root | paramiko [192.168.0.14] | Connected (version 2.0, client Cisco-1.25)
+2026-04-15 19:28:04,288 p=219582 u=root n=p=219582 u=root | paramiko [192.168.0.11] | Connected (version 2.0, client Cisco-1.25)
+2026-04-15 19:28:04,383 p=219458 u=root n=ansible | network_os is set to cisco.ios.ios
+2026-04-15 19:28:04,447 p=219585 u=root n=p=219585 u=root | paramiko [192.168.0.12] | Connected (version 2.0, client Cisco-1.25)
+2026-04-15 19:28:04,507 p=219458 u=root n=ansible | network_os is set to cisco.ios.ios
+2026-04-15 19:28:04,635 p=219592 u=root n=p=219592 u=root | paramiko [192.168.0.13] | Connected (version 2.0, client Cisco-1.25)
+2026-04-15 19:28:05,010 p=219585 u=root n=p=219585 u=root | paramiko [192.168.0.12] | Auth banner: b"\r\n**************************************************************************\r\n* IOSv is strictly limited to use for evaluation, demonstration and IOS  *\r\n* education. IOSv is provided as-is and is not supported by Cisco's      *\r\n* Technical Advisory Center. Any use or disclosure, in whole or in part, *\r\n* of the IOSv Software or Documentation to any third party for any       *\r\n* purposes is expressly prohibited except as otherwise authorized by     *\r\n* Cisco in writing.                                                      *\r\n**************************************************************************"
+2026-04-15 19:28:05,025 p=219585 u=root n=p=219585 u=root | paramiko [192.168.0.12] | Authentication (password) successful!
+2026-04-15 19:28:05,033 p=219582 u=root n=p=219582 u=root | paramiko [192.168.0.11] | Auth banner: b"\r\n**************************************************************************\r\n* IOSv is strictly limited to use for evaluation, demonstration and IOS  *\r\n* education. IOSv is provided as-is and is not supported by Cisco's      *\r\n* Technical Advisory Center. Any use or disclosure, in whole or in part, *\r\n* of the IOSv Software or Documentation to any third party for any       *\r\n* purposes is expressly prohibited except as otherwise authorized by     *\r\n* Cisco in writing.                                                      *\r\n**************************************************************************"
+2026-04-15 19:28:05,078 p=219582 u=root n=p=219582 u=root | paramiko [192.168.0.11] | Authentication (password) successful!
+2026-04-15 19:28:05,089 p=219579 u=root n=p=219579 u=root | paramiko [192.168.0.14] | Auth banner: b"\r\n**************************************************************************\r\n* IOSv is strictly limited to use for evaluation, demonstration and IOS  *\r\n* education. IOSv is provided as-is and is not supported by Cisco's      *\r\n* Technical Advisory Center. Any use or disclosure, in whole or in part, *\r\n* of the IOSv Software or Documentation to any third party for any       *\r\n* purposes is expressly prohibited except as otherwise authorized by     *\r\n* Cisco in writing.                                                      *\r\n**************************************************************************"
+2026-04-15 19:28:05,122 p=219579 u=root n=p=219579 u=root | paramiko [192.168.0.14] | Authentication (password) successful!
+2026-04-15 19:28:05,162 p=219592 u=root n=p=219592 u=root | paramiko [192.168.0.13] | Auth banner: b"\r\n**************************************************************************\r\n* IOSv is strictly limited to use for evaluation, demonstration and IOS  *\r\n* education. IOSv is provided as-is and is not supported by Cisco's      *\r\n* Technical Advisory Center. Any use or disclosure, in whole or in part, *\r\n* of the IOSv Software or Documentation to any third party for any       *\r\n* purposes is expressly prohibited except as otherwise authorized by     *\r\n* Cisco in writing.                                                      *\r\n**************************************************************************"
+2026-04-15 19:28:05,204 p=219592 u=root n=p=219592 u=root | paramiko [192.168.0.13] | Authentication (password) successful!
+2026-04-15 19:28:11,939 p=219458 u=root n=ansible | changed: [router_P1] => (item={'name': 'GigabitEthernet0/1', 'ip': '10.0.12.1', 'mask': '255.255.255.252'})
+2026-04-15 19:28:12,169 p=219458 u=root n=ansible | changed: [router_P2] => (item={'name': 'GigabitEthernet0/1', 'ip': '10.0.12.2', 'mask': '255.255.255.252'})
+2026-04-15 19:28:14,508 p=219458 u=root n=ansible | changed: [router_P2] => (item={'name': 'GigabitEthernet0/2', 'ip': '10.0.24.1', 'mask': '255.255.255.252'})
+2026-04-15 19:28:14,694 p=219458 u=root n=ansible | changed: [router_P1] => (item={'name': 'GigabitEthernet0/2', 'ip': '10.0.13.1', 'mask': '255.255.255.252'})
+2026-04-15 19:28:14,852 p=219458 u=root n=ansible | changed: [router_PE2] => (item={'name': 'GigabitEthernet0/1', 'ip': '10.0.14.2', 'mask': '255.255.255.252'})
+2026-04-15 19:28:15,157 p=219458 u=root n=ansible | changed: [router_PE1] => (item={'name': 'GigabitEthernet0/1', 'ip': '10.0.13.2', 'mask': '255.255.255.252'})
+2026-04-15 19:28:17,002 p=219458 u=root n=ansible | changed: [router_P1] => (item={'name': 'GigabitEthernet0/3', 'ip': '10.0.14.1', 'mask': '255.255.255.252'})
+2026-04-15 19:28:17,019 p=219458 u=root n=ansible | changed: [router_PE2] => (item={'name': 'GigabitEthernet0/2', 'ip': '172.16.20.1', 'mask': '255.255.255.0'})
+2026-04-15 19:28:17,234 p=219458 u=root n=ansible | changed: [router_PE1] => (item={'name': 'GigabitEthernet0/2', 'ip': '172.16.10.1', 'mask': '255.255.255.0'})
+2026-04-15 19:28:18,733 p=219458 u=root n=ansible | changed: [router_PE2] => (item={'name': 'GigabitEthernet0/3', 'ip': '10.0.24.2', 'mask': '255.255.255.252'})
+2026-04-15 19:28:18,763 p=219458 u=root n=ansible | PLAY RECAP *********************************************************************
+2026-04-15 19:28:18,763 p=219458 u=root n=ansible | router_P1                  : ok=1    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2026-04-15 19:28:18,763 p=219458 u=root n=ansible | router_P2                  : ok=1    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2026-04-15 19:28:18,764 p=219458 u=root n=ansible | router_PE1                 : ok=1    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2026-04-15 19:28:18,764 p=219458 u=root n=ansible | router_PE2                 : ok=1    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2026-04-15 19:28:18,764 p=219458 u=root n=ansible | sw01                       : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2026-04-15 19:28:18,764 p=219458 u=root n=ansible | sw02                       : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2026-04-15 19:28:32,063 p=219503 u=root n=ansible | persistent connection idle timeout triggered, timeout value is 30 secs.
+See the timeout setting options in the Network Debug and Troubleshooting Guide.
+2026-04-15 19:28:32,170 p=219503 u=root n=ansible | shutdown complete
+2026-04-15 19:28:32,485 p=219500 u=root n=ansible | persistent connection idle timeout triggered, timeout value is 30 secs.
+See the timeout setting options in the Network Debug and Troubleshooting Guide.
+2026-04-15 19:28:32,594 p=219500 u=root n=ansible | shutdown complete
+2026-04-15 19:28:44,512 p=219585 u=root n=ansible | persistent connection idle timeout triggered, timeout value is 30 secs.
+See the timeout setting options in the Network Debug and Troubleshooting Guide.
+2026-04-15 19:28:44,615 p=219585 u=root n=ansible | shutdown complete
+2026-04-15 19:28:46,990 p=219582 u=root n=ansible | persistent connection idle timeout triggered, timeout value is 30 secs.
+See the timeout setting options in the Network Debug and Troubleshooting Guide.
+2026-04-15 19:28:47,094 p=219582 u=root n=ansible | shutdown complete
+2026-04-15 19:28:47,229 p=219592 u=root n=ansible | persistent connection idle timeout triggered, timeout value is 30 secs.
+See the timeout setting options in the Network Debug and Troubleshooting Guide.
+2026-04-15 19:28:47,332 p=219592 u=root n=ansible | shutdown complete
+2026-04-15 19:28:48,725 p=219579 u=root n=ansible | persistent connection idle timeout triggered, timeout value is 30 secs.
+See the timeout setting options in the Network Debug and Troubleshooting Guide.
+2026-04-15 19:28:48,841 p=219579 u=root n=ansible | shutdown complete
+2026-04-15 19:28:49,107 p=219896 u=root n=ansible | PLAY [access_switches] *********************************************************
+2026-04-15 19:28:49,117 p=219896 u=root n=ansible | TASK [Check VLAN exists] *******************************************************
+2026-04-15 19:28:50,011 p=219896 u=root n=ansible | network_os is set to cisco.ios.ios
+2026-04-15 19:28:50,027 p=219896 u=root n=ansible | network_os is set to cisco.ios.ios
+2026-04-15 19:28:50,068 p=219916 u=root n=p=219916 u=root | paramiko [192.168.0.203] | Connected (version 2.0, client Cisco-1.25)
+2026-04-15 19:28:50,070 p=219913 u=root n=p=219913 u=root | paramiko [192.168.0.204] | Connected (version 2.0, client Cisco-1.25)
+2026-04-15 19:28:50,461 p=219916 u=root n=p=219916 u=root | paramiko [192.168.0.203] | Auth banner: b'\r\nIOSv - Cisco Systems Confidential -\r\n\r\nSupplemental End User License Restrictions\r\n\r\nThis IOSv software is provided AS-IS without warranty of any kind. Under no circumstances may this software be used separate from the Cisco Modeling Labs Software that this software was provided with, or deployed or used as part of a production environment.\r\n\r\nBy using the software, you agree to abide by the terms and conditions of the Cisco End User License Agreement at http://www.cisco.com/go/eula. Unauthorized use or distribution of this software is expressly prohibited.\r\n'
+2026-04-15 19:28:50,480 p=219913 u=root n=p=219913 u=root | paramiko [192.168.0.204] | Auth banner: b'\r\nIOSv - Cisco Systems Confidential -\r\n\r\nSupplemental End User License Restrictions\r\n\r\nThis IOSv software is provided AS-IS without warranty of any kind. Under no circumstances may this software be used separate from the Cisco Modeling Labs Software that this software was provided with, or deployed or used as part of a production environment.\r\n\r\nBy using the software, you agree to abide by the terms and conditions of the Cisco End User License Agreement at http://www.cisco.com/go/eula. Unauthorized use or distribution of this software is expressly prohibited.\r\n'
+2026-04-15 19:28:50,484 p=219916 u=root n=p=219916 u=root | paramiko [192.168.0.203] | Authentication (password) successful!
+2026-04-15 19:28:50,492 p=219913 u=root n=p=219913 u=root | paramiko [192.168.0.204] | Authentication (password) successful!
+2026-04-15 19:28:52,296 p=219896 u=root n=ansible | ok: [sw01]
+2026-04-15 19:28:52,308 p=219896 u=root n=ansible | ok: [sw02]
+2026-04-15 19:28:52,313 p=219896 u=root n=ansible | TASK [Set VLAN check result] ***************************************************
+2026-04-15 19:28:52,408 p=219896 u=root n=ansible | ok: [sw01]
+2026-04-15 19:28:52,417 p=219896 u=root n=ansible | ok: [sw02]
+2026-04-15 19:28:52,422 p=219896 u=root n=ansible | TASK [Check port VLAN] *********************************************************
+2026-04-15 19:28:53,763 p=219896 u=root n=ansible | ok: [sw01]
+2026-04-15 19:28:53,770 p=219896 u=root n=ansible | ok: [sw02]
+2026-04-15 19:28:53,774 p=219896 u=root n=ansible | TASK [Set port check result] ***************************************************
+2026-04-15 19:28:53,890 p=219896 u=root n=ansible | ok: [sw01]
+2026-04-15 19:28:53,897 p=219896 u=root n=ansible | ok: [sw02]
+2026-04-15 19:28:53,900 p=219896 u=root n=ansible | TASK [FINAL RESULT] ************************************************************
+2026-04-15 19:28:54,017 p=219896 u=root n=ansible | ok: [sw02] => {
+    "msg": "sw02: PASS"
+}
+2026-04-15 19:28:54,020 p=219896 u=root n=ansible | ok: [sw01] => {
+    "msg": "sw01: PASS"
+}
+2026-04-15 19:28:54,030 p=219896 u=root n=ansible | PLAY [routers] *****************************************************************
+2026-04-15 19:28:54,039 p=219896 u=root n=ansible | TASK [Verify interface IPs] ****************************************************
+2026-04-15 19:28:54,130 p=219916 u=root n=ansible | shutdown complete
+2026-04-15 19:28:54,131 p=219913 u=root n=ansible | shutdown complete
+2026-04-15 19:28:55,955 p=219896 u=root n=ansible | network_os is set to cisco.ios.ios
+2026-04-15 19:28:56,059 p=219896 u=root n=ansible | network_os is set to cisco.ios.ios
+2026-04-15 19:28:56,131 p=219896 u=root n=ansible | network_os is set to cisco.ios.ios
+2026-04-15 19:28:56,138 p=219980 u=root n=p=219980 u=root | paramiko [192.168.0.12] | Connected (version 2.0, client Cisco-1.25)
+2026-04-15 19:28:56,148 p=219973 u=root n=p=219973 u=root | paramiko [192.168.0.14] | Connected (version 2.0, client Cisco-1.25)
+2026-04-15 19:28:56,186 p=219896 u=root n=ansible | network_os is set to cisco.ios.ios
+2026-04-15 19:28:56,218 p=219976 u=root n=p=219976 u=root | paramiko [192.168.0.13] | Connected (version 2.0, client Cisco-1.25)
+2026-04-15 19:28:56,246 p=219982 u=root n=p=219982 u=root | paramiko [192.168.0.11] | Connected (version 2.0, client Cisco-1.25)
+2026-04-15 19:28:56,718 p=219982 u=root n=p=219982 u=root | paramiko [192.168.0.11] | Auth banner: b"\r\n**************************************************************************\r\n* IOSv is strictly limited to use for evaluation, demonstration and IOS  *\r\n* education. IOSv is provided as-is and is not supported by Cisco's      *\r\n* Technical Advisory Center. Any use or disclosure, in whole or in part, *\r\n* of the IOSv Software or Documentation to any third party for any       *\r\n* purposes is expressly prohibited except as otherwise authorized by     *\r\n* Cisco in writing.                                                      *\r\n**************************************************************************"
+2026-04-15 19:28:56,730 p=219976 u=root n=p=219976 u=root | paramiko [192.168.0.13] | Auth banner: b"\r\n**************************************************************************\r\n* IOSv is strictly limited to use for evaluation, demonstration and IOS  *\r\n* education. IOSv is provided as-is and is not supported by Cisco's      *\r\n* Technical Advisory Center. Any use or disclosure, in whole or in part, *\r\n* of the IOSv Software or Documentation to any third party for any       *\r\n* purposes is expressly prohibited except as otherwise authorized by     *\r\n* Cisco in writing.                                                      *\r\n**************************************************************************"
+2026-04-15 19:28:56,740 p=219982 u=root n=p=219982 u=root | paramiko [192.168.0.11] | Authentication (password) successful!
+2026-04-15 19:28:56,746 p=219976 u=root n=p=219976 u=root | paramiko [192.168.0.13] | Authentication (password) successful!
+2026-04-15 19:28:56,849 p=219980 u=root n=p=219980 u=root | paramiko [192.168.0.12] | Auth banner: b"\r\n**************************************************************************\r\n* IOSv is strictly limited to use for evaluation, demonstration and IOS  *\r\n* education. IOSv is provided as-is and is not supported by Cisco's      *\r\n* Technical Advisory Center. Any use or disclosure, in whole or in part, *\r\n* of the IOSv Software or Documentation to any third party for any       *\r\n* purposes is expressly prohibited except as otherwise authorized by     *\r\n* Cisco in writing.                                                      *\r\n**************************************************************************"
+2026-04-15 19:28:56,873 p=219980 u=root n=p=219980 u=root | paramiko [192.168.0.12] | Authentication (password) successful!
+2026-04-15 19:28:56,906 p=219973 u=root n=p=219973 u=root | paramiko [192.168.0.14] | Auth banner: b"\r\n**************************************************************************\r\n* IOSv is strictly limited to use for evaluation, demonstration and IOS  *\r\n* education. IOSv is provided as-is and is not supported by Cisco's      *\r\n* Technical Advisory Center. Any use or disclosure, in whole or in part, *\r\n* of the IOSv Software or Documentation to any third party for any       *\r\n* purposes is expressly prohibited except as otherwise authorized by     *\r\n* Cisco in writing.                                                      *\r\n**************************************************************************"
+2026-04-15 19:28:56,953 p=219973 u=root n=p=219973 u=root | paramiko [192.168.0.14] | Authentication (password) successful!
+2026-04-15 19:28:58,436 p=219896 u=root n=ansible | ok: [router_P1]
+2026-04-15 19:28:58,555 p=219896 u=root n=ansible | ok: [router_PE1]
+2026-04-15 19:28:58,569 p=219896 u=root n=ansible | ok: [router_P2]
+2026-04-15 19:28:58,959 p=219896 u=root n=ansible | ok: [router_PE2]
+2026-04-15 19:28:58,966 p=219896 u=root n=ansible | PLAY RECAP *********************************************************************
+2026-04-15 19:28:58,967 p=219896 u=root n=ansible | router_P1                  : ok=1    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2026-04-15 19:28:58,967 p=219896 u=root n=ansible | router_P2                  : ok=1    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2026-04-15 19:28:58,967 p=219896 u=root n=ansible | router_PE1                 : ok=1    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2026-04-15 19:28:58,967 p=219896 u=root n=ansible | router_PE2                 : ok=1    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2026-04-15 19:28:58,967 p=219896 u=root n=ansible | sw01                       : ok=5    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2026-04-15 19:28:58,967 p=219896 u=root n=ansible | sw02                       : ok=5    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2026-04-15 19:28:59,062 p=219982 u=root n=ansible | shutdown complete
+2026-04-15 19:28:59,065 p=219980 u=root n=ansible | shutdown complete
+2026-04-15 19:28:59,073 p=219976 u=root n=ansible | shutdown complete
+2026-04-15 19:28:59,095 p=219973 u=root n=ansible | shutdown complete
+2026-04-15 19:41:14,991 p=224526 u=root n=ansible | PLAY [General precheck - switches] **********************************************************************************************************************************************************
+2026-04-15 19:41:15,027 p=224526 u=root n=ansible | TASK [Check VLANs] **************************************************************************************************************************************************************************
+2026-04-15 19:41:15,852 p=224526 u=root n=ansible | network_os is set to cisco.ios.ios
+2026-04-15 19:41:15,907 p=224562 u=root n=p=224562 u=root | paramiko [192.168.0.203] | Connected (version 2.0, client Cisco-1.25)
+2026-04-15 19:41:15,951 p=224526 u=root n=ansible | network_os is set to cisco.ios.ios
+2026-04-15 19:41:16,006 p=224565 u=root n=p=224565 u=root | paramiko [192.168.0.204] | Connected (version 2.0, client Cisco-1.25)
+2026-04-15 19:41:16,366 p=224562 u=root n=p=224562 u=root | paramiko [192.168.0.203] | Auth banner: b'\r\nIOSv - Cisco Systems Confidential -\r\n\r\nSupplemental End User License Restrictions\r\n\r\nThis IOSv software is provided AS-IS without warranty of any kind. Under no circumstances may this software be used separate from the Cisco Modeling Labs Software that this software was provided with, or deployed or used as part of a production environment.\r\n\r\nBy using the software, you agree to abide by the terms and conditions of the Cisco End User License Agreement at http://www.cisco.com/go/eula. Unauthorized use or distribution of this software is expressly prohibited.\r\n'
+2026-04-15 19:41:16,383 p=224562 u=root n=p=224562 u=root | paramiko [192.168.0.203] | Authentication (password) successful!
+2026-04-15 19:41:16,395 p=224565 u=root n=p=224565 u=root | paramiko [192.168.0.204] | Auth banner: b'\r\nIOSv - Cisco Systems Confidential -\r\n\r\nSupplemental End User License Restrictions\r\n\r\nThis IOSv software is provided AS-IS without warranty of any kind. Under no circumstances may this software be used separate from the Cisco Modeling Labs Software that this software was provided with, or deployed or used as part of a production environment.\r\n\r\nBy using the software, you agree to abide by the terms and conditions of the Cisco End User License Agreement at http://www.cisco.com/go/eula. Unauthorized use or distribution of this software is expressly prohibited.\r\n'
+2026-04-15 19:41:16,409 p=224565 u=root n=p=224565 u=root | paramiko [192.168.0.204] | Authentication (password) successful!
+2026-04-15 19:41:18,050 p=224526 u=root n=ansible | ok: [sw02]
+2026-04-15 19:41:18,077 p=224526 u=root n=ansible | ok: [sw01]
+2026-04-15 19:41:18,081 p=224526 u=root n=ansible | TASK [Backup switch configs] ****************************************************************************************************************************************************************
+2026-04-15 19:41:21,399 p=224526 u=root n=ansible | changed: [sw02]
+2026-04-15 19:41:21,441 p=224526 u=root n=ansible | changed: [sw01]
+2026-04-15 19:41:21,451 p=224526 u=root n=ansible | PLAY [General precheck - routers] ***********************************************************************************************************************************************************
+2026-04-15 19:41:21,458 p=224526 u=root n=ansible | TASK [Check interfaces] *********************************************************************************************************************************************************************
+2026-04-15 19:41:21,548 p=224565 u=root n=ansible | shutdown complete
+2026-04-15 19:41:21,555 p=224562 u=root n=ansible | shutdown complete
+2026-04-15 19:41:23,144 p=224526 u=root n=ansible | network_os is set to cisco.ios.ios
+2026-04-15 19:41:23,261 p=224622 u=root n=p=224622 u=root | paramiko [192.168.0.14] | Connected (version 2.0, client Cisco-1.25)
+2026-04-15 19:41:23,631 p=224526 u=root n=ansible | network_os is set to cisco.ios.ios
+2026-04-15 19:41:23,710 p=224625 u=root n=p=224625 u=root | paramiko [192.168.0.11] | Connected (version 2.0, client Cisco-1.25)
+2026-04-15 19:41:23,744 p=224526 u=root n=ansible | network_os is set to cisco.ios.ios
+2026-04-15 19:41:23,822 p=224630 u=root n=p=224630 u=root | paramiko [192.168.0.12] | Connected (version 2.0, client Cisco-1.25)
+2026-04-15 19:41:23,824 p=224526 u=root n=ansible | network_os is set to cisco.ios.ios
+2026-04-15 19:41:23,894 p=224633 u=root n=p=224633 u=root | paramiko [192.168.0.13] | Connected (version 2.0, client Cisco-1.25)
+2026-04-15 19:41:23,918 p=224622 u=root n=p=224622 u=root | paramiko [192.168.0.14] | Auth banner: b"\r\n**************************************************************************\r\n* IOSv is strictly limited to use for evaluation, demonstration and IOS  *\r\n* education. IOSv is provided as-is and is not supported by Cisco's      *\r\n* Technical Advisory Center. Any use or disclosure, in whole or in part, *\r\n* of the IOSv Software or Documentation to any third party for any       *\r\n* purposes is expressly prohibited except as otherwise authorized by     *\r\n* Cisco in writing.                                                      *\r\n**************************************************************************"
+2026-04-15 19:41:23,969 p=224622 u=root n=p=224622 u=root | paramiko [192.168.0.14] | Authentication (password) successful!
+2026-04-15 19:41:24,167 p=224625 u=root n=p=224625 u=root | paramiko [192.168.0.11] | Auth banner: b"\r\n**************************************************************************\r\n* IOSv is strictly limited to use for evaluation, demonstration and IOS  *\r\n* education. IOSv is provided as-is and is not supported by Cisco's      *\r\n* Technical Advisory Center. Any use or disclosure, in whole or in part, *\r\n* of the IOSv Software or Documentation to any third party for any       *\r\n* purposes is expressly prohibited except as otherwise authorized by     *\r\n* Cisco in writing.                                                      *\r\n**************************************************************************"
+2026-04-15 19:41:24,181 p=224625 u=root n=p=224625 u=root | paramiko [192.168.0.11] | Authentication (password) successful!
+2026-04-15 19:41:24,355 p=224630 u=root n=p=224630 u=root | paramiko [192.168.0.12] | Auth banner: b"\r\n**************************************************************************\r\n* IOSv is strictly limited to use for evaluation, demonstration and IOS  *\r\n* education. IOSv is provided as-is and is not supported by Cisco's      *\r\n* Technical Advisory Center. Any use or disclosure, in whole or in part, *\r\n* of the IOSv Software or Documentation to any third party for any       *\r\n* purposes is expressly prohibited except as otherwise authorized by     *\r\n* Cisco in writing.                                                      *\r\n**************************************************************************"
+2026-04-15 19:41:24,356 p=224633 u=root n=p=224633 u=root | paramiko [192.168.0.13] | Auth banner: b"\r\n**************************************************************************\r\n* IOSv is strictly limited to use for evaluation, demonstration and IOS  *\r\n* education. IOSv is provided as-is and is not supported by Cisco's      *\r\n* Technical Advisory Center. Any use or disclosure, in whole or in part, *\r\n* of the IOSv Software or Documentation to any third party for any       *\r\n* purposes is expressly prohibited except as otherwise authorized by     *\r\n* Cisco in writing.                                                      *\r\n**************************************************************************"
+2026-04-15 19:41:24,383 p=224630 u=root n=p=224630 u=root | paramiko [192.168.0.12] | Authentication (password) successful!
+2026-04-15 19:41:24,388 p=224633 u=root n=p=224633 u=root | paramiko [192.168.0.13] | Authentication (password) successful!
+2026-04-15 19:41:25,792 p=224526 u=root n=ansible | ok: [router_PE2]
+2026-04-15 19:41:25,995 p=224526 u=root n=ansible | ok: [router_P1]
+2026-04-15 19:41:26,009 p=224526 u=root n=ansible | ok: [router_P2]
+2026-04-15 19:41:26,208 p=224526 u=root n=ansible | ok: [router_PE1]
+2026-04-15 19:41:26,212 p=224526 u=root n=ansible | TASK [Backup router configs] ****************************************************************************************************************************************************************
+2026-04-15 19:41:32,682 p=224526 u=root n=ansible | changed: [router_P1]
+2026-04-15 19:41:32,703 p=224526 u=root n=ansible | changed: [router_P2]
+2026-04-15 19:41:33,489 p=224526 u=root n=ansible | changed: [router_PE2]
+2026-04-15 19:41:33,668 p=224526 u=root n=ansible | changed: [router_PE1]
+2026-04-15 19:41:33,678 p=224526 u=root n=ansible | PLAY RECAP **********************************************************************************************************************************************************************************
+2026-04-15 19:41:33,678 p=224526 u=root n=ansible | router_P1                  : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2026-04-15 19:41:33,679 p=224526 u=root n=ansible | router_P2                  : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2026-04-15 19:41:33,679 p=224526 u=root n=ansible | router_PE1                 : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2026-04-15 19:41:33,680 p=224526 u=root n=ansible | router_PE2                 : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2026-04-15 19:41:33,680 p=224526 u=root n=ansible | sw01                       : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2026-04-15 19:41:33,680 p=224526 u=root n=ansible | sw02                       : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2026-04-15 19:41:33,778 p=224625 u=root n=ansible | shutdown complete
+2026-04-15 19:41:33,797 p=224622 u=root n=ansible | shutdown complete
+2026-04-15 19:41:33,809 p=224633 u=root n=ansible | shutdown complete
+2026-04-15 19:41:33,782 p=224630 u=root n=ansible | shutdown complete
+2026-04-15 19:44:26,043 p=225691 u=root n=ansible | PLAY [access_switches] *********************************************************
+2026-04-15 19:44:26,052 p=225691 u=root n=ansible | TASK [Get VLAN info] ***********************************************************
+2026-04-15 19:44:26,990 p=225691 u=root n=ansible | network_os is set to cisco.ios.ios
+2026-04-15 19:44:26,992 p=225691 u=root n=ansible | network_os is set to cisco.ios.ios
+2026-04-15 19:44:27,057 p=225711 u=root n=p=225711 u=root | paramiko [192.168.0.204] | Connected (version 2.0, client Cisco-1.25)
+2026-04-15 19:44:27,062 p=225708 u=root n=p=225708 u=root | paramiko [192.168.0.203] | Connected (version 2.0, client Cisco-1.25)
+2026-04-15 19:44:27,541 p=225708 u=root n=p=225708 u=root | paramiko [192.168.0.203] | Auth banner: b'\r\nIOSv - Cisco Systems Confidential -\r\n\r\nSupplemental End User License Restrictions\r\n\r\nThis IOSv software is provided AS-IS without warranty of any kind. Under no circumstances may this software be used separate from the Cisco Modeling Labs Software that this software was provided with, or deployed or used as part of a production environment.\r\n\r\nBy using the software, you agree to abide by the terms and conditions of the Cisco End User License Agreement at http://www.cisco.com/go/eula. Unauthorized use or distribution of this software is expressly prohibited.\r\n'
+2026-04-15 19:44:27,543 p=225711 u=root n=p=225711 u=root | paramiko [192.168.0.204] | Auth banner: b'\r\nIOSv - Cisco Systems Confidential -\r\n\r\nSupplemental End User License Restrictions\r\n\r\nThis IOSv software is provided AS-IS without warranty of any kind. Under no circumstances may this software be used separate from the Cisco Modeling Labs Software that this software was provided with, or deployed or used as part of a production environment.\r\n\r\nBy using the software, you agree to abide by the terms and conditions of the Cisco End User License Agreement at http://www.cisco.com/go/eula. Unauthorized use or distribution of this software is expressly prohibited.\r\n'
+2026-04-15 19:44:27,561 p=225708 u=root n=p=225708 u=root | paramiko [192.168.0.203] | Authentication (password) successful!
+2026-04-15 19:44:27,573 p=225711 u=root n=p=225711 u=root | paramiko [192.168.0.204] | Authentication (password) successful!
+2026-04-15 19:44:29,299 p=225691 u=root n=ansible | ok: [sw01]
+2026-04-15 19:44:29,318 p=225691 u=root n=ansible | ok: [sw02]
+2026-04-15 19:44:29,327 p=225691 u=root n=ansible | TASK [Check VLAN existence] ****************************************************
+2026-04-15 19:44:29,453 p=225691 u=root n=ansible | ok: [sw01]
+2026-04-15 19:44:29,477 p=225691 u=root n=ansible | ok: [sw02]
+2026-04-15 19:44:29,479 p=225691 u=root n=ansible | TASK [Show VLAN check] *********************************************************
+2026-04-15 19:44:29,554 p=225691 u=root n=ansible | ok: [sw01] => (item={'id': 40, 'name': 'COSTUMER', 'ports': ['GigabitEthernet0/1']}) => {
+    "msg": "40 present: True"
+}
+2026-04-15 19:44:29,579 p=225691 u=root n=ansible | ok: [sw02] => (item={'id': 40, 'name': 'COSTUMER', 'ports': ['GigabitEthernet0/1']}) => {
+    "msg": "40 present: True"
+}
+2026-04-15 19:44:29,587 p=225691 u=root n=ansible | PLAY [routers] *****************************************************************
+2026-04-15 19:44:29,603 p=225691 u=root n=ansible | TASK [Check interface status] **************************************************
+2026-04-15 19:44:29,687 p=225711 u=root n=ansible | shutdown complete
+2026-04-15 19:44:29,706 p=225708 u=root n=ansible | shutdown complete
+2026-04-15 19:44:31,432 p=225691 u=root n=ansible | network_os is set to cisco.ios.ios
+2026-04-15 19:44:31,574 p=225784 u=root n=p=225784 u=root | paramiko [192.168.0.11] | Connected (version 2.0, client Cisco-1.25)
+2026-04-15 19:44:31,616 p=225691 u=root n=ansible | network_os is set to cisco.ios.ios
+2026-04-15 19:44:31,705 p=225791 u=root n=p=225791 u=root | paramiko [192.168.0.14] | Connected (version 2.0, client Cisco-1.25)
+2026-04-15 19:44:31,846 p=225691 u=root n=ansible | network_os is set to cisco.ios.ios
+2026-04-15 19:44:31,948 p=225794 u=root n=p=225794 u=root | paramiko [192.168.0.12] | Connected (version 2.0, client Cisco-1.25)
+2026-04-15 19:44:31,965 p=225691 u=root n=ansible | network_os is set to cisco.ios.ios
+2026-04-15 19:44:32,049 p=225797 u=root n=p=225797 u=root | paramiko [192.168.0.13] | Connected (version 2.0, client Cisco-1.25)
+2026-04-15 19:44:32,159 p=225784 u=root n=p=225784 u=root | paramiko [192.168.0.11] | Auth banner: b"\r\n**************************************************************************\r\n* IOSv is strictly limited to use for evaluation, demonstration and IOS  *\r\n* education. IOSv is provided as-is and is not supported by Cisco's      *\r\n* Technical Advisory Center. Any use or disclosure, in whole or in part, *\r\n* of the IOSv Software or Documentation to any third party for any       *\r\n* purposes is expressly prohibited except as otherwise authorized by     *\r\n* Cisco in writing.                                                      *\r\n**************************************************************************"
+2026-04-15 19:44:32,176 p=225784 u=root n=p=225784 u=root | paramiko [192.168.0.11] | Authentication (password) successful!
+2026-04-15 19:44:32,329 p=225791 u=root n=p=225791 u=root | paramiko [192.168.0.14] | Auth banner: b"\r\n**************************************************************************\r\n* IOSv is strictly limited to use for evaluation, demonstration and IOS  *\r\n* education. IOSv is provided as-is and is not supported by Cisco's      *\r\n* Technical Advisory Center. Any use or disclosure, in whole or in part, *\r\n* of the IOSv Software or Documentation to any third party for any       *\r\n* purposes is expressly prohibited except as otherwise authorized by     *\r\n* Cisco in writing.                                                      *\r\n**************************************************************************"
+2026-04-15 19:44:32,368 p=225791 u=root n=p=225791 u=root | paramiko [192.168.0.14] | Authentication (password) successful!
+2026-04-15 19:44:32,400 p=225794 u=root n=p=225794 u=root | paramiko [192.168.0.12] | Auth banner: b"\r\n**************************************************************************\r\n* IOSv is strictly limited to use for evaluation, demonstration and IOS  *\r\n* education. IOSv is provided as-is and is not supported by Cisco's      *\r\n* Technical Advisory Center. Any use or disclosure, in whole or in part, *\r\n* of the IOSv Software or Documentation to any third party for any       *\r\n* purposes is expressly prohibited except as otherwise authorized by     *\r\n* Cisco in writing.                                                      *\r\n**************************************************************************"
+2026-04-15 19:44:32,434 p=225794 u=root n=p=225794 u=root | paramiko [192.168.0.12] | Authentication (password) successful!
+2026-04-15 19:44:32,454 p=225797 u=root n=p=225797 u=root | paramiko [192.168.0.13] | Auth banner: b"\r\n**************************************************************************\r\n* IOSv is strictly limited to use for evaluation, demonstration and IOS  *\r\n* education. IOSv is provided as-is and is not supported by Cisco's      *\r\n* Technical Advisory Center. Any use or disclosure, in whole or in part, *\r\n* of the IOSv Software or Documentation to any third party for any       *\r\n* purposes is expressly prohibited except as otherwise authorized by     *\r\n* Cisco in writing.                                                      *\r\n**************************************************************************"
+2026-04-15 19:44:32,498 p=225797 u=root n=p=225797 u=root | paramiko [192.168.0.13] | Authentication (password) successful!
+2026-04-15 19:44:34,126 p=225691 u=root n=ansible | ok: [router_P1]
+2026-04-15 19:44:34,289 p=225691 u=root n=ansible | ok: [router_PE1]
+2026-04-15 19:44:34,308 p=225691 u=root n=ansible | ok: [router_P2]
+2026-04-15 19:44:34,422 p=225691 u=root n=ansible | ok: [router_PE2]
+2026-04-15 19:44:34,437 p=225691 u=root n=ansible | PLAY RECAP *********************************************************************
+2026-04-15 19:44:34,437 p=225691 u=root n=ansible | router_P1                  : ok=1    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2026-04-15 19:44:34,438 p=225691 u=root n=ansible | router_P2                  : ok=1    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2026-04-15 19:44:34,439 p=225691 u=root n=ansible | router_PE1                 : ok=1    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2026-04-15 19:44:34,439 p=225691 u=root n=ansible | router_PE2                 : ok=1    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2026-04-15 19:44:34,439 p=225691 u=root n=ansible | sw01                       : ok=3    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2026-04-15 19:44:34,439 p=225691 u=root n=ansible | sw02                       : ok=3    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2026-04-15 19:44:34,537 p=225797 u=root n=ansible | shutdown complete
+2026-04-15 19:44:34,541 p=225784 u=root n=ansible | shutdown complete
+2026-04-15 19:44:34,552 p=225794 u=root n=ansible | shutdown complete
+2026-04-15 19:44:34,555 p=225791 u=root n=ansible | shutdown complete
+2026-04-15 19:45:08,069 p=226036 u=root n=ansible | PLAY [Deploy VLANs on switches] ************************************************
+2026-04-15 19:45:08,077 p=226036 u=root n=ansible | TASK [Create VLANs] ************************************************************
+2026-04-15 19:45:08,901 p=226036 u=root n=ansible | network_os is set to cisco.ios.ios
+2026-04-15 19:45:08,964 p=226053 u=root n=p=226053 u=root | paramiko [192.168.0.204] | Connected (version 2.0, client Cisco-1.25)
+2026-04-15 19:45:09,056 p=226036 u=root n=ansible | network_os is set to cisco.ios.ios
+2026-04-15 19:45:09,096 p=226056 u=root n=p=226056 u=root | paramiko [192.168.0.203] | Connected (version 2.0, client Cisco-1.25)
+2026-04-15 19:45:09,364 p=226053 u=root n=p=226053 u=root | paramiko [192.168.0.204] | Auth banner: b'\r\nIOSv - Cisco Systems Confidential -\r\n\r\nSupplemental End User License Restrictions\r\n\r\nThis IOSv software is provided AS-IS without warranty of any kind. Under no circumstances may this software be used separate from the Cisco Modeling Labs Software that this software was provided with, or deployed or used as part of a production environment.\r\n\r\nBy using the software, you agree to abide by the terms and conditions of the Cisco End User License Agreement at http://www.cisco.com/go/eula. Unauthorized use or distribution of this software is expressly prohibited.\r\n'
+2026-04-15 19:45:09,379 p=226053 u=root n=p=226053 u=root | paramiko [192.168.0.204] | Authentication (password) successful!
+2026-04-15 19:45:09,668 p=226056 u=root n=p=226056 u=root | paramiko [192.168.0.203] | Auth banner: b'\r\nIOSv - Cisco Systems Confidential -\r\n\r\nSupplemental End User License Restrictions\r\n\r\nThis IOSv software is provided AS-IS without warranty of any kind. Under no circumstances may this software be used separate from the Cisco Modeling Labs Software that this software was provided with, or deployed or used as part of a production environment.\r\n\r\nBy using the software, you agree to abide by the terms and conditions of the Cisco End User License Agreement at http://www.cisco.com/go/eula. Unauthorized use or distribution of this software is expressly prohibited.\r\n'
+2026-04-15 19:45:09,682 p=226056 u=root n=p=226056 u=root | paramiko [192.168.0.203] | Authentication (password) successful!
+2026-04-15 19:45:13,810 p=226036 u=root n=ansible | changed: [sw01] => (item={'id': 40, 'name': 'COSTUMER', 'ports': ['GigabitEthernet0/1']})
+2026-04-15 19:45:13,812 p=226036 u=root n=ansible | [WARNING]: To ensure idempotency and correct diff the input configuration lines
+should be similar to how they appear if present in the running configuration on
+device
+
+2026-04-15 19:45:13,817 p=226036 u=root n=ansible | changed: [sw02] => (item={'id': 40, 'name': 'COSTUMER', 'ports': ['GigabitEthernet0/1']})
+2026-04-15 19:45:13,821 p=226036 u=root n=ansible | TASK [Assign VLANs to interfaces] **********************************************
+2026-04-15 19:45:17,028 p=226036 u=root n=ansible | ok: [sw01] => (item=[{'id': 40, 'name': 'COSTUMER', 'ports': ['GigabitEthernet0/1']}, 'GigabitEthernet0/1'])
+2026-04-15 19:45:17,049 p=226036 u=root n=ansible | ok: [sw02] => (item=[{'id': 40, 'name': 'COSTUMER', 'ports': ['GigabitEthernet0/1']}, 'GigabitEthernet0/1'])
+2026-04-15 19:45:17,053 p=226036 u=root n=ansible | PLAY [Configure router interfaces] *********************************************
+2026-04-15 19:45:17,065 p=226036 u=root n=ansible | TASK [router_interfaces : Configure router interfaces] *************************
+2026-04-15 19:45:18,676 p=226036 u=root n=ansible | network_os is set to cisco.ios.ios
+2026-04-15 19:45:18,743 p=226036 u=root n=ansible | network_os is set to cisco.ios.ios
+2026-04-15 19:45:18,758 p=226133 u=root n=p=226133 u=root | paramiko [192.168.0.12] | Connected (version 2.0, client Cisco-1.25)
+2026-04-15 19:45:18,803 p=226136 u=root n=p=226136 u=root | paramiko [192.168.0.11] | Connected (version 2.0, client Cisco-1.25)
+2026-04-15 19:45:18,973 p=226036 u=root n=ansible | network_os is set to cisco.ios.ios
+2026-04-15 19:45:19,030 p=226036 u=root n=ansible | network_os is set to cisco.ios.ios
+2026-04-15 19:45:19,040 p=226139 u=root n=p=226139 u=root | paramiko [192.168.0.14] | Connected (version 2.0, client Cisco-1.25)
+2026-04-15 19:45:19,130 p=226142 u=root n=p=226142 u=root | paramiko [192.168.0.13] | Connected (version 2.0, client Cisco-1.25)
+2026-04-15 19:45:19,206 p=226136 u=root n=p=226136 u=root | paramiko [192.168.0.11] | Auth banner: b"\r\n**************************************************************************\r\n* IOSv is strictly limited to use for evaluation, demonstration and IOS  *\r\n* education. IOSv is provided as-is and is not supported by Cisco's      *\r\n* Technical Advisory Center. Any use or disclosure, in whole or in part, *\r\n* of the IOSv Software or Documentation to any third party for any       *\r\n* purposes is expressly prohibited except as otherwise authorized by     *\r\n* Cisco in writing.                                                      *\r\n**************************************************************************"
+2026-04-15 19:45:19,245 p=226136 u=root n=p=226136 u=root | paramiko [192.168.0.11] | Authentication (password) successful!
+2026-04-15 19:45:19,405 p=226133 u=root n=p=226133 u=root | paramiko [192.168.0.12] | Auth banner: b"\r\n**************************************************************************\r\n* IOSv is strictly limited to use for evaluation, demonstration and IOS  *\r\n* education. IOSv is provided as-is and is not supported by Cisco's      *\r\n* Technical Advisory Center. Any use or disclosure, in whole or in part, *\r\n* of the IOSv Software or Documentation to any third party for any       *\r\n* purposes is expressly prohibited except as otherwise authorized by     *\r\n* Cisco in writing.                                                      *\r\n**************************************************************************"
+2026-04-15 19:45:19,420 p=226133 u=root n=p=226133 u=root | paramiko [192.168.0.12] | Authentication (password) successful!
+2026-04-15 19:45:19,596 p=226142 u=root n=p=226142 u=root | paramiko [192.168.0.13] | Auth banner: b"\r\n**************************************************************************\r\n* IOSv is strictly limited to use for evaluation, demonstration and IOS  *\r\n* education. IOSv is provided as-is and is not supported by Cisco's      *\r\n* Technical Advisory Center. Any use or disclosure, in whole or in part, *\r\n* of the IOSv Software or Documentation to any third party for any       *\r\n* purposes is expressly prohibited except as otherwise authorized by     *\r\n* Cisco in writing.                                                      *\r\n**************************************************************************"
+2026-04-15 19:45:19,607 p=226139 u=root n=p=226139 u=root | paramiko [192.168.0.14] | Auth banner: b"\r\n**************************************************************************\r\n* IOSv is strictly limited to use for evaluation, demonstration and IOS  *\r\n* education. IOSv is provided as-is and is not supported by Cisco's      *\r\n* Technical Advisory Center. Any use or disclosure, in whole or in part, *\r\n* of the IOSv Software or Documentation to any third party for any       *\r\n* purposes is expressly prohibited except as otherwise authorized by     *\r\n* Cisco in writing.                                                      *\r\n**************************************************************************"
+2026-04-15 19:45:19,651 p=226142 u=root n=p=226142 u=root | paramiko [192.168.0.13] | Authentication (password) successful!
+2026-04-15 19:45:19,663 p=226139 u=root n=p=226139 u=root | paramiko [192.168.0.14] | Authentication (password) successful!
+2026-04-15 19:45:26,083 p=226036 u=root n=ansible | changed: [router_P1] => (item={'name': 'GigabitEthernet0/1', 'ip': '10.0.12.1', 'mask': '255.255.255.252'})
+2026-04-15 19:45:26,971 p=226036 u=root n=ansible | changed: [router_P2] => (item={'name': 'GigabitEthernet0/1', 'ip': '10.0.12.2', 'mask': '255.255.255.252'})
+2026-04-15 19:45:28,041 p=226036 u=root n=ansible | changed: [router_P1] => (item={'name': 'GigabitEthernet0/2', 'ip': '10.0.13.1', 'mask': '255.255.255.252'})
+2026-04-15 19:45:29,346 p=226036 u=root n=ansible | changed: [router_P2] => (item={'name': 'GigabitEthernet0/2', 'ip': '10.0.24.1', 'mask': '255.255.255.252'})
+2026-04-15 19:45:29,476 p=226036 u=root n=ansible | changed: [router_PE1] => (item={'name': 'GigabitEthernet0/1', 'ip': '10.0.13.2', 'mask': '255.255.255.252'})
+2026-04-15 19:45:29,763 p=226036 u=root n=ansible | changed: [router_PE2] => (item={'name': 'GigabitEthernet0/1', 'ip': '10.0.14.2', 'mask': '255.255.255.252'})
+2026-04-15 19:45:30,494 p=226036 u=root n=ansible | changed: [router_P1] => (item={'name': 'GigabitEthernet0/3', 'ip': '10.0.14.1', 'mask': '255.255.255.252'})
+2026-04-15 19:45:31,890 p=226036 u=root n=ansible | changed: [router_PE1] => (item={'name': 'GigabitEthernet0/2', 'ip': '172.16.10.1', 'mask': '255.255.255.0'})
+2026-04-15 19:45:32,129 p=226036 u=root n=ansible | changed: [router_PE2] => (item={'name': 'GigabitEthernet0/2', 'ip': '172.16.20.1', 'mask': '255.255.255.0'})
+2026-04-15 19:45:33,933 p=226036 u=root n=ansible | changed: [router_PE2] => (item={'name': 'GigabitEthernet0/3', 'ip': '10.0.24.2', 'mask': '255.255.255.252'})
+2026-04-15 19:45:33,953 p=226036 u=root n=ansible | PLAY RECAP *********************************************************************
+2026-04-15 19:45:33,954 p=226036 u=root n=ansible | router_P1                  : ok=1    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2026-04-15 19:45:33,954 p=226036 u=root n=ansible | router_P2                  : ok=1    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2026-04-15 19:45:33,954 p=226036 u=root n=ansible | router_PE1                 : ok=1    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2026-04-15 19:45:33,954 p=226036 u=root n=ansible | router_PE2                 : ok=1    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2026-04-15 19:45:33,954 p=226036 u=root n=ansible | sw01                       : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2026-04-15 19:45:33,954 p=226036 u=root n=ansible | sw02                       : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2026-04-15 19:45:47,018 p=226056 u=root n=ansible | persistent connection idle timeout triggered, timeout value is 30 secs.
+See the timeout setting options in the Network Debug and Troubleshooting Guide.
+2026-04-15 19:45:47,049 p=226053 u=root n=ansible | persistent connection idle timeout triggered, timeout value is 30 secs.
+See the timeout setting options in the Network Debug and Troubleshooting Guide.
+2026-04-15 19:45:47,120 p=226056 u=root n=ansible | shutdown complete
+2026-04-15 19:45:47,152 p=226053 u=root n=ansible | shutdown complete
+2026-04-15 19:45:59,348 p=226133 u=root n=ansible | persistent connection idle timeout triggered, timeout value is 30 secs.
+See the timeout setting options in the Network Debug and Troubleshooting Guide.
+2026-04-15 19:45:59,450 p=226133 u=root n=ansible | shutdown complete
+2026-04-15 19:46:00,496 p=226136 u=root n=ansible | persistent connection idle timeout triggered, timeout value is 30 secs.
+See the timeout setting options in the Network Debug and Troubleshooting Guide.
+2026-04-15 19:46:00,606 p=226136 u=root n=ansible | shutdown complete
+2026-04-15 19:46:01,888 p=226142 u=root n=ansible | persistent connection idle timeout triggered, timeout value is 30 secs.
+See the timeout setting options in the Network Debug and Troubleshooting Guide.
+2026-04-15 19:46:01,991 p=226142 u=root n=ansible | shutdown complete
+2026-04-15 19:46:03,553 p=226450 u=root n=ansible | PLAY [access_switches] *********************************************************
+2026-04-15 19:46:03,560 p=226450 u=root n=ansible | TASK [Check VLAN exists] *******************************************************
+2026-04-15 19:46:03,949 p=226139 u=root n=ansible | persistent connection idle timeout triggered, timeout value is 30 secs.
+See the timeout setting options in the Network Debug and Troubleshooting Guide.
+2026-04-15 19:46:04,053 p=226139 u=root n=ansible | shutdown complete
+2026-04-15 19:46:04,797 p=226450 u=root n=ansible | network_os is set to cisco.ios.ios
+2026-04-15 19:46:04,807 p=226450 u=root n=ansible | network_os is set to cisco.ios.ios
+2026-04-15 19:46:04,854 p=226496 u=root n=p=226496 u=root | paramiko [192.168.0.203] | Connected (version 2.0, client Cisco-1.25)
+2026-04-15 19:46:04,869 p=226493 u=root n=p=226493 u=root | paramiko [192.168.0.204] | Connected (version 2.0, client Cisco-1.25)
+2026-04-15 19:46:05,280 p=226493 u=root n=p=226493 u=root | paramiko [192.168.0.204] | Auth banner: b'\r\nIOSv - Cisco Systems Confidential -\r\n\r\nSupplemental End User License Restrictions\r\n\r\nThis IOSv software is provided AS-IS without warranty of any kind. Under no circumstances may this software be used separate from the Cisco Modeling Labs Software that this software was provided with, or deployed or used as part of a production environment.\r\n\r\nBy using the software, you agree to abide by the terms and conditions of the Cisco End User License Agreement at http://www.cisco.com/go/eula. Unauthorized use or distribution of this software is expressly prohibited.\r\n'
+2026-04-15 19:46:05,290 p=226496 u=root n=p=226496 u=root | paramiko [192.168.0.203] | Auth banner: b'\r\nIOSv - Cisco Systems Confidential -\r\n\r\nSupplemental End User License Restrictions\r\n\r\nThis IOSv software is provided AS-IS without warranty of any kind. Under no circumstances may this software be used separate from the Cisco Modeling Labs Software that this software was provided with, or deployed or used as part of a production environment.\r\n\r\nBy using the software, you agree to abide by the terms and conditions of the Cisco End User License Agreement at http://www.cisco.com/go/eula. Unauthorized use or distribution of this software is expressly prohibited.\r\n'
+2026-04-15 19:46:05,298 p=226493 u=root n=p=226493 u=root | paramiko [192.168.0.204] | Authentication (password) successful!
+2026-04-15 19:46:05,317 p=226496 u=root n=p=226496 u=root | paramiko [192.168.0.203] | Authentication (password) successful!
+2026-04-15 19:46:07,014 p=226450 u=root n=ansible | ok: [sw01]
+2026-04-15 19:46:07,022 p=226450 u=root n=ansible | ok: [sw02]
+2026-04-15 19:46:07,025 p=226450 u=root n=ansible | TASK [Set VLAN check result] ***************************************************
+2026-04-15 19:46:07,117 p=226450 u=root n=ansible | ok: [sw01]
+2026-04-15 19:46:07,122 p=226450 u=root n=ansible | ok: [sw02]
+2026-04-15 19:46:07,129 p=226450 u=root n=ansible | TASK [Check port VLAN] *********************************************************
+2026-04-15 19:46:08,430 p=226450 u=root n=ansible | ok: [sw02]
+2026-04-15 19:46:08,469 p=226450 u=root n=ansible | ok: [sw01]
+2026-04-15 19:46:08,471 p=226450 u=root n=ansible | TASK [Set port check result] ***************************************************
+2026-04-15 19:46:08,543 p=226450 u=root n=ansible | ok: [sw01]
+2026-04-15 19:46:08,553 p=226450 u=root n=ansible | ok: [sw02]
+2026-04-15 19:46:08,557 p=226450 u=root n=ansible | TASK [FINAL RESULT] ************************************************************
+2026-04-15 19:46:08,640 p=226450 u=root n=ansible | ok: [sw01] => {
+    "msg": "sw01: PASS"
+}
+2026-04-15 19:46:08,644 p=226450 u=root n=ansible | ok: [sw02] => {
+    "msg": "sw02: PASS"
+}
+2026-04-15 19:46:08,651 p=226450 u=root n=ansible | PLAY [routers] *****************************************************************
+2026-04-15 19:46:08,661 p=226450 u=root n=ansible | TASK [Verify interface IPs] ****************************************************
+2026-04-15 19:46:08,748 p=226496 u=root n=ansible | shutdown complete
+2026-04-15 19:46:08,771 p=226493 u=root n=ansible | shutdown complete
+2026-04-15 19:46:10,561 p=226450 u=root n=ansible | network_os is set to cisco.ios.ios
+2026-04-15 19:46:10,669 p=226553 u=root n=p=226553 u=root | paramiko [192.168.0.12] | Connected (version 2.0, client Cisco-1.25)
+2026-04-15 19:46:10,717 p=226450 u=root n=ansible | network_os is set to cisco.ios.ios
+2026-04-15 19:46:10,762 p=226450 u=root n=ansible | network_os is set to cisco.ios.ios
+2026-04-15 19:46:10,804 p=226556 u=root n=p=226556 u=root | paramiko [192.168.0.11] | Connected (version 2.0, client Cisco-1.25)
+2026-04-15 19:46:10,878 p=226559 u=root n=p=226559 u=root | paramiko [192.168.0.13] | Connected (version 2.0, client Cisco-1.25)
+2026-04-15 19:46:10,919 p=226450 u=root n=ansible | network_os is set to cisco.ios.ios
+2026-04-15 19:46:10,987 p=226562 u=root n=p=226562 u=root | paramiko [192.168.0.14] | Connected (version 2.0, client Cisco-1.25)
+2026-04-15 19:46:11,266 p=226553 u=root n=p=226553 u=root | paramiko [192.168.0.12] | Auth banner: b"\r\n**************************************************************************\r\n* IOSv is strictly limited to use for evaluation, demonstration and IOS  *\r\n* education. IOSv is provided as-is and is not supported by Cisco's      *\r\n* Technical Advisory Center. Any use or disclosure, in whole or in part, *\r\n* of the IOSv Software or Documentation to any third party for any       *\r\n* purposes is expressly prohibited except as otherwise authorized by     *\r\n* Cisco in writing.                                                      *\r\n**************************************************************************"
+2026-04-15 19:46:11,286 p=226553 u=root n=p=226553 u=root | paramiko [192.168.0.12] | Authentication (password) successful!
+2026-04-15 19:46:11,342 p=226556 u=root n=p=226556 u=root | paramiko [192.168.0.11] | Auth banner: b"\r\n**************************************************************************\r\n* IOSv is strictly limited to use for evaluation, demonstration and IOS  *\r\n* education. IOSv is provided as-is and is not supported by Cisco's      *\r\n* Technical Advisory Center. Any use or disclosure, in whole or in part, *\r\n* of the IOSv Software or Documentation to any third party for any       *\r\n* purposes is expressly prohibited except as otherwise authorized by     *\r\n* Cisco in writing.                                                      *\r\n**************************************************************************"
+2026-04-15 19:46:11,365 p=226556 u=root n=p=226556 u=root | paramiko [192.168.0.11] | Authentication (password) successful!
+2026-04-15 19:46:11,388 p=226559 u=root n=p=226559 u=root | paramiko [192.168.0.13] | Auth banner: b"\r\n**************************************************************************\r\n* IOSv is strictly limited to use for evaluation, demonstration and IOS  *\r\n* education. IOSv is provided as-is and is not supported by Cisco's      *\r\n* Technical Advisory Center. Any use or disclosure, in whole or in part, *\r\n* of the IOSv Software or Documentation to any third party for any       *\r\n* purposes is expressly prohibited except as otherwise authorized by     *\r\n* Cisco in writing.                                                      *\r\n**************************************************************************"
+2026-04-15 19:46:11,425 p=226559 u=root n=p=226559 u=root | paramiko [192.168.0.13] | Authentication (password) successful!
+2026-04-15 19:46:11,449 p=226562 u=root n=p=226562 u=root | paramiko [192.168.0.14] | Auth banner: b"\r\n**************************************************************************\r\n* IOSv is strictly limited to use for evaluation, demonstration and IOS  *\r\n* education. IOSv is provided as-is and is not supported by Cisco's      *\r\n* Technical Advisory Center. Any use or disclosure, in whole or in part, *\r\n* of the IOSv Software or Documentation to any third party for any       *\r\n* purposes is expressly prohibited except as otherwise authorized by     *\r\n* Cisco in writing.                                                      *\r\n**************************************************************************"
+2026-04-15 19:46:11,489 p=226562 u=root n=p=226562 u=root | paramiko [192.168.0.14] | Authentication (password) successful!
+2026-04-15 19:46:12,797 p=226450 u=root n=ansible | ok: [router_P2]
+2026-04-15 19:46:13,031 p=226450 u=root n=ansible | ok: [router_P1]
+2026-04-15 19:46:13,163 p=226450 u=root n=ansible | ok: [router_PE1]
+2026-04-15 19:46:13,282 p=226450 u=root n=ansible | ok: [router_PE2]
+2026-04-15 19:46:13,306 p=226450 u=root n=ansible | PLAY RECAP *********************************************************************
+2026-04-15 19:46:13,306 p=226450 u=root n=ansible | router_P1                  : ok=1    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2026-04-15 19:46:13,306 p=226450 u=root n=ansible | router_P2                  : ok=1    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2026-04-15 19:46:13,306 p=226450 u=root n=ansible | router_PE1                 : ok=1    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2026-04-15 19:46:13,306 p=226450 u=root n=ansible | router_PE2                 : ok=1    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2026-04-15 19:46:13,306 p=226450 u=root n=ansible | sw01                       : ok=5    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2026-04-15 19:46:13,306 p=226450 u=root n=ansible | sw02                       : ok=5    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2026-04-15 19:46:13,393 p=226553 u=root n=ansible | shutdown complete
+2026-04-15 19:46:13,412 p=226556 u=root n=ansible | shutdown complete
+2026-04-15 19:46:13,417 p=226559 u=root n=ansible | shutdown complete
+2026-04-15 19:46:13,427 p=226562 u=root n=ansible | shutdown complete
+2026-04-15 19:46:15,782 p=226597 u=root n=ansible | PLAY [Rollback switches] ********************************************************************************************************************************************************************
+2026-04-15 19:46:15,814 p=226597 u=root n=ansible | TASK [Restore switch config] ****************************************************************************************************************************************************************
+2026-04-15 19:46:16,691 p=226597 u=root n=ansible | network_os is set to cisco.ios.ios
+2026-04-15 19:46:16,695 p=226597 u=root n=ansible | fatal: [sw02]: FAILED! => {"changed": false, "msg": "path specified in src not found"}
+2026-04-15 19:46:16,716 p=226597 u=root n=ansible | network_os is set to cisco.ios.ios
+2026-04-15 19:46:16,723 p=226597 u=root n=ansible | fatal: [sw01]: FAILED! => {"changed": false, "msg": "path specified in src not found"}
+2026-04-15 19:46:16,724 p=226597 u=root n=ansible | PLAY RECAP **********************************************************************************************************************************************************************************
+2026-04-15 19:46:16,725 p=226597 u=root n=ansible | sw01                       : ok=0    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2026-04-15 19:46:16,726 p=226597 u=root n=ansible | sw02                       : ok=0    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2026-04-15 19:46:46,526 p=226608 u=root n=ansible | persistent connection idle timeout triggered, timeout value is 30 secs.
+See the timeout setting options in the Network Debug and Troubleshooting Guide.
+2026-04-15 19:46:46,603 p=226611 u=root n=ansible | persistent connection idle timeout triggered, timeout value is 30 secs.
+See the timeout setting options in the Network Debug and Troubleshooting Guide.
+2026-04-15 19:46:46,635 p=226608 u=root n=ansible | shutdown complete
+2026-04-15 19:46:46,705 p=226611 u=root n=ansible | shutdown complete
+2026-04-15 19:47:57,279 p=227158 u=root n=ansible | PLAY [Rollback switches] ********************************************************************************************************************************************************************
+2026-04-15 19:47:57,308 p=227158 u=root n=ansible | TASK [Restore switch config] ****************************************************************************************************************************************************************
+2026-04-15 19:47:58,211 p=227158 u=root n=ansible | network_os is set to cisco.ios.ios
+2026-04-15 19:47:58,251 p=227182 u=root n=p=227182 u=root | paramiko [192.168.0.203] | Connected (version 2.0, client Cisco-1.25)
+2026-04-15 19:47:58,308 p=227158 u=root n=ansible | network_os is set to cisco.ios.ios
+2026-04-15 19:47:58,355 p=227191 u=root n=p=227191 u=root | paramiko [192.168.0.204] | Connected (version 2.0, client Cisco-1.25)
+2026-04-15 19:47:58,700 p=227182 u=root n=p=227182 u=root | paramiko [192.168.0.203] | Auth banner: b'\r\nIOSv - Cisco Systems Confidential -\r\n\r\nSupplemental End User License Restrictions\r\n\r\nThis IOSv software is provided AS-IS without warranty of any kind. Under no circumstances may this software be used separate from the Cisco Modeling Labs Software that this software was provided with, or deployed or used as part of a production environment.\r\n\r\nBy using the software, you agree to abide by the terms and conditions of the Cisco End User License Agreement at http://www.cisco.com/go/eula. Unauthorized use or distribution of this software is expressly prohibited.\r\n'
+2026-04-15 19:47:58,714 p=227182 u=root n=p=227182 u=root | paramiko [192.168.0.203] | Authentication (password) successful!
+2026-04-15 19:47:58,727 p=227191 u=root n=p=227191 u=root | paramiko [192.168.0.204] | Auth banner: b'\r\nIOSv - Cisco Systems Confidential -\r\n\r\nSupplemental End User License Restrictions\r\n\r\nThis IOSv software is provided AS-IS without warranty of any kind. Under no circumstances may this software be used separate from the Cisco Modeling Labs Software that this software was provided with, or deployed or used as part of a production environment.\r\n\r\nBy using the software, you agree to abide by the terms and conditions of the Cisco End User License Agreement at http://www.cisco.com/go/eula. Unauthorized use or distribution of this software is expressly prohibited.\r\n'
+2026-04-15 19:47:58,739 p=227191 u=root n=p=227191 u=root | paramiko [192.168.0.204] | Authentication (password) successful!
+2026-04-15 19:48:02,376 p=227158 u=root n=ansible | ok: [sw02]
+2026-04-15 19:48:02,507 p=227158 u=root n=ansible | ok: [sw01]
+2026-04-15 19:48:02,517 p=227158 u=root n=ansible | PLAY [Rollback routers] *********************************************************************************************************************************************************************
+2026-04-15 19:48:02,525 p=227158 u=root n=ansible | TASK [Restore router config] ****************************************************************************************************************************************************************
+2026-04-15 19:48:02,612 p=227191 u=root n=ansible | shutdown complete
+2026-04-15 19:48:02,629 p=227182 u=root n=ansible | shutdown complete
+2026-04-15 19:48:04,162 p=227158 u=root n=ansible | network_os is set to cisco.ios.ios
+2026-04-15 19:48:04,225 p=227242 u=root n=p=227242 u=root | paramiko [192.168.0.11] | Connected (version 2.0, client Cisco-1.25)
+2026-04-15 19:48:04,632 p=227158 u=root n=ansible | network_os is set to cisco.ios.ios
+2026-04-15 19:48:04,703 p=227158 u=root n=ansible | network_os is set to cisco.ios.ios
+2026-04-15 19:48:04,769 p=227247 u=root n=p=227247 u=root | paramiko [192.168.0.14] | Connected (version 2.0, client Cisco-1.25)
+2026-04-15 19:48:04,803 p=227158 u=root n=ansible | network_os is set to cisco.ios.ios
+2026-04-15 19:48:04,807 p=227250 u=root n=p=227250 u=root | paramiko [192.168.0.12] | Connected (version 2.0, client Cisco-1.25)
+2026-04-15 19:48:04,872 p=227253 u=root n=p=227253 u=root | paramiko [192.168.0.13] | Connected (version 2.0, client Cisco-1.25)
+2026-04-15 19:48:05,016 p=227242 u=root n=p=227242 u=root | paramiko [192.168.0.11] | Auth banner: b"\r\n**************************************************************************\r\n* IOSv is strictly limited to use for evaluation, demonstration and IOS  *\r\n* education. IOSv is provided as-is and is not supported by Cisco's      *\r\n* Technical Advisory Center. Any use or disclosure, in whole or in part, *\r\n* of the IOSv Software or Documentation to any third party for any       *\r\n* purposes is expressly prohibited except as otherwise authorized by     *\r\n* Cisco in writing.                                                      *\r\n**************************************************************************"
+2026-04-15 19:48:05,080 p=227242 u=root n=p=227242 u=root | paramiko [192.168.0.11] | Authentication (password) successful!
+2026-04-15 19:48:05,248 p=227247 u=root n=p=227247 u=root | paramiko [192.168.0.14] | Auth banner: b"\r\n**************************************************************************\r\n* IOSv is strictly limited to use for evaluation, demonstration and IOS  *\r\n* education. IOSv is provided as-is and is not supported by Cisco's      *\r\n* Technical Advisory Center. Any use or disclosure, in whole or in part, *\r\n* of the IOSv Software or Documentation to any third party for any       *\r\n* purposes is expressly prohibited except as otherwise authorized by     *\r\n* Cisco in writing.                                                      *\r\n**************************************************************************"
+2026-04-15 19:48:05,275 p=227247 u=root n=p=227247 u=root | paramiko [192.168.0.14] | Authentication (password) successful!
+2026-04-15 19:48:05,336 p=227250 u=root n=p=227250 u=root | paramiko [192.168.0.12] | Auth banner: b"\r\n**************************************************************************\r\n* IOSv is strictly limited to use for evaluation, demonstration and IOS  *\r\n* education. IOSv is provided as-is and is not supported by Cisco's      *\r\n* Technical Advisory Center. Any use or disclosure, in whole or in part, *\r\n* of the IOSv Software or Documentation to any third party for any       *\r\n* purposes is expressly prohibited except as otherwise authorized by     *\r\n* Cisco in writing.                                                      *\r\n**************************************************************************"
+2026-04-15 19:48:05,351 p=227250 u=root n=p=227250 u=root | paramiko [192.168.0.12] | Authentication (password) successful!
+2026-04-15 19:48:05,354 p=227253 u=root n=p=227253 u=root | paramiko [192.168.0.13] | Auth banner: b"\r\n**************************************************************************\r\n* IOSv is strictly limited to use for evaluation, demonstration and IOS  *\r\n* education. IOSv is provided as-is and is not supported by Cisco's      *\r\n* Technical Advisory Center. Any use or disclosure, in whole or in part, *\r\n* of the IOSv Software or Documentation to any third party for any       *\r\n* purposes is expressly prohibited except as otherwise authorized by     *\r\n* Cisco in writing.                                                      *\r\n**************************************************************************"
+2026-04-15 19:48:05,379 p=227253 u=root n=p=227253 u=root | paramiko [192.168.0.13] | Authentication (password) successful!
+2026-04-15 19:48:12,915 p=227158 u=root n=ansible | [WARNING]: To ensure idempotency and correct diff the input configuration lines should be similar to how they appear if present in the running configuration on device including the
+indentation
+
+2026-04-15 19:48:12,915 p=227158 u=root n=ansible | changed: [router_P2]
+2026-04-15 19:48:13,103 p=227158 u=root n=ansible | changed: [router_P1]
+2026-04-15 19:48:13,848 p=227158 u=root n=ansible | changed: [router_PE2]
+2026-04-15 19:48:13,955 p=227158 u=root n=ansible | changed: [router_PE1]
+2026-04-15 19:48:13,963 p=227158 u=root n=ansible | PLAY RECAP **********************************************************************************************************************************************************************************
+2026-04-15 19:48:13,963 p=227158 u=root n=ansible | router_P1                  : ok=1    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2026-04-15 19:48:13,963 p=227158 u=root n=ansible | router_P2                  : ok=1    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2026-04-15 19:48:13,963 p=227158 u=root n=ansible | router_PE1                 : ok=1    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2026-04-15 19:48:13,963 p=227158 u=root n=ansible | router_PE2                 : ok=1    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2026-04-15 19:48:13,963 p=227158 u=root n=ansible | sw01                       : ok=1    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2026-04-15 19:48:13,964 p=227158 u=root n=ansible | sw02                       : ok=1    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2026-04-15 19:48:14,060 p=227242 u=root n=ansible | shutdown complete
+2026-04-15 19:48:14,063 p=227250 u=root n=ansible | shutdown complete
+2026-04-15 19:48:14,066 p=227253 u=root n=ansible | shutdown complete
+2026-04-15 19:48:14,081 p=227247 u=root n=ansible | shutdown complete

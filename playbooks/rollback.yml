@@ -1,0 +1,18 @@
+- name: Rollback switches
+  hosts: access_switches
+  gather_facts: no
+
+  tasks:
+    - name: Restore switch config
+      cisco.ios.ios_config:
+        src: "{{ playbook_dir }}/../backups/{{ inventory_hostname }}.cfg"
+
+
+- name: Rollback routers
+  hosts: routers
+  gather_facts: no
+
+  tasks:
+    - name: Restore router config
+      cisco.ios.ios_config:
+        src: "{{ playbook_dir }}/../backups/{{ inventory_hostname }}.cfg"
