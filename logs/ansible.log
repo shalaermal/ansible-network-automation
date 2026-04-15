@@ -1078,3 +1078,91 @@ See the timeout setting options in the Network Debug and Troubleshooting Guide.
 2026-04-15 18:35:04,507 p=202027 u=root n=ansible | sw02                       : ok=5    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
 2026-04-15 18:35:04,587 p=202041 u=root n=ansible | shutdown complete
 2026-04-15 18:35:04,588 p=202038 u=root n=ansible | shutdown complete
+2026-04-15 18:36:56,930 p=202882 u=root n=ansible | PLAY [access_switches] *********************************************************
+2026-04-15 18:36:56,939 p=202882 u=root n=ansible | TASK [Get VLAN info] ***********************************************************
+2026-04-15 18:36:58,011 p=202882 u=root n=ansible | network_os is set to cisco.ios.ios
+2026-04-15 18:36:58,016 p=202882 u=root n=ansible | network_os is set to cisco.ios.ios
+2026-04-15 18:36:58,051 p=202896 u=root n=p=202896 u=root | paramiko [192.168.0.203] | Connected (version 2.0, client Cisco-1.25)
+2026-04-15 18:36:58,065 p=202893 u=root n=p=202893 u=root | paramiko [192.168.0.204] | Connected (version 2.0, client Cisco-1.25)
+2026-04-15 18:36:58,425 p=202896 u=root n=p=202896 u=root | paramiko [192.168.0.203] | Auth banner: b'\r\nIOSv - Cisco Systems Confidential -\r\n\r\nSupplemental End User License Restrictions\r\n\r\nThis IOSv software is provided AS-IS without warranty of any kind. Under no circumstances may this software be used separate from the Cisco Modeling Labs Software that this software was provided with, or deployed or used as part of a production environment.\r\n\r\nBy using the software, you agree to abide by the terms and conditions of the Cisco End User License Agreement at http://www.cisco.com/go/eula. Unauthorized use or distribution of this software is expressly prohibited.\r\n'
+2026-04-15 18:36:58,429 p=202893 u=root n=p=202893 u=root | paramiko [192.168.0.204] | Auth banner: b'\r\nIOSv - Cisco Systems Confidential -\r\n\r\nSupplemental End User License Restrictions\r\n\r\nThis IOSv software is provided AS-IS without warranty of any kind. Under no circumstances may this software be used separate from the Cisco Modeling Labs Software that this software was provided with, or deployed or used as part of a production environment.\r\n\r\nBy using the software, you agree to abide by the terms and conditions of the Cisco End User License Agreement at http://www.cisco.com/go/eula. Unauthorized use or distribution of this software is expressly prohibited.\r\n'
+2026-04-15 18:36:58,445 p=202896 u=root n=p=202896 u=root | paramiko [192.168.0.203] | Authentication (password) successful!
+2026-04-15 18:36:58,447 p=202893 u=root n=p=202893 u=root | paramiko [192.168.0.204] | Authentication (password) successful!
+2026-04-15 18:37:00,086 p=202882 u=root n=ansible | ok: [sw02]
+2026-04-15 18:37:00,087 p=202882 u=root n=ansible | ok: [sw01]
+2026-04-15 18:37:00,098 p=202882 u=root n=ansible | TASK [Check VLAN existence] ****************************************************
+2026-04-15 18:37:00,171 p=202882 u=root n=ansible | ok: [sw01]
+2026-04-15 18:37:00,190 p=202882 u=root n=ansible | ok: [sw02]
+2026-04-15 18:37:00,195 p=202882 u=root n=ansible | TASK [Show VLAN check] *********************************************************
+2026-04-15 18:37:00,319 p=202882 u=root n=ansible | ok: [sw02] => (item={'id': 40, 'name': 'COSTUMER', 'ports': ['GigabitEthernet0/1']}) => {
+    "msg": "40 present: True"
+}
+2026-04-15 18:37:00,332 p=202882 u=root n=ansible | ok: [sw01] => (item={'id': 40, 'name': 'COSTUMER', 'ports': ['GigabitEthernet0/1']}) => {
+    "msg": "40 present: True"
+}
+2026-04-15 18:37:00,339 p=202882 u=root n=ansible | PLAY RECAP *********************************************************************
+2026-04-15 18:37:00,339 p=202882 u=root n=ansible | sw01                       : ok=3    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2026-04-15 18:37:00,339 p=202882 u=root n=ansible | sw02                       : ok=3    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2026-04-15 18:37:00,436 p=202893 u=root n=ansible | shutdown complete
+2026-04-15 18:37:00,439 p=202896 u=root n=ansible | shutdown complete
+2026-04-15 18:37:01,151 p=202918 u=root n=ansible | PLAY [access_switches] *********************************************************
+2026-04-15 18:37:01,160 p=202918 u=root n=ansible | TASK [Create VLANs] ************************************************************
+2026-04-15 18:37:02,136 p=202918 u=root n=ansible | network_os is set to cisco.ios.ios
+2026-04-15 18:37:02,186 p=202941 u=root n=p=202941 u=root | paramiko [192.168.0.204] | Connected (version 2.0, client Cisco-1.25)
+2026-04-15 18:37:02,212 p=202918 u=root n=ansible | network_os is set to cisco.ios.ios
+2026-04-15 18:37:02,283 p=202944 u=root n=p=202944 u=root | paramiko [192.168.0.203] | Connected (version 2.0, client Cisco-1.25)
+2026-04-15 18:37:02,579 p=202941 u=root n=p=202941 u=root | paramiko [192.168.0.204] | Auth banner: b'\r\nIOSv - Cisco Systems Confidential -\r\n\r\nSupplemental End User License Restrictions\r\n\r\nThis IOSv software is provided AS-IS without warranty of any kind. Under no circumstances may this software be used separate from the Cisco Modeling Labs Software that this software was provided with, or deployed or used as part of a production environment.\r\n\r\nBy using the software, you agree to abide by the terms and conditions of the Cisco End User License Agreement at http://www.cisco.com/go/eula. Unauthorized use or distribution of this software is expressly prohibited.\r\n'
+2026-04-15 18:37:02,592 p=202941 u=root n=p=202941 u=root | paramiko [192.168.0.204] | Authentication (password) successful!
+2026-04-15 18:37:02,667 p=202944 u=root n=p=202944 u=root | paramiko [192.168.0.203] | Auth banner: b'\r\nIOSv - Cisco Systems Confidential -\r\n\r\nSupplemental End User License Restrictions\r\n\r\nThis IOSv software is provided AS-IS without warranty of any kind. Under no circumstances may this software be used separate from the Cisco Modeling Labs Software that this software was provided with, or deployed or used as part of a production environment.\r\n\r\nBy using the software, you agree to abide by the terms and conditions of the Cisco End User License Agreement at http://www.cisco.com/go/eula. Unauthorized use or distribution of this software is expressly prohibited.\r\n'
+2026-04-15 18:37:02,686 p=202944 u=root n=p=202944 u=root | paramiko [192.168.0.203] | Authentication (password) successful!
+2026-04-15 18:37:06,868 p=202918 u=root n=ansible | changed: [sw02] => (item={'id': 40, 'name': 'COSTUMER', 'ports': ['GigabitEthernet0/1']})
+2026-04-15 18:37:06,871 p=202918 u=root n=ansible | [WARNING]: To ensure idempotency and correct diff the input configuration lines
+should be similar to how they appear if present in the running configuration on
+device
+
+2026-04-15 18:37:07,268 p=202918 u=root n=ansible | changed: [sw01] => (item={'id': 40, 'name': 'COSTUMER', 'ports': ['GigabitEthernet0/1']})
+2026-04-15 18:37:07,276 p=202918 u=root n=ansible | TASK [Assign VLANs to interfaces] **********************************************
+2026-04-15 18:37:10,468 p=202918 u=root n=ansible | ok: [sw01] => (item=[{'id': 40, 'name': 'COSTUMER', 'ports': ['GigabitEthernet0/1']}, 'GigabitEthernet0/1'])
+2026-04-15 18:37:10,590 p=202918 u=root n=ansible | ok: [sw02] => (item=[{'id': 40, 'name': 'COSTUMER', 'ports': ['GigabitEthernet0/1']}, 'GigabitEthernet0/1'])
+2026-04-15 18:37:10,598 p=202918 u=root n=ansible | PLAY RECAP *********************************************************************
+2026-04-15 18:37:10,598 p=202918 u=root n=ansible | sw01                       : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2026-04-15 18:37:10,599 p=202918 u=root n=ansible | sw02                       : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2026-04-15 18:37:11,342 p=202848 u=root n=ansible | PLAY [access_switches] *********************************************************
+2026-04-15 18:37:11,350 p=202848 u=root n=ansible | TASK [Check VLAN exists] *******************************************************
+2026-04-15 18:37:12,136 p=202848 u=root n=ansible | network_os is set to cisco.ios.ios
+2026-04-15 18:37:12,197 p=203015 u=root n=p=203015 u=root | paramiko [192.168.0.203] | Connected (version 2.0, client Cisco-1.25)
+2026-04-15 18:37:12,291 p=202848 u=root n=ansible | network_os is set to cisco.ios.ios
+2026-04-15 18:37:12,330 p=203018 u=root n=p=203018 u=root | paramiko [192.168.0.204] | Connected (version 2.0, client Cisco-1.25)
+2026-04-15 18:37:12,694 p=203018 u=root n=p=203018 u=root | paramiko [192.168.0.204] | Auth banner: b'\r\nIOSv - Cisco Systems Confidential -\r\n\r\nSupplemental End User License Restrictions\r\n\r\nThis IOSv software is provided AS-IS without warranty of any kind. Under no circumstances may this software be used separate from the Cisco Modeling Labs Software that this software was provided with, or deployed or used as part of a production environment.\r\n\r\nBy using the software, you agree to abide by the terms and conditions of the Cisco End User License Agreement at http://www.cisco.com/go/eula. Unauthorized use or distribution of this software is expressly prohibited.\r\n'
+2026-04-15 18:37:12,713 p=203018 u=root n=p=203018 u=root | paramiko [192.168.0.204] | Authentication (password) successful!
+2026-04-15 18:37:12,776 p=203015 u=root n=p=203015 u=root | paramiko [192.168.0.203] | Auth banner: b'\r\nIOSv - Cisco Systems Confidential -\r\n\r\nSupplemental End User License Restrictions\r\n\r\nThis IOSv software is provided AS-IS without warranty of any kind. Under no circumstances may this software be used separate from the Cisco Modeling Labs Software that this software was provided with, or deployed or used as part of a production environment.\r\n\r\nBy using the software, you agree to abide by the terms and conditions of the Cisco End User License Agreement at http://www.cisco.com/go/eula. Unauthorized use or distribution of this software is expressly prohibited.\r\n'
+2026-04-15 18:37:12,799 p=203015 u=root n=p=203015 u=root | paramiko [192.168.0.203] | Authentication (password) successful!
+2026-04-15 18:37:14,338 p=202848 u=root n=ansible | ok: [sw02]
+2026-04-15 18:37:14,345 p=202848 u=root n=ansible | ok: [sw01]
+2026-04-15 18:37:14,352 p=202848 u=root n=ansible | TASK [Set VLAN check result] ***************************************************
+2026-04-15 18:37:14,457 p=202848 u=root n=ansible | ok: [sw01]
+2026-04-15 18:37:14,476 p=202848 u=root n=ansible | ok: [sw02]
+2026-04-15 18:37:14,484 p=202848 u=root n=ansible | TASK [Check port VLAN] *********************************************************
+2026-04-15 18:37:15,741 p=202848 u=root n=ansible | ok: [sw02]
+2026-04-15 18:37:15,966 p=202848 u=root n=ansible | ok: [sw01]
+2026-04-15 18:37:15,971 p=202848 u=root n=ansible | TASK [Set port check result] ***************************************************
+2026-04-15 18:37:16,083 p=202848 u=root n=ansible | ok: [sw01]
+2026-04-15 18:37:16,094 p=202848 u=root n=ansible | ok: [sw02]
+2026-04-15 18:37:16,096 p=202848 u=root n=ansible | TASK [FINAL RESULT] ************************************************************
+2026-04-15 18:37:16,176 p=202848 u=root n=ansible | ok: [sw01] => {
+    "msg": "sw01: PASS"
+}
+2026-04-15 18:37:16,222 p=202848 u=root n=ansible | ok: [sw02] => {
+    "msg": "sw02: PASS"
+}
+2026-04-15 18:37:16,226 p=202848 u=root n=ansible | PLAY RECAP *********************************************************************
+2026-04-15 18:37:16,226 p=202848 u=root n=ansible | sw01                       : ok=5    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2026-04-15 18:37:16,226 p=202848 u=root n=ansible | sw02                       : ok=5    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2026-04-15 18:37:16,332 p=203018 u=root n=ansible | shutdown complete
+2026-04-15 18:37:16,342 p=203015 u=root n=ansible | shutdown complete
+2026-04-15 18:37:40,463 p=202944 u=root n=ansible | persistent connection idle timeout triggered, timeout value is 30 secs.
+See the timeout setting options in the Network Debug and Troubleshooting Guide.
+2026-04-15 18:37:40,566 p=202944 u=root n=ansible | shutdown complete
+2026-04-15 18:37:40,585 p=202941 u=root n=ansible | persistent connection idle timeout triggered, timeout value is 30 secs.
+See the timeout setting options in the Network Debug and Troubleshooting Guide.
+2026-04-15 18:37:40,687 p=202941 u=root n=ansible | shutdown complete
