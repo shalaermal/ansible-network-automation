@@ -390,3 +390,399 @@ See the timeout setting options in the Network Debug and Troubleshooting Guide.
 2026-04-15 10:27:17,634 p=16317 u=root n=ansible | shutdown complete
 2026-04-15 10:27:17,644 p=16320 u=root n=ansible | shutdown complete
 2026-04-15 10:29:22,473 p=17084 u=root n=ansible | ERROR! the playbook: playbooks/vlan_precheck.yml could not be found
+2026-04-15 10:38:23,616 p=19760 u=root n=ansible | PLAY [access_switches] *********************************************************
+2026-04-15 10:38:23,625 p=19760 u=root n=ansible | TASK [Get VLAN info] ***********************************************************
+2026-04-15 10:38:24,445 p=19760 u=root n=ansible | network_os is set to cisco.ios.ios
+2026-04-15 10:38:24,495 p=19774 u=root n=p=19774 u=root | paramiko [192.168.0.203] | Connected (version 2.0, client Cisco-1.25)
+2026-04-15 10:38:24,810 p=19760 u=root n=ansible | network_os is set to cisco.ios.ios
+2026-04-15 10:38:24,843 p=19779 u=root n=p=19779 u=root | paramiko [192.168.0.204] | Connected (version 2.0, client Cisco-1.25)
+2026-04-15 10:38:24,932 p=19760 u=root n=ansible | network_os is set to cisco.ios.ios
+2026-04-15 10:38:24,956 p=19774 u=root n=p=19774 u=root | paramiko [192.168.0.203] | Auth banner: b'\r\nIOSv - Cisco Systems Confidential -\r\n\r\nSupplemental End User License Restrictions\r\n\r\nThis IOSv software is provided AS-IS without warranty of any kind. Under no circumstances may this software be used separate from the Cisco Modeling Labs Software that this software was provided with, or deployed or used as part of a production environment.\r\n\r\nBy using the software, you agree to abide by the terms and conditions of the Cisco End User License Agreement at http://www.cisco.com/go/eula. Unauthorized use or distribution of this software is expressly prohibited.\r\n'
+2026-04-15 10:38:24,991 p=19782 u=root n=p=19782 u=root | paramiko [192.168.0.205] | Connected (version 2.0, client Cisco-1.25)
+2026-04-15 10:38:24,994 p=19774 u=root n=p=19774 u=root | paramiko [192.168.0.203] | Authentication (password) successful!
+2026-04-15 10:38:25,205 p=19779 u=root n=p=19779 u=root | paramiko [192.168.0.204] | Auth banner: b'\r\nIOSv - Cisco Systems Confidential -\r\n\r\nSupplemental End User License Restrictions\r\n\r\nThis IOSv software is provided AS-IS without warranty of any kind. Under no circumstances may this software be used separate from the Cisco Modeling Labs Software that this software was provided with, or deployed or used as part of a production environment.\r\n\r\nBy using the software, you agree to abide by the terms and conditions of the Cisco End User License Agreement at http://www.cisco.com/go/eula. Unauthorized use or distribution of this software is expressly prohibited.\r\n'
+2026-04-15 10:38:25,216 p=19779 u=root n=p=19779 u=root | paramiko [192.168.0.204] | Authentication (password) successful!
+2026-04-15 10:38:25,653 p=19782 u=root n=p=19782 u=root | paramiko [192.168.0.205] | Auth banner: b'\r\nIOSv - Cisco Systems Confidential -\r\n\r\nSupplemental End User License Restrictions\r\n\r\nThis IOSv software is provided AS-IS without warranty of any kind. Under no circumstances may this software be used separate from the Cisco Modeling Labs Software that this software was provided with, or deployed or used as part of a production environment.\r\n\r\nBy using the software, you agree to abide by the terms and conditions of the Cisco End User License Agreement at http://www.cisco.com/go/eula. Unauthorized use or distribution of this software is expressly prohibited.\r\n'
+2026-04-15 10:38:25,680 p=19782 u=root n=p=19782 u=root | paramiko [192.168.0.205] | Authentication (password) successful!
+2026-04-15 10:38:26,510 p=19760 u=root n=ansible | ok: [sw01]
+2026-04-15 10:38:26,776 p=19760 u=root n=ansible | ok: [sw02]
+2026-04-15 10:38:27,189 p=19760 u=root n=ansible | ok: [sw03]
+2026-04-15 10:38:27,191 p=19760 u=root n=ansible | TASK [Check VLAN existence] ****************************************************
+2026-04-15 10:38:27,270 p=19760 u=root n=ansible | ok: [sw01]
+2026-04-15 10:38:27,294 p=19760 u=root n=ansible | ok: [sw02]
+2026-04-15 10:38:27,295 p=19760 u=root n=ansible | ok: [sw03]
+2026-04-15 10:38:27,297 p=19760 u=root n=ansible | TASK [Show VLAN check] *********************************************************
+2026-04-15 10:38:27,373 p=19760 u=root n=ansible | ok: [sw01] => (item={'id': 40, 'name': 'COSTUMER', 'ports': ['GigabitEthernet0/1']}) => {
+    "msg": "40 present: False"
+}
+2026-04-15 10:38:27,401 p=19760 u=root n=ansible | ok: [sw02] => (item={'id': 40, 'name': 'COSTUMER', 'ports': ['GigabitEthernet0/1']}) => {
+    "msg": "40 present: False"
+}
+2026-04-15 10:38:27,419 p=19760 u=root n=ansible | ok: [sw03] => (item={'id': 40, 'name': 'COSTUMER', 'ports': ['GigabitEthernet0/1']}) => {
+    "msg": "40 present: False"
+}
+2026-04-15 10:38:27,424 p=19760 u=root n=ansible | PLAY RECAP *********************************************************************
+2026-04-15 10:38:27,425 p=19760 u=root n=ansible | sw01                       : ok=3    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2026-04-15 10:38:27,425 p=19760 u=root n=ansible | sw02                       : ok=3    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2026-04-15 10:38:27,425 p=19760 u=root n=ansible | sw03                       : ok=3    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2026-04-15 10:38:27,523 p=19774 u=root n=ansible | shutdown complete
+2026-04-15 10:38:27,538 p=19782 u=root n=ansible | shutdown complete
+2026-04-15 10:38:27,551 p=19779 u=root n=ansible | shutdown complete
+2026-04-15 10:38:28,235 p=19832 u=root n=ansible | PLAY [access_switches] *********************************************************
+2026-04-15 10:38:28,245 p=19832 u=root n=ansible | TASK [Create VLANs] ************************************************************
+2026-04-15 10:38:29,415 p=19832 u=root n=ansible | network_os is set to cisco.ios.ios
+2026-04-15 10:38:29,462 p=19849 u=root n=p=19849 u=root | paramiko [192.168.0.203] | Connected (version 2.0, client Cisco-1.25)
+2026-04-15 10:38:29,502 p=19832 u=root n=ansible | network_os is set to cisco.ios.ios
+2026-04-15 10:38:29,553 p=19846 u=root n=p=19846 u=root | paramiko [192.168.0.205] | Connected (version 2.0, client Cisco-1.25)
+2026-04-15 10:38:29,695 p=19832 u=root n=ansible | network_os is set to cisco.ios.ios
+2026-04-15 10:38:29,732 p=19855 u=root n=p=19855 u=root | paramiko [192.168.0.204] | Connected (version 2.0, client Cisco-1.25)
+2026-04-15 10:38:29,950 p=19849 u=root n=p=19849 u=root | paramiko [192.168.0.203] | Auth banner: b'\r\nIOSv - Cisco Systems Confidential -\r\n\r\nSupplemental End User License Restrictions\r\n\r\nThis IOSv software is provided AS-IS without warranty of any kind. Under no circumstances may this software be used separate from the Cisco Modeling Labs Software that this software was provided with, or deployed or used as part of a production environment.\r\n\r\nBy using the software, you agree to abide by the terms and conditions of the Cisco End User License Agreement at http://www.cisco.com/go/eula. Unauthorized use or distribution of this software is expressly prohibited.\r\n'
+2026-04-15 10:38:29,968 p=19849 u=root n=p=19849 u=root | paramiko [192.168.0.203] | Authentication (password) successful!
+2026-04-15 10:38:29,991 p=19846 u=root n=p=19846 u=root | paramiko [192.168.0.205] | Auth banner: b'\r\nIOSv - Cisco Systems Confidential -\r\n\r\nSupplemental End User License Restrictions\r\n\r\nThis IOSv software is provided AS-IS without warranty of any kind. Under no circumstances may this software be used separate from the Cisco Modeling Labs Software that this software was provided with, or deployed or used as part of a production environment.\r\n\r\nBy using the software, you agree to abide by the terms and conditions of the Cisco End User License Agreement at http://www.cisco.com/go/eula. Unauthorized use or distribution of this software is expressly prohibited.\r\n'
+2026-04-15 10:38:30,018 p=19846 u=root n=p=19846 u=root | paramiko [192.168.0.205] | Authentication (password) successful!
+2026-04-15 10:38:30,341 p=19855 u=root n=p=19855 u=root | paramiko [192.168.0.204] | Auth banner: b'\r\nIOSv - Cisco Systems Confidential -\r\n\r\nSupplemental End User License Restrictions\r\n\r\nThis IOSv software is provided AS-IS without warranty of any kind. Under no circumstances may this software be used separate from the Cisco Modeling Labs Software that this software was provided with, or deployed or used as part of a production environment.\r\n\r\nBy using the software, you agree to abide by the terms and conditions of the Cisco End User License Agreement at http://www.cisco.com/go/eula. Unauthorized use or distribution of this software is expressly prohibited.\r\n'
+2026-04-15 10:38:30,367 p=19855 u=root n=p=19855 u=root | paramiko [192.168.0.204] | Authentication (password) successful!
+2026-04-15 10:38:35,429 p=19832 u=root n=ansible | changed: [sw03] => (item={'id': 40, 'name': 'COSTUMER', 'ports': ['GigabitEthernet0/1']})
+2026-04-15 10:38:35,433 p=19832 u=root n=ansible | [WARNING]: To ensure idempotency and correct diff the input configuration lines
+should be similar to how they appear if present in the running configuration on
+device
+
+2026-04-15 10:38:35,634 p=19832 u=root n=ansible | changed: [sw01] => (item={'id': 40, 'name': 'COSTUMER', 'ports': ['GigabitEthernet0/1']})
+2026-04-15 10:38:35,872 p=19832 u=root n=ansible | changed: [sw02] => (item={'id': 40, 'name': 'COSTUMER', 'ports': ['GigabitEthernet0/1']})
+2026-04-15 10:38:35,874 p=19832 u=root n=ansible | TASK [Assign VLANs to interfaces] **********************************************
+2026-04-15 10:38:40,375 p=19832 u=root n=ansible | changed: [sw03] => (item=[{'id': 40, 'name': 'COSTUMER', 'ports': ['GigabitEthernet0/1']}, 'GigabitEthernet0/1'])
+2026-04-15 10:38:40,541 p=19832 u=root n=ansible | changed: [sw02] => (item=[{'id': 40, 'name': 'COSTUMER', 'ports': ['GigabitEthernet0/1']}, 'GigabitEthernet0/1'])
+2026-04-15 10:38:40,938 p=19832 u=root n=ansible | changed: [sw01] => (item=[{'id': 40, 'name': 'COSTUMER', 'ports': ['GigabitEthernet0/1']}, 'GigabitEthernet0/1'])
+2026-04-15 10:38:40,941 p=19832 u=root n=ansible | PLAY RECAP *********************************************************************
+2026-04-15 10:38:40,941 p=19832 u=root n=ansible | sw01                       : ok=2    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2026-04-15 10:38:40,941 p=19832 u=root n=ansible | sw02                       : ok=2    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2026-04-15 10:38:40,942 p=19832 u=root n=ansible | sw03                       : ok=2    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2026-04-15 10:38:41,590 p=19753 u=root n=ansible | PLAY [access_switches] *********************************************************
+2026-04-15 10:38:41,599 p=19753 u=root n=ansible | TASK [Check VLAN exists] *******************************************************
+2026-04-15 10:38:42,497 p=19753 u=root n=ansible | network_os is set to cisco.ios.ios
+2026-04-15 10:38:42,546 p=20001 u=root n=p=20001 u=root | paramiko [192.168.0.204] | Connected (version 2.0, client Cisco-1.25)
+2026-04-15 10:38:42,831 p=19753 u=root n=ansible | network_os is set to cisco.ios.ios
+2026-04-15 10:38:42,905 p=20006 u=root n=p=20006 u=root | paramiko [192.168.0.203] | Connected (version 2.0, client Cisco-1.25)
+2026-04-15 10:38:42,931 p=19753 u=root n=ansible | network_os is set to cisco.ios.ios
+2026-04-15 10:38:42,988 p=20009 u=root n=p=20009 u=root | paramiko [192.168.0.205] | Connected (version 2.0, client Cisco-1.25)
+2026-04-15 10:38:43,205 p=20001 u=root n=p=20001 u=root | paramiko [192.168.0.204] | Auth banner: b'\r\nIOSv - Cisco Systems Confidential -\r\n\r\nSupplemental End User License Restrictions\r\n\r\nThis IOSv software is provided AS-IS without warranty of any kind. Under no circumstances may this software be used separate from the Cisco Modeling Labs Software that this software was provided with, or deployed or used as part of a production environment.\r\n\r\nBy using the software, you agree to abide by the terms and conditions of the Cisco End User License Agreement at http://www.cisco.com/go/eula. Unauthorized use or distribution of this software is expressly prohibited.\r\n'
+2026-04-15 10:38:43,224 p=20001 u=root n=p=20001 u=root | paramiko [192.168.0.204] | Authentication (password) successful!
+2026-04-15 10:38:43,304 p=20006 u=root n=p=20006 u=root | paramiko [192.168.0.203] | Auth banner: b'\r\nIOSv - Cisco Systems Confidential -\r\n\r\nSupplemental End User License Restrictions\r\n\r\nThis IOSv software is provided AS-IS without warranty of any kind. Under no circumstances may this software be used separate from the Cisco Modeling Labs Software that this software was provided with, or deployed or used as part of a production environment.\r\n\r\nBy using the software, you agree to abide by the terms and conditions of the Cisco End User License Agreement at http://www.cisco.com/go/eula. Unauthorized use or distribution of this software is expressly prohibited.\r\n'
+2026-04-15 10:38:43,324 p=20006 u=root n=p=20006 u=root | paramiko [192.168.0.203] | Authentication (password) successful!
+2026-04-15 10:38:43,348 p=20009 u=root n=p=20009 u=root | paramiko [192.168.0.205] | Auth banner: b'\r\nIOSv - Cisco Systems Confidential -\r\n\r\nSupplemental End User License Restrictions\r\n\r\nThis IOSv software is provided AS-IS without warranty of any kind. Under no circumstances may this software be used separate from the Cisco Modeling Labs Software that this software was provided with, or deployed or used as part of a production environment.\r\n\r\nBy using the software, you agree to abide by the terms and conditions of the Cisco End User License Agreement at http://www.cisco.com/go/eula. Unauthorized use or distribution of this software is expressly prohibited.\r\n'
+2026-04-15 10:38:43,367 p=20009 u=root n=p=20009 u=root | paramiko [192.168.0.205] | Authentication (password) successful!
+2026-04-15 10:38:44,752 p=19753 u=root n=ansible | ok: [sw02]
+2026-04-15 10:38:44,874 p=19753 u=root n=ansible | ok: [sw03]
+2026-04-15 10:38:44,909 p=19753 u=root n=ansible | ok: [sw01]
+2026-04-15 10:38:44,912 p=19753 u=root n=ansible | TASK [Set VLAN check result] ***************************************************
+2026-04-15 10:38:45,028 p=19753 u=root n=ansible | ok: [sw01]
+2026-04-15 10:38:45,056 p=19753 u=root n=ansible | ok: [sw02]
+2026-04-15 10:38:45,061 p=19753 u=root n=ansible | ok: [sw03]
+2026-04-15 10:38:45,064 p=19753 u=root n=ansible | TASK [Check port VLAN] *********************************************************
+2026-04-15 10:38:46,581 p=19753 u=root n=ansible | ok: [sw02]
+2026-04-15 10:38:46,660 p=19753 u=root n=ansible | ok: [sw01]
+2026-04-15 10:38:46,758 p=19753 u=root n=ansible | ok: [sw03]
+2026-04-15 10:38:46,759 p=19753 u=root n=ansible | TASK [Set port check result] ***************************************************
+2026-04-15 10:38:46,832 p=19753 u=root n=ansible | ok: [sw01]
+2026-04-15 10:38:46,865 p=19753 u=root n=ansible | ok: [sw03]
+2026-04-15 10:38:46,865 p=19753 u=root n=ansible | ok: [sw02]
+2026-04-15 10:38:46,868 p=19753 u=root n=ansible | TASK [FINAL RESULT] ************************************************************
+2026-04-15 10:38:46,969 p=19753 u=root n=ansible | ok: [sw02] => {
+    "msg": "sw02: PASS"
+}
+2026-04-15 10:38:46,983 p=19753 u=root n=ansible | ok: [sw01] => {
+    "msg": "sw01: PASS"
+}
+2026-04-15 10:38:46,999 p=19753 u=root n=ansible | ok: [sw03] => {
+    "msg": "sw03: PASS"
+}
+2026-04-15 10:38:47,004 p=19753 u=root n=ansible | PLAY RECAP *********************************************************************
+2026-04-15 10:38:47,004 p=19753 u=root n=ansible | sw01                       : ok=5    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2026-04-15 10:38:47,004 p=19753 u=root n=ansible | sw02                       : ok=5    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2026-04-15 10:38:47,004 p=19753 u=root n=ansible | sw03                       : ok=5    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2026-04-15 10:38:47,101 p=20001 u=root n=ansible | shutdown complete
+2026-04-15 10:38:47,110 p=20009 u=root n=ansible | shutdown complete
+2026-04-15 10:38:47,115 p=20006 u=root n=ansible | shutdown complete
+2026-04-15 10:39:10,375 p=19846 u=root n=ansible | persistent connection idle timeout triggered, timeout value is 30 secs.
+See the timeout setting options in the Network Debug and Troubleshooting Guide.
+2026-04-15 10:39:10,478 p=19846 u=root n=ansible | shutdown complete
+2026-04-15 10:39:10,537 p=19855 u=root n=ansible | persistent connection idle timeout triggered, timeout value is 30 secs.
+See the timeout setting options in the Network Debug and Troubleshooting Guide.
+2026-04-15 10:39:10,639 p=19855 u=root n=ansible | shutdown complete
+2026-04-15 10:39:10,931 p=19849 u=root n=ansible | persistent connection idle timeout triggered, timeout value is 30 secs.
+See the timeout setting options in the Network Debug and Troubleshooting Guide.
+2026-04-15 10:39:11,034 p=19849 u=root n=ansible | shutdown complete
+2026-04-15 14:53:59,165 p=122513 u=root n=ansible | [WARNING]: Unable to parse /root/networking-ansible-lab/hosts.ini as an inventory source
+
+2026-04-15 14:53:59,166 p=122513 u=root n=ansible | [WARNING]: No inventory was parsed, only implicit localhost is available
+
+2026-04-15 14:53:59,170 p=122513 u=root n=ansible | [WARNING]: provided hosts list is empty, only localhost is available. Note that the implicit localhost does not match 'all'
+
+2026-04-15 14:55:11,774 p=122918 u=root n=ansible | [WARNING]:  * Failed to parse /root/networking-ansible-lab/inventories/lab/hosts.yml with auto plugin: We were unable to read either as JSON nor YAML, these are the errors we got from
+each: JSON: Expecting value: line 1 column 1 (char 0)  Syntax Error while loading YAML.   could not find expected ':'. while scanning a simple key   in "<unicode string>", line 13, column
+13 could not find expected ':'   in "<unicode string>", line 14, column 27  The error appears to be in '/root/networking-ansible-lab/inventories/lab/hosts.yml': line 14, column 27, but may
+be elsewhere in the file depending on the exact syntax problem.  The offending line appears to be:              router_P1               ansible_host: 192.168.0.11
+^ here
+
+2026-04-15 14:55:11,775 p=122918 u=root n=ansible | [WARNING]:  * Failed to parse /root/networking-ansible-lab/inventories/lab/hosts.yml with yaml plugin: We were unable to read either as JSON nor YAML, these are the errors we got from
+each: JSON: Expecting value: line 1 column 1 (char 0)  Syntax Error while loading YAML.   could not find expected ':'. while scanning a simple key   in "<unicode string>", line 13, column
+13 could not find expected ':'   in "<unicode string>", line 14, column 27  The error appears to be in '/root/networking-ansible-lab/inventories/lab/hosts.yml': line 14, column 27, but may
+be elsewhere in the file depending on the exact syntax problem.  The offending line appears to be:              router_P1               ansible_host: 192.168.0.11
+^ here
+
+2026-04-15 14:55:11,775 p=122918 u=root n=ansible | [WARNING]:  * Failed to parse /root/networking-ansible-lab/inventories/lab/hosts.yml with ini plugin: Invalid host pattern 'all:' supplied, ending in ':' is not allowed, this character is
+reserved to provide a port.
+
+2026-04-15 14:55:11,775 p=122918 u=root n=ansible | [WARNING]: Unable to parse /root/networking-ansible-lab/inventories/lab/hosts.yml as an inventory source
+
+2026-04-15 14:55:11,775 p=122918 u=root n=ansible | [WARNING]: No inventory was parsed, only implicit localhost is available
+
+2026-04-15 14:55:11,779 p=122918 u=root n=ansible | [WARNING]: provided hosts list is empty, only localhost is available. Note that the implicit localhost does not match 'all'
+
+2026-04-15 14:55:44,284 p=123105 u=root n=ansible | [WARNING]: Skipping 'hostname' as this is not a valid group definition
+
+2026-04-15 14:55:44,285 p=123105 u=root n=ansible | [WARNING]: Skipping 'mgmt_ip' as this is not a valid group definition
+
+2026-04-15 14:55:44,285 p=123105 u=root n=ansible | [WARNING]: Skipping 'mgmt_mask' as this is not a valid group definition
+
+2026-04-15 14:55:44,297 p=123105 u=root n=ansible | [WARNING]: Skipping 'unused_interfaces' as this is not a valid group definition
+
+2026-04-15 14:55:44,298 p=123105 u=root n=ansible | [WARNING]: Skipping 'change_interface' as this is not a valid group definition
+
+2026-04-15 14:55:44,298 p=123105 u=root n=ansible | [WARNING]: Skipping 'target_vlan_id' as this is not a valid group definition
+
+2026-04-15 14:55:44,298 p=123105 u=root n=ansible | [WARNING]: Skipping 'target_vlan_name' as this is not a valid group definition
+
+2026-04-15 14:55:44,304 p=123105 u=root n=ansible | [WARNING]: provided hosts list is empty, only localhost is available. Note that the implicit localhost does not match 'all'
+
+2026-04-15 14:57:14,842 p=123576 u=root n=ansible | [WARNING]:  * Failed to parse /root/networking-ansible-lab/inventories/lab/hosts.yml with auto plugin: We were unable to read either as JSON nor YAML, these are the errors we got from
+each: JSON: Expecting value: line 1 column 1 (char 0)  Syntax Error while loading YAML.   could not find expected ':'. while scanning a simple key   in "<unicode string>", line 13, column
+13 could not find expected ':'   in "<unicode string>", line 14, column 27  The error appears to be in '/root/networking-ansible-lab/inventories/lab/hosts.yml': line 14, column 27, but may
+be elsewhere in the file depending on the exact syntax problem.  The offending line appears to be:              router_P1               ansible_host: 192.168.0.11
+^ here
+
+2026-04-15 14:57:14,843 p=123576 u=root n=ansible | [WARNING]:  * Failed to parse /root/networking-ansible-lab/inventories/lab/hosts.yml with yaml plugin: We were unable to read either as JSON nor YAML, these are the errors we got from
+each: JSON: Expecting value: line 1 column 1 (char 0)  Syntax Error while loading YAML.   could not find expected ':'. while scanning a simple key   in "<unicode string>", line 13, column
+13 could not find expected ':'   in "<unicode string>", line 14, column 27  The error appears to be in '/root/networking-ansible-lab/inventories/lab/hosts.yml': line 14, column 27, but may
+be elsewhere in the file depending on the exact syntax problem.  The offending line appears to be:              router_P1               ansible_host: 192.168.0.11
+^ here
+
+2026-04-15 14:57:14,843 p=123576 u=root n=ansible | [WARNING]:  * Failed to parse /root/networking-ansible-lab/inventories/lab/hosts.yml with ini plugin: Invalid host pattern 'all:' supplied, ending in ':' is not allowed, this character is
+reserved to provide a port.
+
+2026-04-15 14:57:14,844 p=123576 u=root n=ansible | [WARNING]: Unable to parse /root/networking-ansible-lab/inventories/lab/hosts.yml as an inventory source
+
+2026-04-15 14:57:14,844 p=123576 u=root n=ansible | [WARNING]: No inventory was parsed, only implicit localhost is available
+
+2026-04-15 14:57:14,847 p=123576 u=root n=ansible | [WARNING]: provided hosts list is empty, only localhost is available. Note that the implicit localhost does not match 'all'
+
+2026-04-15 14:57:25,384 p=123629 u=root n=ansible | [WARNING]:  * Failed to parse /root/networking-ansible-lab/inventories/lab/hosts.yml with auto plugin: We were unable to read either as JSON nor YAML, these are the errors we got from
+each: JSON: Expecting value: line 1 column 1 (char 0)  Syntax Error while loading YAML.   could not find expected ':'. while scanning a simple key   in "<unicode string>", line 13, column
+13 could not find expected ':'   in "<unicode string>", line 14, column 27  The error appears to be in '/root/networking-ansible-lab/inventories/lab/hosts.yml': line 14, column 27, but may
+be elsewhere in the file depending on the exact syntax problem.  The offending line appears to be:              router_P1               ansible_host: 192.168.0.11
+^ here
+
+2026-04-15 14:57:25,384 p=123629 u=root n=ansible | [WARNING]:  * Failed to parse /root/networking-ansible-lab/inventories/lab/hosts.yml with yaml plugin: We were unable to read either as JSON nor YAML, these are the errors we got from
+each: JSON: Expecting value: line 1 column 1 (char 0)  Syntax Error while loading YAML.   could not find expected ':'. while scanning a simple key   in "<unicode string>", line 13, column
+13 could not find expected ':'   in "<unicode string>", line 14, column 27  The error appears to be in '/root/networking-ansible-lab/inventories/lab/hosts.yml': line 14, column 27, but may
+be elsewhere in the file depending on the exact syntax problem.  The offending line appears to be:              router_P1               ansible_host: 192.168.0.11
+^ here
+
+2026-04-15 14:57:25,384 p=123629 u=root n=ansible | [WARNING]:  * Failed to parse /root/networking-ansible-lab/inventories/lab/hosts.yml with ini plugin: Invalid host pattern 'all:' supplied, ending in ':' is not allowed, this character is
+reserved to provide a port.
+
+2026-04-15 14:57:25,384 p=123629 u=root n=ansible | [WARNING]: Unable to parse /root/networking-ansible-lab/inventories/lab/hosts.yml as an inventory source
+
+2026-04-15 14:57:25,384 p=123629 u=root n=ansible | [WARNING]: No inventory was parsed, only implicit localhost is available
+
+2026-04-15 14:57:25,387 p=123629 u=root n=ansible | [WARNING]: provided hosts list is empty, only localhost is available. Note that the implicit localhost does not match 'all'
+
+2026-04-15 14:57:33,097 p=123710 u=root n=ansible | [WARNING]:  * Failed to parse /root/networking-ansible-lab/inventories/lab/hosts.yml with auto plugin: We were unable to read either as JSON nor YAML, these are the errors we got from
+each: JSON: Expecting value: line 1 column 1 (char 0)  Syntax Error while loading YAML.   could not find expected ':'. while scanning a simple key   in "<unicode string>", line 13, column
+13 could not find expected ':'   in "<unicode string>", line 14, column 27  The error appears to be in '/root/networking-ansible-lab/inventories/lab/hosts.yml': line 14, column 27, but may
+be elsewhere in the file depending on the exact syntax problem.  The offending line appears to be:              router_P1               ansible_host: 192.168.0.11
+^ here
+
+2026-04-15 14:57:33,098 p=123710 u=root n=ansible | [WARNING]:  * Failed to parse /root/networking-ansible-lab/inventories/lab/hosts.yml with yaml plugin: We were unable to read either as JSON nor YAML, these are the errors we got from
+each: JSON: Expecting value: line 1 column 1 (char 0)  Syntax Error while loading YAML.   could not find expected ':'. while scanning a simple key   in "<unicode string>", line 13, column
+13 could not find expected ':'   in "<unicode string>", line 14, column 27  The error appears to be in '/root/networking-ansible-lab/inventories/lab/hosts.yml': line 14, column 27, but may
+be elsewhere in the file depending on the exact syntax problem.  The offending line appears to be:              router_P1               ansible_host: 192.168.0.11
+^ here
+
+2026-04-15 14:57:33,098 p=123710 u=root n=ansible | [WARNING]:  * Failed to parse /root/networking-ansible-lab/inventories/lab/hosts.yml with ini plugin: Invalid host pattern 'all:' supplied, ending in ':' is not allowed, this character is
+reserved to provide a port.
+
+2026-04-15 14:57:33,098 p=123710 u=root n=ansible | [WARNING]: Unable to parse /root/networking-ansible-lab/inventories/lab/hosts.yml as an inventory source
+
+2026-04-15 14:57:33,098 p=123710 u=root n=ansible | [WARNING]: No inventory was parsed, only implicit localhost is available
+
+2026-04-15 14:57:33,101 p=123710 u=root n=ansible | [WARNING]: provided hosts list is empty, only localhost is available. Note that the implicit localhost does not match 'all'
+
+2026-04-15 14:57:33,102 p=123710 u=root n=ansible | [WARNING]: Could not match supplied host pattern, ignoring: access_switches
+
+2026-04-15 14:59:47,499 p=124444 u=root n=ansible | [WARNING]:  * Failed to parse /root/networking-ansible-lab/inventories/lab/hosts.yml with auto plugin: We were unable to read either as JSON nor YAML, these are the errors we got from
+each: JSON: Expecting value: line 1 column 1 (char 0)  Syntax Error while loading YAML.   mapping values are not allowed in this context. mapping values are not allowed in this context
+in "<unicode string>", line 17, column 27  The error appears to be in '/root/networking-ansible-lab/inventories/lab/hosts.yml': line 17, column 27, but may be elsewhere in the file
+depending on the exact syntax problem.  The offending line appears to be:              router_P1               ansible_host: 192.168.0.11                           ^ here
+
+2026-04-15 14:59:47,500 p=124444 u=root n=ansible | [WARNING]:  * Failed to parse /root/networking-ansible-lab/inventories/lab/hosts.yml with yaml plugin: We were unable to read either as JSON nor YAML, these are the errors we got from
+each: JSON: Expecting value: line 1 column 1 (char 0)  Syntax Error while loading YAML.   mapping values are not allowed in this context. mapping values are not allowed in this context
+in "<unicode string>", line 17, column 27  The error appears to be in '/root/networking-ansible-lab/inventories/lab/hosts.yml': line 17, column 27, but may be elsewhere in the file
+depending on the exact syntax problem.  The offending line appears to be:              router_P1               ansible_host: 192.168.0.11                           ^ here
+
+2026-04-15 14:59:47,500 p=124444 u=root n=ansible | [WARNING]:  * Failed to parse /root/networking-ansible-lab/inventories/lab/hosts.yml with ini plugin: Invalid host pattern 'all:' supplied, ending in ':' is not allowed, this character is
+reserved to provide a port.
+
+2026-04-15 14:59:47,500 p=124444 u=root n=ansible | [WARNING]: Unable to parse /root/networking-ansible-lab/inventories/lab/hosts.yml as an inventory source
+
+2026-04-15 14:59:47,500 p=124444 u=root n=ansible | [WARNING]: No inventory was parsed, only implicit localhost is available
+
+2026-04-15 14:59:47,503 p=124444 u=root n=ansible | [WARNING]: provided hosts list is empty, only localhost is available. Note that the implicit localhost does not match 'all'
+
+2026-04-15 14:59:47,504 p=124444 u=root n=ansible | [WARNING]: Could not match supplied host pattern, ignoring: access_switches
+
+2026-04-15 14:59:52,374 p=124478 u=root n=ansible | [WARNING]:  * Failed to parse /root/networking-ansible-lab/inventories/lab/hosts.yml with auto plugin: We were unable to read either as JSON nor YAML, these are the errors we got from
+each: JSON: Expecting value: line 1 column 1 (char 0)  Syntax Error while loading YAML.   mapping values are not allowed in this context. mapping values are not allowed in this context
+in "<unicode string>", line 17, column 27  The error appears to be in '/root/networking-ansible-lab/inventories/lab/hosts.yml': line 17, column 27, but may be elsewhere in the file
+depending on the exact syntax problem.  The offending line appears to be:              router_P1               ansible_host: 192.168.0.11                           ^ here
+
+2026-04-15 14:59:52,374 p=124478 u=root n=ansible | [WARNING]:  * Failed to parse /root/networking-ansible-lab/inventories/lab/hosts.yml with yaml plugin: We were unable to read either as JSON nor YAML, these are the errors we got from
+each: JSON: Expecting value: line 1 column 1 (char 0)  Syntax Error while loading YAML.   mapping values are not allowed in this context. mapping values are not allowed in this context
+in "<unicode string>", line 17, column 27  The error appears to be in '/root/networking-ansible-lab/inventories/lab/hosts.yml': line 17, column 27, but may be elsewhere in the file
+depending on the exact syntax problem.  The offending line appears to be:              router_P1               ansible_host: 192.168.0.11                           ^ here
+
+2026-04-15 14:59:52,375 p=124478 u=root n=ansible | [WARNING]:  * Failed to parse /root/networking-ansible-lab/inventories/lab/hosts.yml with ini plugin: Invalid host pattern 'all:' supplied, ending in ':' is not allowed, this character is
+reserved to provide a port.
+
+2026-04-15 14:59:52,375 p=124478 u=root n=ansible | [WARNING]: Unable to parse /root/networking-ansible-lab/inventories/lab/hosts.yml as an inventory source
+
+2026-04-15 14:59:52,375 p=124478 u=root n=ansible | [WARNING]: No inventory was parsed, only implicit localhost is available
+
+2026-04-15 14:59:52,379 p=124478 u=root n=ansible | [WARNING]: provided hosts list is empty, only localhost is available. Note that the implicit localhost does not match 'all'
+
+2026-04-15 15:01:27,122 p=124942 u=root n=ansible | network_os is set to cisco.ios.ios
+2026-04-15 15:01:27,122 p=124942 u=root n=ansible | network_os is set to cisco.ios.ios
+2026-04-15 15:01:27,381 p=124942 u=root n=ansible | network_os is set to cisco.ios.ios
+2026-04-15 15:01:27,455 p=124942 u=root n=ansible | network_os is set to cisco.ios.ios
+2026-04-15 15:01:27,568 p=124942 u=root n=ansible | network_os is set to cisco.ios.ios
+2026-04-15 15:01:28,053 p=124942 u=root n=ansible | sw01 | SUCCESS => {
+    "changed": false,
+    "ping": "pong"
+}
+2026-04-15 15:01:28,151 p=124942 u=root n=ansible | sw02 | SUCCESS => {
+    "changed": false,
+    "ping": "pong"
+}
+2026-04-15 15:01:28,160 p=124942 u=root n=ansible | sw03 | SUCCESS => {
+    "changed": false,
+    "ping": "pong"
+}
+2026-04-15 15:01:28,160 p=124942 u=root n=ansible | router_P2 | SUCCESS => {
+    "changed": false,
+    "ping": "pong"
+}
+2026-04-15 15:01:28,251 p=124942 u=root n=ansible | router_P1 | SUCCESS => {
+    "changed": false,
+    "ping": "pong"
+}
+2026-04-15 15:01:29,107 p=124942 u=root n=ansible | network_os is set to cisco.ios.ios
+2026-04-15 15:01:29,217 p=124942 u=root n=ansible | network_os is set to cisco.ios.ios
+2026-04-15 15:01:29,421 p=124942 u=root n=ansible | router_PE1 | SUCCESS => {
+    "changed": false,
+    "ping": "pong"
+}
+2026-04-15 15:01:29,466 p=124942 u=root n=ansible | router_PE2 | SUCCESS => {
+    "changed": false,
+    "ping": "pong"
+}
+2026-04-15 15:01:29,573 p=124993 u=root n=ansible | shutdown complete
+2026-04-15 15:01:29,573 p=124987 u=root n=ansible | shutdown complete
+2026-04-15 15:01:29,574 p=125007 u=root n=ansible | shutdown complete
+2026-04-15 15:01:29,576 p=124990 u=root n=ansible | shutdown complete
+2026-04-15 15:01:29,576 p=125116 u=root n=ansible | shutdown complete
+2026-04-15 15:01:29,579 p=125017 u=root n=ansible | shutdown complete
+2026-04-15 15:01:29,581 p=125113 u=root n=ansible | shutdown complete
+2026-04-15 15:01:42,865 p=125238 u=root n=ansible | network_os is set to cisco.ios.ios
+2026-04-15 15:01:43,161 p=125238 u=root n=ansible | network_os is set to cisco.ios.ios
+2026-04-15 15:01:43,215 p=125238 u=root n=ansible | network_os is set to cisco.ios.ios
+2026-04-15 15:01:43,308 p=125238 u=root n=ansible | network_os is set to cisco.ios.ios
+2026-04-15 15:01:43,388 p=125238 u=root n=ansible | network_os is set to cisco.ios.ios
+2026-04-15 15:01:43,886 p=125238 u=root n=ansible | router_P1 | SUCCESS => {
+    "changed": false,
+    "ping": "pong"
+}
+2026-04-15 15:01:43,970 p=125238 u=root n=ansible | sw01 | SUCCESS => {
+    "changed": false,
+    "ping": "pong"
+}
+2026-04-15 15:01:44,000 p=125238 u=root n=ansible | sw02 | SUCCESS => {
+    "changed": false,
+    "ping": "pong"
+}
+2026-04-15 15:01:44,030 p=125238 u=root n=ansible | router_P2 | SUCCESS => {
+    "changed": false,
+    "ping": "pong"
+}
+2026-04-15 15:01:44,098 p=125238 u=root n=ansible | sw03 | SUCCESS => {
+    "changed": false,
+    "ping": "pong"
+}
+2026-04-15 15:01:44,830 p=125238 u=root n=ansible | network_os is set to cisco.ios.ios
+2026-04-15 15:01:45,013 p=125238 u=root n=ansible | network_os is set to cisco.ios.ios
+2026-04-15 15:01:45,118 p=125238 u=root n=ansible | router_PE1 | SUCCESS => {
+    "changed": false,
+    "ping": "pong"
+}
+2026-04-15 15:01:45,236 p=125238 u=root n=ansible | router_PE2 | SUCCESS => {
+    "changed": false,
+    "ping": "pong"
+}
+2026-04-15 15:01:45,340 p=125283 u=root n=ansible | shutdown complete
+2026-04-15 15:01:45,342 p=125304 u=root n=ansible | shutdown complete
+2026-04-15 15:01:45,343 p=125294 u=root n=ansible | shutdown complete
+2026-04-15 15:01:45,346 p=125286 u=root n=ansible | shutdown complete
+2026-04-15 15:01:45,346 p=125409 u=root n=ansible | shutdown complete
+2026-04-15 15:01:45,377 p=125412 u=root n=ansible | shutdown complete
+2026-04-15 15:01:45,391 p=125289 u=root n=ansible | shutdown complete
+2026-04-15 15:01:58,909 p=125511 u=root n=ansible | network_os is set to cisco.ios.ios
+2026-04-15 15:01:59,045 p=125511 u=root n=ansible | network_os is set to cisco.ios.ios
+2026-04-15 15:01:59,217 p=125511 u=root n=ansible | network_os is set to cisco.ios.ios
+2026-04-15 15:01:59,455 p=125511 u=root n=ansible | sw02 | SUCCESS => {
+    "changed": false,
+    "ping": "pong"
+}
+2026-04-15 15:01:59,521 p=125511 u=root n=ansible | sw01 | SUCCESS => {
+    "changed": false,
+    "ping": "pong"
+}
+2026-04-15 15:01:59,593 p=125511 u=root n=ansible | sw03 | SUCCESS => {
+    "changed": false,
+    "ping": "pong"
+}
+2026-04-15 15:01:59,698 p=125550 u=root n=ansible | shutdown complete
+2026-04-15 15:01:59,701 p=125565 u=root n=ansible | shutdown complete
+2026-04-15 15:01:59,700 p=125553 u=root n=ansible | shutdown complete
+2026-04-15 15:02:28,328 p=125758 u=root n=ansible | network_os is set to cisco.ios.ios
+2026-04-15 15:02:28,584 p=125758 u=root n=ansible | network_os is set to cisco.ios.ios
+2026-04-15 15:02:28,680 p=125758 u=root n=ansible | network_os is set to cisco.ios.ios
+2026-04-15 15:02:28,997 p=125758 u=root n=ansible | router_PE1 | SUCCESS => {
+    "changed": false,
+    "ping": "pong"
+}
+2026-04-15 15:02:29,156 p=125758 u=root n=ansible | network_os is set to cisco.ios.ios
+2026-04-15 15:02:29,214 p=125758 u=root n=ansible | router_P2 | SUCCESS => {
+    "changed": false,
+    "ping": "pong"
+}
+2026-04-15 15:02:29,241 p=125758 u=root n=ansible | router_P1 | SUCCESS => {
+    "changed": false,
+    "ping": "pong"
+}
+2026-04-15 15:02:29,392 p=125758 u=root n=ansible | router_PE2 | SUCCESS => {
+    "changed": false,
+    "ping": "pong"
+}
+2026-04-15 15:02:29,494 p=125790 u=root n=ansible | shutdown complete
+2026-04-15 15:02:29,508 p=125778 u=root n=ansible | shutdown complete
+2026-04-15 15:02:29,510 p=125775 u=root n=ansible | shutdown complete
+2026-04-15 15:02:29,512 p=125802 u=root n=ansible | shutdown complete

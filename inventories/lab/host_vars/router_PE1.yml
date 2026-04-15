@@ -1,0 +1,3 @@
+hostname: Router_PE1   
+mgmt_ip: 192.168.0.13/24
+mgmt_mask: 255.255.255.0
