@@ -1,0 +1,9 @@
+- name: Configure router interfaces
+  cisco.ios.ios_config:
+    parents: "interface {{ item.name }}"
+    lines:
+      - no ip address
+      - ip address {{ item.ip }} {{ item.mask }}
+      - no shutdown
+  loop: "{{ interfaces }}"
+  when: interfaces is defined

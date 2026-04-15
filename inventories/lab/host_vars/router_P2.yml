@@ -1,3 +1,12 @@
 hostname: Router_P2   
 mgmt_ip: 192.168.0.12/24
 mgmt_mask: 255.255.255.0
+
+interfaces:
+  - name: GigabitEthernet0/1
+    ip: 10.0.12.2
+    mask: 255.255.255.252
+
+  - name: GigabitEthernet0/2
+    ip: 10.0.24.1
+    mask: 255.255.255.252

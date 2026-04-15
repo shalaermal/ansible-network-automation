@@ -8,3 +8,15 @@
 
     - role: access_switch
       tags: [access]
+
+
+- name: Configure routers
+  hosts: routers
+  gather_facts: no
+
+  roles:
+    - role: cisco_base
+      tags: [base]
+
+    - role: router_interfaces
+      tags: [interfaces]
