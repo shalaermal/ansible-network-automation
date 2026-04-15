@@ -1,4 +1,12 @@
-- hosts: access_switches
+- name: Deploy VLANs on switches
+  hosts: access_switches
   gather_facts: no
   tasks:
     - import_tasks: ../../roles/vlan_lifecycle/tasks/deploy.yml
+
+
+- name: Configure router interfaces
+  hosts: routers
+  gather_facts: no
+  roles:
+    - router_interfaces

@@ -2,3 +2,12 @@
   gather_facts: no
   tasks:
     - import_tasks: ../../roles/vlan_lifecycle/tasks/postcheck.yml
+
+- hosts: routers
+  gather_facts: no
+
+  tasks:
+    - name: Verify interface IPs
+      cisco.ios.ios_command:
+        commands:
+          - show ip interface brief
