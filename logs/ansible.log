@@ -389,3 +389,4 @@ See the timeout setting options in the Network Debug and Troubleshooting Guide.
 See the timeout setting options in the Network Debug and Troubleshooting Guide.
 2026-04-15 10:27:17,634 p=16317 u=root n=ansible | shutdown complete
 2026-04-15 10:27:17,644 p=16320 u=root n=ansible | shutdown complete
+2026-04-15 10:29:22,473 p=17084 u=root n=ansible | ERROR! the playbook: playbooks/vlan_precheck.yml could not be found
