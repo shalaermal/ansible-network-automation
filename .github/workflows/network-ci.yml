@@ -29,9 +29,9 @@ jobs:
             cd ~/networking-ansible-lab &&
             git pull &&
             echo "=== PRECHECK ===" &&
-            ansible-playbook playbooks/vlan_precheck.yml &&
+            ansible-playbook playbooks/mop/precheck.yml &&
             echo "=== DEPLOY ===" &&
-            ansible-playbook playbooks/vlan_deploy.yml &&
+            ansible-playbook playbooks/mop/deploy.yml &&
             echo "=== POSTCHECK ===" &&
-            ansible-playbook playbooks/vlan_postcheck.yml
+            ansible-playbook playbooks/mop/postcheck.yml
           '
