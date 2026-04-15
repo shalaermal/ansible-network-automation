@@ -786,3 +786,77 @@ reserved to provide a port.
 2026-04-15 15:02:29,508 p=125778 u=root n=ansible | shutdown complete
 2026-04-15 15:02:29,510 p=125775 u=root n=ansible | shutdown complete
 2026-04-15 15:02:29,512 p=125802 u=root n=ansible | shutdown complete
+2026-04-15 15:05:20,860 p=126881 u=root n=ansible | PLAY [access_switches] *********************************************************
+2026-04-15 15:05:20,869 p=126881 u=root n=ansible | TASK [Get VLAN info] ***********************************************************
+2026-04-15 15:05:22,039 p=126881 u=root n=ansible | network_os is set to cisco.ios.ios
+2026-04-15 15:05:22,341 p=126881 u=root n=ansible | network_os is set to cisco.ios.ios
+2026-04-15 15:05:22,408 p=126923 u=root n=p=126923 u=root | paramiko [192.168.0.204] | Connected (version 2.0, client Cisco-1.25)
+2026-04-15 15:05:22,454 p=126881 u=root n=ansible | network_os is set to cisco.ios.ios
+2026-04-15 15:05:22,494 p=126926 u=root n=p=126926 u=root | paramiko [192.168.0.203] | Connected (version 2.0, client Cisco-1.25)
+2026-04-15 15:05:22,840 p=126923 u=root n=p=126923 u=root | paramiko [192.168.0.204] | Auth banner: b'\r\nIOSv - Cisco Systems Confidential -\r\n\r\nSupplemental End User License Restrictions\r\n\r\nThis IOSv software is provided AS-IS without warranty of any kind. Under no circumstances may this software be used separate from the Cisco Modeling Labs Software that this software was provided with, or deployed or used as part of a production environment.\r\n\r\nBy using the software, you agree to abide by the terms and conditions of the Cisco End User License Agreement at http://www.cisco.com/go/eula. Unauthorized use or distribution of this software is expressly prohibited.\r\n'
+2026-04-15 15:05:22,854 p=126926 u=root n=p=126926 u=root | paramiko [192.168.0.203] | Auth banner: b'\r\nIOSv - Cisco Systems Confidential -\r\n\r\nSupplemental End User License Restrictions\r\n\r\nThis IOSv software is provided AS-IS without warranty of any kind. Under no circumstances may this software be used separate from the Cisco Modeling Labs Software that this software was provided with, or deployed or used as part of a production environment.\r\n\r\nBy using the software, you agree to abide by the terms and conditions of the Cisco End User License Agreement at http://www.cisco.com/go/eula. Unauthorized use or distribution of this software is expressly prohibited.\r\n'
+2026-04-15 15:05:22,867 p=126923 u=root n=p=126923 u=root | paramiko [192.168.0.204] | Authentication (password) successful!
+2026-04-15 15:05:22,881 p=126926 u=root n=p=126926 u=root | paramiko [192.168.0.203] | Authentication (password) successful!
+2026-04-15 15:05:24,438 p=126881 u=root n=ansible | ok: [sw02]
+2026-04-15 15:05:24,617 p=126881 u=root n=ansible | ok: [sw01]
+2026-04-15 15:05:36,460 p=126881 u=root n=ansible | fatal: [sw03]: FAILED! => {"changed": false, "msg": "[Errno None] Unable to connect to port 22 on 192.168.0.205"}
+2026-04-15 15:05:36,463 p=126881 u=root n=ansible | TASK [Check VLAN existence] ****************************************************
+2026-04-15 15:05:36,558 p=126881 u=root n=ansible | ok: [sw01]
+2026-04-15 15:05:36,575 p=126881 u=root n=ansible | ok: [sw02]
+2026-04-15 15:05:36,580 p=126881 u=root n=ansible | TASK [Show VLAN check] *********************************************************
+2026-04-15 15:05:36,674 p=126881 u=root n=ansible | ok: [sw01] => (item={'id': 40, 'name': 'COSTUMER', 'ports': ['GigabitEthernet0/1']}) => {
+    "msg": "40 present: True"
+}
+2026-04-15 15:05:36,695 p=126881 u=root n=ansible | ok: [sw02] => (item={'id': 40, 'name': 'COSTUMER', 'ports': ['GigabitEthernet0/1']}) => {
+    "msg": "40 present: True"
+}
+2026-04-15 15:05:36,703 p=126881 u=root n=ansible | PLAY RECAP *********************************************************************
+2026-04-15 15:05:36,703 p=126881 u=root n=ansible | sw01                       : ok=3    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2026-04-15 15:05:36,703 p=126881 u=root n=ansible | sw02                       : ok=3    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2026-04-15 15:05:36,703 p=126881 u=root n=ansible | sw03                       : ok=0    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2026-04-15 15:05:36,802 p=126923 u=root n=ansible | shutdown complete
+2026-04-15 15:05:36,803 p=126920 u=root n=ansible | shutdown complete
+2026-04-15 15:05:36,805 p=126926 u=root n=ansible | shutdown complete
+2026-04-15 15:07:58,354 p=127764 u=root n=ansible | network_os is set to cisco.ios.ios
+2026-04-15 15:07:58,400 p=127764 u=root n=ansible | network_os is set to cisco.ios.ios
+2026-04-15 15:07:58,555 p=127764 u=root n=ansible | network_os is set to cisco.ios.ios
+2026-04-15 15:07:58,636 p=127764 u=root n=ansible | network_os is set to cisco.ios.ios
+2026-04-15 15:07:58,697 p=127764 u=root n=ansible | network_os is set to cisco.ios.ios
+2026-04-15 15:07:59,274 p=127764 u=root n=ansible | sw02 | SUCCESS => {
+    "changed": false,
+    "ping": "pong"
+}
+2026-04-15 15:07:59,316 p=127764 u=root n=ansible | router_P1 | SUCCESS => {
+    "changed": false,
+    "ping": "pong"
+}
+2026-04-15 15:07:59,337 p=127764 u=root n=ansible | sw01 | SUCCESS => {
+    "changed": false,
+    "ping": "pong"
+}
+2026-04-15 15:07:59,358 p=127764 u=root n=ansible | router_P2 | SUCCESS => {
+    "changed": false,
+    "ping": "pong"
+}
+2026-04-15 15:07:59,370 p=127764 u=root n=ansible | sw03 | SUCCESS => {
+    "changed": false,
+    "ping": "pong"
+}
+2026-04-15 15:08:00,279 p=127764 u=root n=ansible | network_os is set to cisco.ios.ios
+2026-04-15 15:08:00,330 p=127764 u=root n=ansible | network_os is set to cisco.ios.ios
+2026-04-15 15:08:00,558 p=127764 u=root n=ansible | router_PE1 | SUCCESS => {
+    "changed": false,
+    "ping": "pong"
+}
+2026-04-15 15:08:00,621 p=127764 u=root n=ansible | router_PE2 | SUCCESS => {
+    "changed": false,
+    "ping": "pong"
+}
+2026-04-15 15:08:00,729 p=127787 u=root n=ansible | shutdown complete
+2026-04-15 15:08:00,732 p=127795 u=root n=ansible | shutdown complete
+2026-04-15 15:08:00,737 p=127796 u=root n=ansible | shutdown complete
+2026-04-15 15:08:00,739 p=127938 u=root n=ansible | shutdown complete
+2026-04-15 15:08:00,741 p=127790 u=root n=ansible | shutdown complete
+2026-04-15 15:08:00,766 p=127784 u=root n=ansible | shutdown complete
+2026-04-15 15:08:00,767 p=127935 u=root n=ansible | shutdown complete
+2026-04-15 15:10:42,110 p=129217 u=root n=ansible | ERROR! this task 'ios_command' has extra params, which is only allowed in the following modules: import_role, ansible.legacy.set_fact, include_role, ansible.legacy.group_by, ansible.legacy.include_tasks, ansible.builtin.import_role, set_fact, add_host, include, ansible.builtin.include_vars, ansible.builtin.command, ansible.builtin.script, meta, ansible.legacy.import_tasks, ansible.legacy.import_role, win_shell, ansible.builtin.include, shell, ansible.builtin.include_tasks, ansible.builtin.shell, ansible.builtin.group_by, ansible.builtin.win_command, ansible.legacy.include, group_by, ansible.builtin.raw, ansible.legacy.include_role, ansible.legacy.raw, ansible.legacy.win_command, ansible.builtin.set_fact, include_tasks, ansible.windows.win_shell, ansible.builtin.include_role, ansible.legacy.script, include_vars, ansible.builtin.win_shell, ansible.legacy.add_host, import_tasks, ansible.builtin.add_host, command, ansible.legacy.include_vars, ansible.legacy.meta, ansible.windows.win_command, ansible.builtin.import_tasks, ansible.legacy.shell, raw, ansible.legacy.command, win_command, ansible.legacy.win_shell, ansible.builtin.meta, script
