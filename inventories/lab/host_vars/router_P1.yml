@@ -14,3 +14,6 @@ interfaces:
   - name: GigabitEthernet0/3
     ip: 10.0.14.1
     mask: 255.255.255.252
+  - name: Loopback0
+    ip: 10.255.0.1
+    mask: 255.255.255.255
