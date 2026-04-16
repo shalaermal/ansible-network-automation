@@ -4,6 +4,5 @@
     lines:
       - ip address {{ item.ip }} {{ item.mask }}
       - no shutdown
-
   loop: "{{ interfaces }}"
   when: interfaces is defined
