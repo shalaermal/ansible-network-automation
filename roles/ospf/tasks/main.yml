@@ -1,0 +1,8 @@
+- name: Configure OSPF
+  cisco.ios.ios_config:
+    parents: "router ospf 1"
+    lines:
+      - "router-id {{ loopback_ip }}"
+      - "network {{ item.network }} {{ item.wildcard }} area {{ item.area }}"
+  loop: "{{ ospf_networks }}"
+  when: ospf_networks is defined

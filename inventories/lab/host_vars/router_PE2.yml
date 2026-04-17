@@ -18,3 +18,15 @@ interfaces:
   - name: Loopback0
     ip: 10.255.0.4
     mask: 255.255.255.255
+
+loopback_ip: 10.255.0.4
+ospf_networks:
+  - network: 10.255.0.4
+    wildcard: 0.0.0.0
+    area: 0
+  - network: 10.0.14.0
+    wildcard: 0.0.0.3
+    area: 0
+  - network: 10.0.24.0
+    wildcard: 0.0.0.3
+    area: 0

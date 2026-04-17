@@ -17,3 +17,15 @@ interfaces:
   - name: GigabitEthernet0/3
     ip: 10.0.21.2
     mask: 255.255.255.252
+
+loopback_ip: 10.255.0.3
+ospf_networks:
+  - network: 10.255.0.3
+    wildcard: 0.0.0.0
+    area: 0
+  - network: 10.0.13.0
+    wildcard: 0.0.0.3
+    area: 0
+  - network: 10.0.21.0
+    wildcard: 0.0.0.3
+    area: 0
