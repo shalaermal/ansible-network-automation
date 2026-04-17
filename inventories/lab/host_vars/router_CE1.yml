@@ -1,0 +1,13 @@
+hostname: Router_CE1
+mgmt_ip: 192.168.0.15/24
+mgmt_mask: 255.255.255.0
+interfaces:
+  - name: GigabitEthernet0/1
+    ip: 10.2.1.2
+    mask: 255.255.255.252
+  - name: GigabitEthernet0/2
+    ip: 172.16.10.1
+    mask: 255.255.255.0
+  - name: Loopback0
+    ip: 10.255.0.5
+    mask: 255.255.255.255
