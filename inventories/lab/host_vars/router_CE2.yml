@@ -11,3 +11,20 @@ interfaces:
   - name: Loopback0
     ip: 10.255.0.6
     mask: 255.255.255.255
+
+static_routes:
+  - prefix: 10.255.0.1
+    mask: 255.255.255.255
+    next_hop: 10.2.2.1
+  - prefix: 10.255.0.2
+    mask: 255.255.255.255
+    next_hop: 10.2.2.1
+  - prefix: 10.255.0.3
+    mask: 255.255.255.255
+    next_hop: 10.2.2.1
+  - prefix: 10.255.0.4
+    mask: 255.255.255.255
+    next_hop: 10.2.2.1
+  - prefix: 10.255.0.5
+    mask: 255.255.255.255
+    next_hop: 10.2.2.1

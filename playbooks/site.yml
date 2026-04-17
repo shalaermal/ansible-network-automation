@@ -19,3 +19,6 @@
 
     - role: router_interfaces
       tags: [interfaces]
+
+    - role: static_routes
+      tags: [static_routes]
