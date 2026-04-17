@@ -7,9 +7,9 @@
   loop: "{{ ospf_networks }}"
   when: ospf_networks is defined
 
-- name: Set loopback OSPF network type
+- name: Remove point-to-point from loopback
   cisco.ios.ios_config:
     parents: "interface Loopback0"
     lines:
-      - "ip ospf network point-to-point"
+      - "no ip ospf network point-to-point"
   when: ospf_networks is defined
