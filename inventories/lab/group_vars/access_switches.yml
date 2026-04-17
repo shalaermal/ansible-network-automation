@@ -20,3 +20,11 @@ vlans:
     name: COSTUMER
     ports:
       - GigabitEthernet0/1
+
+cisco_base_config:
+  - no ip domain-lookup
+  - service password-encryption
+  - ip domain-name lab.local
+  - ip ssh version 2
+  - logging buffered 10000
+  - spanning-tree mode rapid-pvst
