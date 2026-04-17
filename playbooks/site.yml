@@ -1,24 +1,19 @@
-- name: Build access switches
+- name: Configure switches
   hosts: access_switches
   gather_facts: no
-
   roles:
     - role: cisco_base
       tags: [base]
-
     - role: access_switch
-      tags: [access]
+      tags: [access, vlans]
 
 - name: Configure routers
   hosts: routers
   gather_facts: no
-
   roles:
     - role: cisco_base
       tags: [base]
-
     - role: router_interfaces
       tags: [interfaces]
-
     - role: static_routes
       tags: [static_routes]

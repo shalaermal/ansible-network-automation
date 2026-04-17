@@ -9,7 +9,6 @@ jobs:
 
   precheck:
     runs-on: ubuntu-latest
-
     steps:
       - uses: actions/checkout@v3
 
@@ -28,14 +27,12 @@ jobs:
           sshpass -p "${{ secrets.VM_PASS }}" ssh -o StrictHostKeyChecking=no ${{ secrets.VM_USER }}@${{ secrets.VM_HOST }} '
             cd ~/networking-ansible-lab &&
             git pull &&
-            ansible-playbook playbooks/mop/precheck.yml
+            ansible-playbook playbooks/precheck.yml
           '
-
 
   deploy:
     runs-on: ubuntu-latest
     needs: precheck
-
     steps:
       - uses: actions/checkout@v3
 
@@ -54,14 +51,12 @@ jobs:
           sshpass -p "${{ secrets.VM_PASS }}" ssh -o StrictHostKeyChecking=no ${{ secrets.VM_USER }}@${{ secrets.VM_HOST }} '
             cd ~/networking-ansible-lab &&
             git pull &&
-            ansible-playbook playbooks/mop/deploy.yml
+            ansible-playbook playbooks/site.yml
           '
-
 
   postcheck:
     runs-on: ubuntu-latest
     needs: deploy
-
     steps:
       - uses: actions/checkout@v3
 
@@ -80,5 +75,5 @@ jobs:
           sshpass -p "${{ secrets.VM_PASS }}" ssh -o StrictHostKeyChecking=no ${{ secrets.VM_USER }}@${{ secrets.VM_HOST }} '
             cd ~/networking-ansible-lab &&
             git pull &&
-            ansible-playbook playbooks/mop/postcheck.yml
+            ansible-playbook playbooks/postcheck.yml
           '

@@ -1,12 +1,16 @@
 - name: General precheck - switches
   hosts: access_switches
   gather_facts: no
-
   tasks:
     - name: Check VLANs
       cisco.ios.ios_command:
         commands:
           - show vlan brief
+      register: vlan_output
+
+    - name: Show VLAN results
+      debug:
+        var: vlan_output.stdout_lines
 
     - name: Backup switch configs
       cisco.ios.ios_config:
@@ -15,16 +19,19 @@
           filename: "{{ inventory_hostname }}.cfg"
           dir_path: backups/
 
-
 - name: General precheck - routers
   hosts: routers
   gather_facts: no
-
   tasks:
     - name: Check interfaces
       cisco.ios.ios_command:
         commands:
           - show ip interface brief
+      register: interface_output
+
+    - name: Show interface results
+      debug:
+        var: interface_output.stdout_lines
 
     - name: Backup router configs
       cisco.ios.ios_config:
