@@ -36,3 +36,7 @@
       - description UNUSED
       - shutdown
   loop: "{{ unused_interfaces }}"
+
+- name: Save configuration
+  cisco.ios.ios_config:
+    save_when: always
