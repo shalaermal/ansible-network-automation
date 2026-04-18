@@ -13,3 +13,7 @@
     lines:
       - "no ip ospf network point-to-point"
   when: ospf_networks is defined
+
+- name: Save configuration
+  cisco.ios.ios_config:
+    save_when: always

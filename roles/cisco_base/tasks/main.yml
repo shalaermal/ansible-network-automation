@@ -6,6 +6,7 @@
   cisco.ios.ios_config:
     lines:
       - "username {{ local_admin_user }} privilege 15 secret {{ local_admin_password }}"
+
 - name: Configure VTY lines for SSH only
   cisco.ios.ios_config:
     parents: line vty 0 4
@@ -49,3 +50,28 @@
   cisco.ios.ios_config:
     lines:
       - "logging trap {{ logging_level }}"
+
+- name: Configure EEM for interface recovery
+  cisco.ios.ios_config:
+    parents: "event manager applet INTERFACES_UP"
+    lines:
+      - "event syslog pattern \"SYS-5-RESTART\""
+      - "action 1.0 cli command \"enable\""
+      - "action 2.0 cli command \"conf t\""
+      - "action 3.0 cli command \"int Gi0/0\""
+      - "action 4.0 cli command \"no shutdown\""
+      - "action 5.0 cli command \"int Gi0/1\""
+      - "action 6.0 cli command \"no shutdown\""
+      - "action 7.0 cli command \"int Gi0/2\""
+      - "action 8.0 cli command \"no shutdown\""
+      - "action 9.0 cli command \"int Gi0/3\""
+      - "action 10.0 cli command \"no shutdown\""
+      - "action 11.0 cli command \"int Loopback0\""
+      - "action 12.0 cli command \"no shutdown\""
+      - "action 13.0 cli command \"end\""
+      - "action 14.0 cli command \"write memory\""
+  when: interfaces is defined
+
+- name: Save configuration
+  cisco.ios.ios_config:
+    save_when: always

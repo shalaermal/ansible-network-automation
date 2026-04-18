@@ -6,3 +6,7 @@
       - no shutdown
   loop: "{{ interfaces }}"
   when: interfaces is defined
+
+- name: Save configuration
+  cisco.ios.ios_config:
+    save_when: always
