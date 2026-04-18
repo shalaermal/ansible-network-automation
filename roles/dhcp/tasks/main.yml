@@ -1,0 +1,20 @@
+- name: Exclude DHCP addresses
+  cisco.ios.ios_config:
+    lines:
+      - "ip dhcp excluded-address {{ item.exclude_start }} {{ item.exclude_end }}"
+  loop: "{{ dhcp_pools }}"
+  when: dhcp_pools is defined
+
+- name: Configure DHCP pools
+  cisco.ios.ios_config:
+    parents: "ip dhcp pool {{ item.name }}"
+    lines:
+      - "network {{ item.network }} {{ item.mask }}"
+      - "default-router {{ item.gateway }}"
+      - "dns-server {{ item.dns }}"
+  loop: "{{ dhcp_pools }}"
+  when: dhcp_pools is defined
+
+- name: Save configuration
+  cisco.ios.ios_config:
+    save_when: always

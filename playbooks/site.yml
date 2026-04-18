@@ -15,5 +15,9 @@
       tags: [base]
     - role: router_interfaces
       tags: [interfaces]
+    - role: subinterfaces
+      tags: [subinterfaces]
+    - role: dhcp
+      tags: [dhcp]
     - role: ospf
       tags: [ospf]
