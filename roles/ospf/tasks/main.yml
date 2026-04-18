@@ -26,3 +26,11 @@
 - name: Save configuration
   cisco.ios.ios_config:
     save_when: always
+
+- name: Configure stub areas
+  cisco.ios.ios_config:
+    parents: "router ospf 1"
+    lines:
+      - "area {{ item.area }} stub"
+  loop: "{{ ospf_stub_areas | default([]) }}"
+  when: ospf_stub_areas is defined
