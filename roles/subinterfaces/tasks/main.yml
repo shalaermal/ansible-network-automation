@@ -1,0 +1,13 @@
+- name: Configure sub-interfaces
+  cisco.ios.ios_config:
+    parents: "interface {{ item.name }}"
+    lines:
+      - "encapsulation dot1Q {{ item.vlan }}"
+      - "ip address {{ item.ip }} {{ item.mask }}"
+      - "no shutdown"
+  loop: "{{ subinterfaces }}"
+  when: subinterfaces is defined
+
+- name: Save configuration
+  cisco.ios.ios_config:
+    save_when: always
