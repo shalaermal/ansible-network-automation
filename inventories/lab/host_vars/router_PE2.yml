@@ -8,8 +8,8 @@ interfaces:
     mask: 255.255.255.252
 
   - name: GigabitEthernet0/2
-    ip: 172.16.20.1
-    mask: 255.255.255.0
+    ip: 10.2.2.1
+    mask: 255.255.255.255
 
   - name: GigabitEthernet0/3
     ip: 10.0.24.2
@@ -30,6 +30,6 @@ ospf_networks:
   - network: 10.0.24.0
     wildcard: 0.0.0.3
     area: 0
-  - network: 172.16.20.0    # link to CE2
-    wildcard: 0.0.255.255
+  - network: 10.2.2.1    # link to CE2
+    wildcard: 0.0.0.3
     area: 2
