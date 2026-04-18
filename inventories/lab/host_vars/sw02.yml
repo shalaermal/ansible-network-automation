@@ -1,3 +1,13 @@
 hostname: SW02
 mgmt_ip: 192.168.0.204
 mgmt_mask: 255.255.255.0
+
+trunk_interfaces:
+  - name: GigabitEthernet0/1
+    allowed_vlans: "20,30"
+
+access_interfaces:
+  - name: GigabitEthernet0/2
+    vlan: 20
+  - name: GigabitEthernet0/3
+    vlan: 30
