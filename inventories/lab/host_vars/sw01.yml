@@ -2,6 +2,7 @@ hostname: SW01
 mgmt_ip: 192.168.0.203
 mgmt_mask: 255.255.255.0
 
+
 trunk_interfaces:
   - name: GigabitEthernet0/1
     allowed_vlans: "20,30"
