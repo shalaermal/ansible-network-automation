@@ -39,15 +39,13 @@
 - name: Configure BGP
   hosts: p_routers:pe_routers:ce_routers
   gather_facts: no
-  when: false
   roles:
     - role: bgp
-      tags: [bgp]
+      tags: [bgp, never]
 
 - name: Configure MPLS L3VPN
   hosts: pe_routers
   gather_facts: no
-  when: false
   roles:
     - role: mpls_l3vpn
-      tags: [mpls]
+      tags: [mpls, never]
