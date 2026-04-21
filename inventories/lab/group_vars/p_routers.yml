@@ -1,0 +1,7 @@
+# IS-IS
+isis_area: "49.0001"
+isis_type: level-2-only
+isis_metric: 10
+
+# BGP Role
+bgp_role: route_reflector

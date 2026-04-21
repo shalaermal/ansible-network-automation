@@ -1,0 +1,10 @@
+# IS-IS
+isis_area: "49.0001"
+isis_type: level-2-only
+isis_metric: 10
+
+# BGP Role
+bgp_role: rr_client
+bgp_rr_peers:
+  - 10.255.0.1  # P1
+  - 10.255.0.2  # P2

@@ -1,0 +1,22 @@
+{# IS-IS Global Configuration #}
+router isis
+ net {{ isis_net }}
+ is-type level-2-only
+ metric-style wide
+!
+
+{# IS-IS Loopback Interface #}
+interface Loopback0
+ ip router isis
+ isis circuit-type level-2-only
+!
+
+{# IS-IS Physical Interfaces #}
+{% for iface in isis_interfaces %}
+interface {{ iface.name }}
+ ip router isis
+ isis circuit-type level-2-only
+ isis network point-to-point
+ isis metric {{ iface.metric }}
+!
+{% endfor %}

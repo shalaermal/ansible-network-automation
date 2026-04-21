@@ -1,0 +1,28 @@
+---
+- name: "IS-IS Configuration"
+  hosts: p_routers:pe_routers
+  gather_facts: false
+  connection: network_cli
+
+  pre_tasks:
+    - name: "CHECK | Create logs directory"
+      file:
+        path: "./logs"
+        state: directory
+      delegate_to: localhost
+      run_once: true
+      tags: always
+
+    - name: "CHECK | Confirm connection"
+      cisco.ios.ios_command:
+        commands: show version
+      register: version_out
+      tags: always
+
+    - name: "CHECK | Show hostname"
+      debug:
+        msg: "Connect with: {{ inventory_hostname }}"
+      tags: always
+
+  roles:
+    - role: isis

@@ -1,3 +1,17 @@
 ansible_user: admin
 ansible_password: admin123
 ansible_connection: ansible.netcommon.network_cli
+ansible_network_os: cisco.ios.ios
+ansible_become: yes
+ansible_become_method: enable
+ansible_become_password: cisco
+
+# AS Numbers
+provider_as: 65000
+customer_a_as_ce1: 65001
+customer_a_as_ce2: 65002
+
+# VRF
+vrf_name: CUSTOMER_A
+vrf_rd: "65000:1"
+vrf_rt: "65000:100"

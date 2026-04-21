@@ -1,0 +1,36 @@
+---
+- name: "ISIS | Configuration IS-IS"
+  cisco.ios.ios_config:
+    src: isis.j2
+  register: isis_result
+  notify: save config
+  tags: isis
+
+- name: "ISIS | Show changes"
+  debug:
+    var: isis_result.commands
+  when: isis_result.changed
+  tags: isis
+
+- name: "ISIS | Verify neighbors"
+  cisco.ios.ios_command:
+    commands:
+      - show isis neighbors
+      - show ip route isis
+  register: isis_verify
+  tags: verify
+
+- name: "ISIS | Check neighbors if UP"
+  assert:
+    that:
+      - "'UP' in isis_verify.stdout[0]"
+    fail_msg: "IS-IS neighbors are not UP in {{ inventory_hostname }}"
+    success_msg: "IS-IS neighbors are UP in {{ inventory_hostname }}"
+  tags: verify
+
+- name: "ISIS | Save output verification"
+  copy:
+    content: "{{ isis_verify.stdout | join('\n---\n') }}"
+    dest: "./logs/isis_verify_{{ inventory_hostname }}.txt"
+  delegate_to: localhost
+  tags: verify
