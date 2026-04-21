@@ -1,0 +1,60 @@
+---
+- name: "BGP | Configure Route Reflector (P routers)"
+  cisco.ios.ios_config:
+    src: bgp_rr.j2
+  when: inventory_hostname in groups['p_routers']
+  register: bgp_rr_result
+  notify: save config
+  tags: bgp
+
+- name: "BGP | Configure PE routers"
+  cisco.ios.ios_config:
+    src: bgp_pe.j2
+  when: inventory_hostname in groups['pe_routers']
+  register: bgp_pe_result
+  notify: save config
+  tags: bgp
+
+- name: "BGP | Configure CE routers"
+  cisco.ios.ios_config:
+    src: bgp_ce.j2
+  when: inventory_hostname in groups['ce_routers']
+  register: bgp_ce_result
+  notify: save config
+  tags: bgp
+
+- name: "BGP | Verify BGP summary"
+  cisco.ios.ios_command:
+    commands:
+      - show bgp vpnv4 unicast all summary
+  when: inventory_hostname in groups['p_routers'] or
+        inventory_hostname in groups['pe_routers']
+  register: bgp_verify
+  tags: verify
+
+- name: "BGP | Verify CE BGP summary"
+  cisco.ios.ios_command:
+    commands:
+      - show bgp ipv4 unicast summary
+  when: inventory_hostname in groups['ce_routers']
+  register: bgp_ce_verify
+  tags: verify
+
+- name: "BGP | Check neighbors Established"
+  assert:
+    that:
+      - "'Established' in bgp_verify.stdout[0] or 'Active' not in bgp_verify.stdout[0]"
+    fail_msg: "BGP neighbors nuk janë Established në {{ inventory_hostname }}"
+    success_msg: "BGP OK në {{ inventory_hostname }}"
+  when: inventory_hostname in groups['p_routers'] or
+        inventory_hostname in groups['pe_routers']
+  tags: verify
+
+- name: "BGP | Save verification output"
+  copy:
+    content: "{{ bgp_verify.stdout | join('\n---\n') }}"
+    dest: "./logs/bgp_verify_{{ inventory_hostname }}.txt"
+  delegate_to: localhost
+  when: inventory_hostname in groups['p_routers'] or
+        inventory_hostname in groups['pe_routers']
+  tags: verify

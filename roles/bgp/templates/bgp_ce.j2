@@ -1,0 +1,13 @@
+router bgp {{ bgp_local_as }}
+ bgp router-id {{ bgp_router_id }}
+ bgp log-neighbor-changes
+!
+ neighbor {{ pe_neighbor.ip }} remote-as {{ pe_neighbor.as }}
+ neighbor {{ pe_neighbor.ip }} description PE-Uplink
+!
+ address-family ipv4
+  neighbor {{ pe_neighbor.ip }} activate
+{% for net in customer_networks %}
+  network {{ net.network }} mask {{ net.mask }}
+{% endfor %}
+ exit-address-family

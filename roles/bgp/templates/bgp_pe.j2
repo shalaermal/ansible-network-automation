@@ -1,0 +1,24 @@
+router bgp {{ provider_as }}
+ bgp router-id {{ bgp_router_id }}
+ bgp log-neighbor-changes
+ no bgp default ipv4-unicast
+!
+{# Lidhje me Route Reflectors #}
+{% for rr in bgp_rr_peers %}
+ neighbor {{ rr.ip }} remote-as {{ provider_as }}
+ neighbor {{ rr.ip }} description {{ rr.description }}
+ neighbor {{ rr.ip }} update-source Loopback0
+{% endfor %}
+!
+ address-family vpnv4
+{% for rr in bgp_rr_peers %}
+  neighbor {{ rr.ip }} activate
+  neighbor {{ rr.ip }} send-community extended
+{% endfor %}
+ exit-address-family
+!
+{# VRF per customer #}
+ address-family ipv4 vrf {{ vrf_name }}
+  neighbor {{ ce_neighbor.ip }} remote-as {{ ce_neighbor.as }}
+  neighbor {{ ce_neighbor.ip }} activate
+ exit-address-family

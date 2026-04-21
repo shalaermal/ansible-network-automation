@@ -1,0 +1,30 @@
+router bgp {{ provider_as }}
+ bgp router-id {{ bgp_router_id }}
+ bgp log-neighbor-changes
+ no bgp default ipv4-unicast
+!
+{# RR Peers - lidhje ndërmjet P1 dhe P2 #}
+{% for peer in bgp_rr_peers %}
+ neighbor {{ peer.ip }} remote-as {{ provider_as }}
+ neighbor {{ peer.ip }} description {{ peer.description }}
+ neighbor {{ peer.ip }} update-source Loopback0
+{% endfor %}
+!
+{# RR Clients - PE routers #}
+{% for client in bgp_rr_clients %}
+ neighbor {{ client.ip }} remote-as {{ provider_as }}
+ neighbor {{ client.ip }} description {{ client.description }}
+ neighbor {{ client.ip }} update-source Loopback0
+{% endfor %}
+!
+ address-family vpnv4
+{% for peer in bgp_rr_peers %}
+  neighbor {{ peer.ip }} activate
+  neighbor {{ peer.ip }} send-community extended
+{% endfor %}
+{% for client in bgp_rr_clients %}
+  neighbor {{ client.ip }} activate
+  neighbor {{ client.ip }} send-community extended
+  neighbor {{ client.ip }} route-reflector-client
+{% endfor %}
+ exit-address-family
