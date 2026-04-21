@@ -1,0 +1,4 @@
+# .gitattributes
+*.j2 linguist-detectable=false
+*.yml linguist-language=YAML
+*.yaml linguist-language=YAML
