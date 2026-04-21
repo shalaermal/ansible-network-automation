@@ -1,37 +1,47 @@
-hostname: Router_PE1   
+hostname: Router_PE1
 mgmt_ip: 192.168.0.13/24
 mgmt_mask: 255.255.255.0
+
+loopback_ip: 10.255.0.3
+bgp_router_id: 10.255.0.3
 
 interfaces:
   - name: GigabitEthernet0/1
     ip: 10.0.13.2
     mask: 255.255.255.252
-
   - name: GigabitEthernet0/2
     ip: 10.2.1.1
     mask: 255.255.255.252
-
+  - name: GigabitEthernet0/3
+    ip: 10.0.21.2
+    mask: 255.255.255.252
   - name: Loopback0
     ip: 10.255.0.3
     mask: 255.255.255.255
 
+# IS-IS
+isis_net: "49.0001.0102.5500.0003.00"
+isis_interfaces:
+  - name: GigabitEthernet0/1
+    metric: 10
   - name: GigabitEthernet0/3
-    ip: 10.0.21.2
-    mask: 255.255.255.252
+    metric: 10
 
-loopback_ip: 10.255.0.3
-ospf_networks:
-  - network: 10.255.0.3
-    wildcard: 0.0.0.0
-    area: 0
-  - network: 10.0.13.0
-    wildcard: 0.0.0.3
-    area: 0
-  - network: 10.0.21.0
-    wildcard: 0.0.0.3
-    area: 0
-  - network: 10.2.1.1    # link to CE1
-    wildcard: 0.0.0.3
-    area: 1
-ospf_stub_areas:
-  - area: 1
+# MPLS
+mpls_interfaces:
+  - GigabitEthernet0/1
+  - GigabitEthernet0/3
+
+# BGP RR Clients
+bgp_rr_peers:
+  - ip: 10.255.0.1
+    description: P1-RR
+  - ip: 10.255.0.2
+    description: P2-RR
+
+# VRF CE neighbor
+ce_neighbor:
+  ip: 10.2.1.2
+  as: 65001
+  interface: GigabitEthernet0/2
+  pe_ip: 10.2.1.1
