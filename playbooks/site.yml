@@ -8,7 +8,7 @@
       tags: [access, vlans]
 
 - name: Configure routers
-  hosts: routers
+  hosts: p_routers:pe_routers:ce_routers
   gather_facts: no
   roles:
     - role: cisco_base
@@ -21,3 +21,24 @@
       tags: [dhcp]
     - role: ospf
       tags: [ospf]
+
+- name: Configure SP Core - IS-IS
+  hosts: p_routers:pe_routers
+  gather_facts: no
+  roles:
+    - role: isis
+      tags: [isis]
+
+- name: Configure BGP
+  hosts: p_routers:pe_routers:ce_routers
+  gather_facts: no
+  roles:
+    - role: bgp
+      tags: [bgp]
+
+- name: Configure MPLS L3VPN
+  hosts: pe_routers
+  gather_facts: no
+  roles:
+    - role: mpls_l3vpn
+      tags: [mpls]
