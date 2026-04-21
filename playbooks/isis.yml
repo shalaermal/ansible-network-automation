@@ -26,3 +26,19 @@
 
   roles:
     - role: isis
+
+- name: Configure SP Core - IS-IS
+  hosts: p_routers:pe_routers
+  gather_facts: no
+
+  pre_tasks:
+    - name: "Create logs directory"
+      file:
+        path: "./logs"
+        state: directory
+      delegate_to: localhost
+      run_once: true
+
+  roles:
+    - role: isis
+      tags: [isis]
