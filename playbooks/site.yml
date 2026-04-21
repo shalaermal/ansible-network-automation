@@ -25,6 +25,13 @@
 - name: Configure SP Core - IS-IS
   hosts: p_routers:pe_routers
   gather_facts: no
+  pre_tasks:
+    - name: "Create logs directory"
+      file:
+        path: "./logs"
+        state: directory
+      delegate_to: localhost
+      run_once: true
   roles:
     - role: isis
       tags: [isis]
@@ -32,6 +39,7 @@
 - name: Configure BGP
   hosts: p_routers:pe_routers:ce_routers
   gather_facts: no
+  when: false
   roles:
     - role: bgp
       tags: [bgp]
@@ -39,6 +47,7 @@
 - name: Configure MPLS L3VPN
   hosts: pe_routers
   gather_facts: no
+  when: false
   roles:
     - role: mpls_l3vpn
       tags: [mpls]
