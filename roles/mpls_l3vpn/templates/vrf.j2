@@ -1,0 +1,19 @@
+{# VRF Definition #}
+vrf definition {{ vrf_name }}
+ rd {{ vrf_rd }}
+ route-target export {{ vrf_rt }}
+ route-target import {{ vrf_rt }}
+ address-family ipv4
+ exit-address-family
+!
+{# Interface drejt CE — vendos në VRF #}
+interface {{ ce_neighbor.interface }}
+ vrf forwarding {{ vrf_name }}
+ ip address {{ ce_neighbor.pe_ip }} 255.255.255.252
+!
+{# BGP VRF per customer #}
+router bgp {{ provider_as }}
+ address-family ipv4 vrf {{ vrf_name }}
+  neighbor {{ ce_neighbor.ip }} remote-as {{ ce_neighbor.as }}
+  neighbor {{ ce_neighbor.ip }} activate
+ exit-address-family

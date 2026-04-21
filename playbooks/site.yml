@@ -41,11 +41,11 @@
   gather_facts: no
   roles:
     - role: bgp
-      tags: [bgp, never]
+      tags: [bgp]
 
 - name: Configure MPLS L3VPN
   hosts: pe_routers
   gather_facts: no
   roles:
     - role: mpls_l3vpn
-      tags: [mpls, never]
+      tags: [mpls]
