@@ -1,0 +1,44 @@
+---
+- name: "MPLS | Activate MPLS and LDP"
+  cisco.ios.ios_config:
+    src: mpls.j2
+  register: mpls_result
+  notify: save config
+  tags: mpls
+
+- name: "MPLS | Show changes"
+  debug:
+    var: mpls_result.commands
+  when: mpls_result.changed
+  tags: mpls
+
+- name: "MPLS | Configuration VRF and BGP VRF"
+  cisco.ios.ios_config:
+    src: vrf.j2
+  register: vrf_result
+  notify: save config
+  tags: mpls
+
+- name: "MPLS | Verify LDP neighbors"
+  cisco.ios.ios_command:
+    commands:
+      - show mpls ldp neighbor
+      - show mpls forwarding-table
+      - show bgp vpnv4 unicast all summary
+  register: mpls_verify
+  tags: verify
+
+- name: "MPLS | Check LDP is Operational"
+  assert:
+    that:
+      - "'Oper' in mpls_verify.stdout[0]"
+    fail_msg: "LDP is not Operational in {{ inventory_hostname }}"
+    success_msg: "MPLS LDP OK in {{ inventory_hostname }}"
+  tags: verify
+
+- name: "MPLS | Save output verification"
+  copy:
+    content: "{{ mpls_verify.stdout | join('\n---\n') }}"
+    dest: "./logs/mpls_verify_{{ inventory_hostname }}.txt"
+  delegate_to: localhost
+  tags: verify
