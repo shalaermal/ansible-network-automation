@@ -29,7 +29,8 @@ jobs:
         run: |
           sshpass -p "${{ secrets.VM_PASS }}" ssh -o StrictHostKeyChecking=no ${{ secrets.VM_USER }}@${{ secrets.VM_HOST }} '
             cd ~/networking-ansible-lab &&
-            git pull &&
+            git config pull.rebase false &&
+            git pull --no-edit &&
             ansible-playbook playbooks/precheck.yml
           '
 
@@ -54,7 +55,8 @@ jobs:
         run: |
           sshpass -p "${{ secrets.VM_PASS }}" ssh -o StrictHostKeyChecking=no ${{ secrets.VM_USER }}@${{ secrets.VM_HOST }} '
             cd ~/networking-ansible-lab &&
-            git pull &&
+            git config pull.rebase false &&
+            git pull --no-edit &&
             ansible-playbook playbooks/site.yml
           '
 
@@ -79,6 +81,7 @@ jobs:
         run: |
           sshpass -p "${{ secrets.VM_PASS }}" ssh -o StrictHostKeyChecking=no ${{ secrets.VM_USER }}@${{ secrets.VM_HOST }} '
             cd ~/networking-ansible-lab &&
-            git pull &&
+            git config pull.rebase false &&
+            git pull --no-edit &&
             ansible-playbook playbooks/postcheck.yml
           '
