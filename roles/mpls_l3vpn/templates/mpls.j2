@@ -1,0 +1,11 @@
+{# MPLS Global #}
+mpls ip
+mpls label protocol ldp
+mpls ldp router-id Loopback0 force
+!
+{# MPLS in interfaces #}
+{% for iface in mpls_interfaces %}
+interface {{ iface }}
+ mpls ip
+!
+{% endfor %}
